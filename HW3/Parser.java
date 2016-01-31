@@ -101,18 +101,19 @@ public class Parser {
 							String next = i + 1 < tokens.size() 
 											? tokens.get(i + 1).type() 
 											: "EOF";
-							String[] noChange = new String[] {
-								"sync", "seq", "pitch", "rest", "varname"
+							String[] change = new String[] {
+								"}","EOF","play"
 							};
-							boolean change = true;
+							boolean willChange = false;
 
-							for(String s: noChange) {
+							for(String s: change) {
 								if( next.equals(s)) {
-									change = false;
+									willChange = true;
+									break;
 								} 
 							}
-							if( change ) {
-								prod = "";
+							if( willChange ) {
+								prod = "e";
 							}
 						}
 						// System.out.println(top + " -> " + prod);
@@ -193,44 +194,6 @@ public class Parser {
 					push(arr[i]);
 				}
 			}
-		}
-	}
-
-
-	private class StackItem {
-		private String value;
-		private int type;
-		private StackItem[] production;
-		public static final int VARIABLE = 0;
-		public static final int TERMINAL = 1;
-
-		public StackItem(String value, int type) {
-			this.value = value;
-			this.type = type;
-		}
-		
-		public StackItem(String value, int type,String production) {
-			this.value = value;
-			this.type = type;
-			String[] arr = production.split(" ");
-			this.production = new StackItem[arr.length];
-			for(int i = 0; i < arr.length; i++) {
-				char c = arr[i].charAt(0);
-				this.production[i] = new StackItem(arr[i],c >= 'A' && c <= 'Z' 
-													? VARIABLE : TERMINAL);
-			}
-		}
-
-		public StackItem[] production() {
-			return production;
-		}
-
-		public int type() {
-			return type;
-		}
-
-		public String toString() {
-			return value;
 		}
 	}
 }

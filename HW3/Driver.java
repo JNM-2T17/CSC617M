@@ -26,6 +26,7 @@ public class Driver {
 		if( code.endsWith("\n") ) {
 			code = code.substring(0,code.length() - 1);
 		}
+
 		Tokenizer t = new Tokenizer(code);
 		t.tokenize();
 		List<Token> tokens = t.getTokens();
