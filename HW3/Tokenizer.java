@@ -215,12 +215,14 @@ public class Tokenizer {
 	}
 
 	public void addToken() {
-		Token t = new Token(currToken,tokenType(),lineNo);
-		if( !t.type().equals("newline") 
-				|| !tokens.get(tokens.size() - 1).type().equals("newline")) {
-			tokens.add(t);
+		if( currToken.length() > 0 ) {
+			Token t = new Token(currToken,tokenType(),lineNo);
+			if( tokens.size() == 0 || !t.type().equals("newline")
+					|| !tokens.get(tokens.size() - 1).type().equals("newline")) {
+				tokens.add(t);
+			}
+			// System.out.println("Added " + t);
 		}
-		// System.out.println("Added " + t);
 		currToken = "";
 	}
 

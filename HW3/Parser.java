@@ -118,6 +118,7 @@ public class Parser {
 				printStack();
 			}
 			pw.close();
+			// System.out.println(tokens.size() + " tokens; index: " + i);
 			return stack.size() == 0 && i == tokens.size();
 		} catch(IOException ioe) {
 			ioe.printStackTrace();

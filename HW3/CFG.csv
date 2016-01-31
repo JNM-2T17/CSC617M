@@ -1,11 +1,11 @@
 ,sync,seq,pitch,rest,varname,play,newline,+,++,-,--,<,<<,>,>>,*,->,[,],~,time,{,.,),EOF
-PROG,ELEMS newline PLAY SUBELEMS,ELEMS newline PLAY SUBELEMS,ELEMS newline PLAY SUBELEMS,ELEMS newline PLAY SUBELEMS,ELEMS newline PLAY SUBELEMS,PLAY SUBELEMS,newline PROG newline,,,,,,,,,,,,,,,,,,SYNCH
+PROG,ELEMS newline PLAY SUBELEMS NL,ELEMS newline PLAY SUBELEMS NL,ELEMS newline PLAY SUBELEMS NL,ELEMS newline PLAY SUBELEMS NL,ELEMS newline PLAY SUBELEMS NL,PLAY SUBELEMS NL,newline PROG NL,,,,,,,,,,,,,,,,,,SYNCH
 ELEM,SYNC SUBELEM,SEQ SUBELEM,NOTE SUBELEM,REST SUBELEM,VAR SUBELEM,,SYNCH,,,,,,,,,,SYNCH,,,,,,,,
-SUBELEM,,,,,,,e,+ num SUBELEM,++ SUBELEM,- num SUBELEM,-- SUBELEM,< num SUBELEM,<< SUBELEM,> num SUBELEM,>> SUBELEM,* num,e,,,,,,,,
+SUBELEM,,,,,,,e,#NAME?,#NAME?,#NAME?,#NAME?,< num SUBELEM,<< SUBELEM,> num SUBELEM,>> SUBELEM,* num,e,,,,,,,,
 VAR,,,,,varname SUBVAR,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,
 SUBVAR,,,,,,,e,e,e,e,e,e,e,e,e,e,e,[ num SUB2VAR,,,,,,,
 SUB2VAR,,,,,,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,],~ num ],,,,,
-ELEMS,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,,SYNCH,,,,,,,,,,,,,,,,,,
+ELEMS,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,,e,,,,,,,,,,e,,,,,,,,e
 SUBELEMS,,,,,,,newline ELEMS,,,,,,,,,,-> varname SUBELEMS2,,,,,,,,e
 SUBELEMS2,,,,,,,newline ELEMS,,,,,,,,,,,,,,,,,,e
 SEQ,,seq SUBBODY,,,,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,
@@ -18,3 +18,4 @@ TIME,,,,,,,,,,,,,,,,,,,,,time SUBTIME,,,,
 SUBTIME,,,,,,,,,,,,,,,,,,,,,,,. SUB2TIME,e,
 SUB2TIME,,,,,,,,,,,,,,,,,,,,,,,. SUB3TIME,e,
 SUB3TIME,,,,,,,,,,,,,,,,,,,,,,,.,e,
+NL,,,,,,,newline,,,,,,,,,,,,,,,,,,e

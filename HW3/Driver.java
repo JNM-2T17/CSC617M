@@ -30,16 +30,16 @@ public class Driver {
 		t.tokenize();
 		List<Token> tokens = t.getTokens();
 
-		// PrintWriter pw = new PrintWriter(
-		// 					new BufferedWriter(
-		// 						new FileWriter(
-		// 							new File(args[1]))));
+		PrintWriter pw = new PrintWriter(
+							new BufferedWriter(
+								new FileWriter(
+									new File(args[1]))));
 
-		// for(Token token: tokens) {
-		// 	pw.println(token);
-		// }
+		for(Token token: tokens) {
+			pw.println(token);
+		}
 
-		// pw.close();
+		pw.close();
 
 		Parser p = new Parser(tokens);
 		System.out.println(p.parse() ? "Valid" : "Invalid");
