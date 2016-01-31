@@ -1,0 +1,41 @@
+PROG -> ELEMS nl PLAY nl ELEMS | PLAY nl ELEMS | ELEMS nl PLAY | PLAY 
+		| nl PROG nl
+ELEM -> SYNC | SEQ | NOTE | REST | VAR | TIMES | SYNC SUBELEM | SEQ SUBELEM 
+			| NOTE SUBELEM | REST SUBELEM | VAR SUBELEM
+SUBELEM -> + num | ++ | - num | -- | < num | << | > num | >> | + num SUBELEM 
+			| ++ SUBELEM | - num SUBELEM | -- SUBELEM | < num SUBELEM 
+			| << SUBELEM | > num SUBELEM | >> SUBELEM
+VAR -> varname | varname[num] | varname[num~num]
+TIMES -> ELEM * num
+ELEMS -> ELEM nl ELEMS | ELEM | DEC | DEC nl ELEMS
+SEQ -> seq { nl ELEMS nl } | seq nl { nl ELEMS nl }
+SYNC -> sync { nl ELEMS nl } | sync nl { nl ELEMS nl }
+PLAY -> play { nl ELEMS nl } | play nl { nl ELEMS nl }
+NOTE -> pitch(num,TIME)
+REST -> rest(TIME)
+TIME -> time | time. | time.. | time...
+DEC -> ELEM -> varname
+
+Left Factored
+
+PROG -> ELEMS nl PLAY SUBELEMS | PLAY SUBELEMS | nl PROG nl
+ELEM -> SYNC SUBELEM | SEQ SUBELEM | NOTE SUBELEM | REST SUBELEM | VAR SUBELEM
+SUBELEM -> + num SUBELEM | ++ SUBELEM | - num SUBELEM | -- SUBELEM 
+			| < num SUBELEM | << SUBELEM | > num SUBELEM | >> SUBELEM | e
+VAR -> varname SUBVAR
+SUBVAR -> e | [num SUBSUBVAR
+SUB2VAR -> ] | ~num]
+TIMES -> ELEM * num
+ELEMS -> ELEM SUBELEMS | DEC SUBELEMS
+SUBELEMS -> nl ELEMS | e
+SEQ -> seq SUBBODY
+SYNC -> sync SUBBODY
+PLAY -> play SUBBODY
+SUBBODY -> { nl ELEMS nl } | nl { nl ELEMS nl }
+NOTE -> pitch(num,TIME)
+REST -> rest(TIME)
+TIME -> time | time. | time.. | time...
+SUBTIME -> e | . SUB2TIME
+SUB2TIME -> e | . SUB3TIME
+SUB3TIME -> e | .
+DEC -> ELEM -> varname
