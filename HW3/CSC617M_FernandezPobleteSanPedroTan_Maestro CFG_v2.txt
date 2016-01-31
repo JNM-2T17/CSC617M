@@ -71,9 +71,9 @@ SUBELEM -> nl, ->
 VAR -> +,++,-,--,<,<<,>,>>,*,nl, ->
 SUBVAR -> +,++,-,--,<,<<,>,>>,*,nl, ->
 SUB2VAR -> +,++,-,--,<,<<,>,>>,*,nl, ->
-ELEMS -> nl
+ELEMS -> nl,EOF
 SUBELEMS -> nl,EOF
-SUBELEMS2 -> nl
+SUBELEMS2 -> nl,EOF
 SEQ -> +,++,-,--,<,<<,>,>>,*,nl, ->
 SYNC -> +,++,-,--,<,<<,>,>>,*,nl, ->
 PLAY -> +,++,-,--,<,<<,>,>>,*,EOF,nl
