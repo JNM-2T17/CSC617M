@@ -43,9 +43,9 @@ public class Parser {
 					for(int i = 1; i < prods.length; i++) {
 						if( prods[i].length() > 0 ) {
 							temp.put(terminals.get(i - 1),prods[i].replaceAll("\\|",","));
-							System.out.println("Adding " + prods[0] + " -> " 
-												+ temp.get(terminals.get(i - 1)) 
-												+ " on " + terminals.get(i - 1));
+							// System.out.println("Adding " + prods[0] + " -> " 
+							// 					+ temp.get(terminals.get(i - 1)) 
+							// 					+ " on " + terminals.get(i - 1));
 						}
 					}
 				} else {
@@ -69,22 +69,33 @@ public class Parser {
 
 			push("PROG");
 			int i = 0;
-			printStack();
+			boolean error = false;
+			// printStack();
 			while(i <= tokens.size() && stack.size() > 0) {
 				String top = peek();
 				Token currToken = i == tokens.size() ? new Token("EOF","EOF"
 									,tokens.get(tokens.size() - 1).lineNo()) 
 									: tokens.get(i);
+				// System.out.println(currToken);
+				if( currToken.type().equals("other") ) {
+					System.out.println("Unrecognized token " + currToken.token() 
+										+ " at line " + currToken.lineNo() );
+					pw.println("Unrecognized token " + currToken.token() 
+								+ " at line " + currToken.lineNo() );
+				}
 
 				if( isVariable(top) ) {
 					String prod = parseTable.get(top).get(currToken.type());
 					
 					if( prod == null ) {
-						System.out.println("Error at token " + currToken);
-						pw.println("Error at token " + currToken);
+						System.out.println("Error: unexpected " + currToken);
+						pw.println("Error: unexpected " + currToken);
 						i++;
+						error = true;
 					} else if( prod.equals("SYNCH") ) {
+						// System.out.println("Error at token " + currToken);
 						pop();
+						error = true;
 					} else {
 						if( prod.equals("newline ELEMS")) {
 							String next = i + 1 < tokens.size() 
@@ -104,22 +115,28 @@ public class Parser {
 								prod = "";
 							}
 						}
+						// System.out.println(top + " -> " + prod);
+						// pw.println(top + " -> " + prod);
 						updateStack(prod);
 					}
 				} else if( currToken.type().equals(top)) {
 					i++;
 					pop();
 				} else {
-					pop();
-					System.out.println("Error at token " + currToken);
-					pw.println("Error at token " + currToken);
-
+					if( currToken.type().equals("newline")) {
+						pop();
+					} else {
+						i++;
+						System.out.println("Error at token " + currToken + " expected " + top);
+						pw.println("Error at token " + currToken);
+					}
+					error = true;
 				}
-				printStack();
+				// printStack();
 			}
 			pw.close();
 			// System.out.println(tokens.size() + " tokens; index: " + i);
-			return stack.size() == 0 && i == tokens.size();
+			return !error && stack.size() == 0 && i == tokens.size();
 		} catch(IOException ioe) {
 			ioe.printStackTrace();
 			return false;
