@@ -27,13 +27,13 @@ rest - rest at line 5
 a - varname at line 6
 \n - newline at line 6
 a - varname at line 7
-+ - + at line 7
+> - > at line 7
 4 - num at line 7
 * - * at line 7
 3 - num at line 7
 \n - newline at line 7
 a - varname at line 8
-> - > at line 8
++ - + at line 8
 2 - num at line 8
 \n - newline at line 8
 } - } at line 9
