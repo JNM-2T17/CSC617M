@@ -8,17 +8,20 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Stack;
 
 public class Parser {
 	private List<Token> tokens;
 	private HashMap<String,HashMap<String,String>> parseTable;
 	private ArrayList<String> stack;
 	private PrintWriter pw;
+	private Stack<Fuck> stack2;
 
 	public Parser(List<Token> tokens) {
 		this.tokens = tokens;
-		parseTable = new HashMap<String,HashMap<String,String>>();
 		stack = new ArrayList<String>();
+		stack2 = new Stack<Fuck>();
+		parseTable = new HashMap<String,HashMap<String,String>>();
 		ArrayList<String> terminals = new ArrayList<String>();
 
 
@@ -67,7 +70,7 @@ public class Parser {
 									new FileWriter(
 										new File("logs.txt"))));
 
-			push("PROG");
+			push("S");
 			int i = 0;
 			boolean error = false;
 			// printStack();
@@ -85,6 +88,7 @@ public class Parser {
 				}
 
 				if( isVariable(top) ) {
+					// System.out.println("Var: " + top);
 					String prod = parseTable.get(top).get(currToken.type());
 					
 					if( prod == null ) {
@@ -97,32 +101,20 @@ public class Parser {
 						pop();
 						error = true;
 					} else {
-						if( prod.equals("newline ELEMS")) {
-							String next = i + 1 < tokens.size() 
-											? tokens.get(i + 1).type() 
-											: "EOF";
-							String[] change = new String[] {
-								"}","EOF","play"
-							};
-							boolean willChange = false;
-
-							for(String s: change) {
-								if( next.equals(s)) {
-									willChange = true;
-									break;
-								} 
-							}
-							if( willChange ) {
-								prod = "e";
-							}
-						}
 						// System.out.println(top + " -> " + prod);
 						// pw.println(top + " -> " + prod);
-						updateStack(prod);
+						updateStack(top,prod);
+						if(prod.equals("e")) {
+							rollUpStack();
+						}
 					}
 				} else if( currToken.type().equals(top)) {
 					i++;
 					pop();
+					Fuck f = stack2.peek();
+					if(f.setNext(currToken.token())) {
+						rollUpStack();
+					}	
 				} else {
 					if( currToken.type().equals("newline")) {
 						pop();
@@ -137,10 +129,21 @@ public class Parser {
 			}
 			pw.close();
 			// System.out.println(tokens.size() + " tokens; index: " + i);
+			System.out.println(stack2.peek().value());
 			return !error && stack.size() == 0 && i == tokens.size();
 		} catch(IOException ioe) {
 			ioe.printStackTrace();
 			return false;
+		}
+	}
+
+	public void rollUpStack() {
+		Fuck f = stack2.pop();
+						
+		Fuck f2 = stack2.peek();
+		while( f2.setNext(f) ) {
+			f = stack2.pop();
+			f2 = stack2.peek();
 		}
 	}
 
@@ -185,15 +188,87 @@ public class Parser {
 		return s.charAt(0) >= 'A' && s.charAt(0) <= 'Z';
 	}
 
-	private void updateStack(String production) {
+	private void updateStack(String left,String production) {
 		String[] arr = production.split(" ");
 		pop();
+		stack2.push(new Fuck(left,production));
 		for(int i = arr.length - 1; i >= 0; i--) {
 			if( arr[i].length() > 0) {
 				if(!arr[i].equals("e")) {
 					push(arr[i]);
 				}
 			}
+		}
+	}
+}
+
+class Fuck {
+	private String type;
+	private Fuck fuck1;
+	private Fuck fuck2;
+	private int value;
+	private int sets;
+
+	public Fuck(String type, String shite) {
+		this.type = type;
+		if( shite.equals("e")) {
+			switch(type) {
+				case "E2":
+					value = 0;
+					break;
+				case "T2":
+				default:
+					value = 1;
+			}
+		}
+		this.sets = 0;
+	}
+
+	public boolean setNext(Fuck fuck) {
+		// System.out.println("Setting " + fuck.type() + " to " + type + ";Sets: " + sets);
+		switch(sets) {
+			case 0:
+				fuck1 = fuck;
+				break;
+			case 1:
+				fuck2 = fuck;
+				break;
+			default:
+		}
+		sets++;
+		return sets == 2;
+	}
+
+	public String type() {
+		return type;
+	}
+
+	public boolean setNext(String s) {
+		// System.out.println("Setting " + s + "; sets = " + sets);
+		try {
+			int i = Integer.parseInt(s);
+			value = i;
+			return true;
+		} catch(NumberFormatException nfe) {
+			sets++;
+			return false;
+		}
+	}
+
+	public int value() {
+		switch(type) {
+			case "S":
+				return fuck1.value();
+			case "E2":
+			case "T2":
+				return fuck2 == null ? value : fuck2.value();
+			case "E":
+				return fuck1.value() + fuck2.value();
+			case "T":
+				return fuck1.value() * fuck2.value();
+			case "F":
+			default:
+				return value;
 		}
 	}
 }

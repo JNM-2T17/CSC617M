@@ -13,14 +13,13 @@ C# - pitch at line 4
 , - , at line 4
 1/4 - time at line 4
 . - . at line 4
-. - . at line 4
-. - . at line 4
 ) - ) at line 4
 \n - newline at line 4
 rest - rest at line 5
 ( - ( at line 5
 1/4 - time at line 5
 ) - ) at line 5
+hello - varname at line 5
 \n - newline at line 5
 } - } at line 6
 -> - -> at line 6

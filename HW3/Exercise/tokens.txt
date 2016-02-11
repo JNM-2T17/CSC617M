@@ -1,0 +1,5 @@
+1 - num at line 1
++ - + at line 1
+2 - num at line 1
+* - * at line 1
+3 - num at line 1
