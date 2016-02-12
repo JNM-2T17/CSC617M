@@ -1,0 +1,7 @@
+,num,+,*,(,),EOF
+S,E,,,E,,
+E,num E2,,,( E ) E2,,
+T,num T2,,,( E ) T2,,
+E2,,+ E,* T E3,,e,e
+T2,,e,* T,,e,e
+E3,,+ E,,,e,e

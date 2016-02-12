@@ -1,0 +1,60 @@
+play{{}
+	C(var,3, 1/4) -> x
+	rest(1/4)
+	x>> * 2
+	x>4
+
+	//(repeatMarker: start) 
+	// 1) Gets skipped over
+	// 4) Goes here. Initializes the value of repeatMarker to 2 (based on “repeatMarker: toEnd after 2”)
+	// 7) Goes here.
+
+	chorus
+
+	seq{
+		C(3, 1/4)
+		E(3, 1/4)
+		G(3, 1/4)
+	} -> seq1
+
+	sync{
+		A(3, 3/4)
+		seq{
+			C(3, 1/4)+4
+			E(3, 1/4)+4
+			G(3, 1/4)+4
+		}
+		seq1+8
+	}
+
+	seq{
+		seq1[1~2]
+		A##(3, 3/4.)+4
+		Gb(3, 1/32...) -> y
+		y++
+		y+2
+	} -> seq2
+
+	//(repeatMarker: toEnd after 2) 
+	// 2) Gets skipped over
+	// 5) Decrements repeatMarker (repeatMarker = 2 - 1 = 1). If repeatMarker > 0, proceeds.
+	// 8) Decrements repeatMarker (repeatMarker = 1 - 1 = 0). If !(repeatMarker > 0), skips to repeatMarker: end
+
+	//(repeatMarker: toStart)
+	// 3) Goes to repeatMarker: start
+	// 6) Goes to repeatMarker: start
+
+	//(repeatMarker: end)
+	// 9) Goes here.
+
+	chorus++
+
+	seq2
+	y-4
+}
+
+seq{
+	C(5, 1/4) * 3
+	E(5, 1/2)
+	G(5, 1/4)
+} -> chorus
