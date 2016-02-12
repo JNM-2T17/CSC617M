@@ -247,8 +247,10 @@ public class Tokenizer {
 			int i = Integer.parseInt(currToken);
 			if( i > 0 ) {
 				return "num";
+			} else if( i >= -1 ) {
+				return "octave";
 			} else {
-				return "Invalid number, must be positiive";
+				return "Invalid number, must be positive";
 			}
 		} catch(NumberFormatException nfe) {
 			if( currToken.matches("^[1-9][0-9]*/[1-9][0-9]*+$")) {

@@ -1,4 +1,4 @@
-import java.util.HashMap
+import java.util.HashMap;
 
 /**
  * This class represents a non-terminal in the grammar.

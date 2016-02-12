@@ -87,7 +87,7 @@ public class Tokenizer {
 						state = 4;
 						addToken();
 						currToken += c;
-					} else if(c >= '0' && c <= '9' ) {
+					} else if(c >= '0' && c <= '9' ) {						
 						state = 5;
 						addToken();
 						currToken += c;
