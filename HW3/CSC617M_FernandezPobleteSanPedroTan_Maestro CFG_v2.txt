@@ -13,7 +13,7 @@ PLAY -> play { nl ELEMS nl } | play nl { nl ELEMS nl }
 NOTE -> pitch(num,TIME)
 REST -> rest(TIME)
 TIME -> time | time. | time.. | time...
-DEC -> ELEM -> varname
+DEC -> ELEM -> varname	
 
 Left Factored
 
@@ -36,7 +36,7 @@ PLAY -> play SUBBODY
 SUBBODY -> { nl ELEMS nl } | nl { nl ELEMS nl }
 NOTE -> pitch(num,TIME)
 REST -> rest(TIME)
-TIME -> time SUBTIME
+TIME -> num SUBTIME | time SUBTIME
 SUBTIME -> e | . SUB2TIME
 SUB2TIME -> e | . SUB3TIME
 SUB3TIME -> e | .
@@ -58,7 +58,7 @@ PLAY -> play
 SUBBODY -> {,nl
 NOTE -> pitch
 REST -> rest
-TIME -> time
+TIME -> time,num
 SUBTIME -> .,e
 SUB2TIME -> .,e
 SUB3TIME -> .,e
