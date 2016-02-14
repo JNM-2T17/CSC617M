@@ -16,14 +16,14 @@ public class Elem extends NonTerminal implements Playable {
 				"SYNC",
 				"SEQ"
 			};
-			foreach(String s: possible) {
-				play = getComponent(s);
+			for(String s: possible) {
+				play = (Playable)getComponent(s);
 
 				if( play != null ) {
 					break;
 				}
 			}
-			SubElem subelem = (SubELem)getComponent("SUBELEM");
+			SubElem subelem = (SubElem)getComponent("SUBELEM");
 			play = subelem.value(play);
 		}
 	}
@@ -41,6 +41,6 @@ public class Elem extends NonTerminal implements Playable {
 	}
 
 	public Playable multiply(int times) {
-		play = play.multiply(times);
+		return play.multiply(times);
 	}
 }

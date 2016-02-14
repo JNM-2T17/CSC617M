@@ -1,13 +1,8 @@
 play{
 	C(3, 1/4) -> x
 	rest(1/4)
-	x>> * 2
-	x>4
-
-	//(repeatMarker: start) 
-	// 1) Gets skipped over
-	// 4) Goes here. Initializes the value of repeatMarker to 2 (based on “repeatMarker: toEnd after 2”)
-	// 7) Goes here.
+	x >> * 2
+	x > 4
 
 	chorus
 
@@ -34,18 +29,6 @@ play{
 		y++
 		y+2
 	} -> seq2
-
-	//(repeatMarker: toEnd after 2) 
-	// 2) Gets skipped over
-	// 5) Decrements repeatMarker (repeatMarker = 2 - 1 = 1). If repeatMarker > 0, proceeds.
-	// 8) Decrements repeatMarker (repeatMarker = 1 - 1 = 0). If !(repeatMarker > 0), skips to repeatMarker: end
-
-	//(repeatMarker: toStart)
-	// 3) Goes to repeatMarker: start
-	// 6) Goes to repeatMarker: start
-
-	//(repeatMarker: end)
-	// 9) Goes here.
 
 	chorus++
 

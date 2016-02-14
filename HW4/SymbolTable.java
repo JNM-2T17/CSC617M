@@ -8,7 +8,7 @@ public class SymbolTable {
 		variables = new HashMap<String,Playable>();
 	}
 
-	public SymbolTable instance() {
+	public static SymbolTable instance() {
 		if( instance == null ) {
 			instance = new SymbolTable();
 		}
