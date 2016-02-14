@@ -45,8 +45,13 @@ public abstract class NonTerminal implements ParseObject {
 	 */
 	public String getProdString() {
 		String s = "";
-		for(String s1 : production) {
-			s += s1 + " ";
+
+		if( production.length == 0 ) {
+			s = "e";
+		} else {
+			for(String s1 : production) {
+				s += s1 + " ";
+			}
 		}
 		return s.trim();
 	}
