@@ -1,0 +1,111 @@
+play {
+    rest(1/6)
+    firstPart
+    ECuBSlurtrue
+    firstPart
+    firstPartEnd
+    BCuCsuSlur
+    secondPart
+    firstPart
+    firstPartEnd
+    BCuCsuSlur
+    secondPart
+    firstPart
+    firstPartEnd
+    rest(1/12)
+}
+
+seq {
+    A(4,1/16)
+    rest(1/16)
+} -> ANote
+
+/**
+ * Start First Part
+ */
+seq {
+    firstSlur
+    CEASlur
+    BEGsBSlur
+    E(4,1/16)
+    firstSlur
+    CEASlur
+} -> firstPart
+
+seq {
+    seq {
+        E(5,1/16)
+        D#(5,1/16)
+    } * 2
+    E(5,1/16)
+    B(4,1/16)
+    D(5,1/16)
+    C(5,1/16)
+    A(4,1/8)
+    rest(1/16)
+} -> firstSlur
+
+seq {
+    C(4,1/16)
+    E(4,1/16)
+    A(4,1/16)
+    B(4,1/8)
+    rest(1/16)
+} -> CEASlur
+
+seq {
+    E(4,1/16)
+    G#(4,1/16)
+    B(4,1/16)
+    C(5,1/8)
+    rest(1/16)
+} -> BEGsBSlur
+
+seq {
+    E(4,1/16)
+    C(5,1/16)
+    B(4,1/16)
+} -> ECuBSlurfalse
+
+seq {
+    ECuBSlurfalse
+    A(4,1/4)
+} -> ECuBSlurtrue
+/* End First Part */
+
+seq {
+    ECuBSlurfalse
+    ANote
+} -> firstPartEnd
+
+/*Start Second Part*/
+
+seq {
+    E(5,1/8.)
+    G(4,1/16)
+    F(5,1/16)
+    E(5,1/16)
+    D(5,1/8.)
+    F(4,1/16)
+    E(5,1/16)
+    D(5,1/16)
+    C(5,1/8.)
+    E(4,1/16)
+    D(5,1/16)
+    C(5,1/16)
+    B(4,1/8)
+    rest(1/16)
+    E(4,1/16)
+    E(5,1/16)
+    rest(1/8)
+    E(5,1/16)
+    B(5,1/16)
+    rest(1/8)
+    D#(5,1/16)
+} -> secondPart
+
+seq {
+    B(4,1/16)
+    C(5,1/16)
+    D(5,1/16)
+} -> BCuCsuSlur

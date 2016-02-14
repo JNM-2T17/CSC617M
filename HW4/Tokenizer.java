@@ -67,12 +67,28 @@ public class Tokenizer {
 					if( c == '/') {
 						state = 2;
 						currToken = "";
+					} else if(c == '*') {
+						state = 8;
+						currToken = "";
 					} else {
 						i--;
 						state = 7;
 					}
 					break;
-				//in comment
+				//in multiline comment
+				case 8:
+					if( c == '*') {
+						state = 9;
+					}
+					break;
+				case 9:
+					if( c == '/') {
+						state = 0;
+					} else {
+						state = 8;
+					}
+					break;
+				//in single line comment
 				case 2:
 					if( c == '\n') {
 						state = 0;
