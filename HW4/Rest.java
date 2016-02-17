@@ -1,5 +1,5 @@
-public class Rest extends NonTerminal {
-	private float time;
+public class Rest extends NonTerminal implements Playable {
+	private float duration;
 
 	public Rest(String pattern) {
 		super("REST",pattern);
@@ -11,11 +11,26 @@ public class Rest extends NonTerminal {
 		} else {
 			Time tm = (Time)getComponent("TIME");
 			tm.interpret();
-			time = tm.getTime();
+			duration = tm.getTime();
 		}
 	}
 
-	public int getTime(){
-		return time;
+	public int getDuration(){
+		return duration;
+	}
+
+	public void play() {
+		// Can this be in the music player too?
+	}
+
+	public void changePitch(int semitones) {
+	}
+
+	public void changeTime(double factor) {
+		duration *= factor;
+	}
+
+	public Playable multiply(int times) {
+		duration *= times
 	}
 }
