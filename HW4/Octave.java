@@ -14,7 +14,7 @@ public class Octave extends NonTerminal {
 			if(minus != null){
 				Token t = (Token)getComponent("num");
 				t.interpret();
-				octave *= -1 * t.intValue();
+				octave = -1 * t.intValue();
 			}
 
 			else{
