@@ -1,7 +1,7 @@
 
 public class Play extends NonTerminal {
 	
-	public Play(String patten){
+	public Play(String pattern){
 		super("PLAY", pattern);
 	}
 	
