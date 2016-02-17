@@ -17,7 +17,7 @@ public class Note extends NonTerminal implements Playable {
 			SubNote subnote = (SubNote)getComponent("SUBNOTE");
 			subnote.interpret();
 
-			note += 12 * (subnote.getOctave() - 1) * 12;
+			note += 12 * (subnote.getOctave() + 1);
 			duration = subnote.getTime();
 		}
 	}
