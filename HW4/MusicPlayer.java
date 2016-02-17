@@ -67,5 +67,6 @@ public class MusicPlayer {
             e.printStackTrace();
         }
         channels[i].noteOff(note);
+        actives[i][note] = false;
     }
 }
