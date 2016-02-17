@@ -10,7 +10,8 @@ ELEMS -> ELEM nl ELEMS | ELEM | DEC | DEC nl ELEMS
 SEQ -> seq { nl ELEMS nl } | seq nl { nl ELEMS nl }
 SYNC -> sync { nl ELEMS nl } | sync nl { nl ELEMS nl }
 PLAY -> play { nl ELEMS nl } | play nl { nl ELEMS nl }
-NOTE -> pitch(num,TIME)
+NOTE -> pitch(num,TIME) | pitch(OCTAVE,TIME)
+OCTAVE -> octave | -num
 REST -> rest(TIME)
 TIME -> time | time. | time.. | time...
 DEC -> ELEM -> varname	
