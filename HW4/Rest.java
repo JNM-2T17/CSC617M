@@ -1,8 +1,13 @@
 public class Rest extends NonTerminal implements Playable {
-	private float duration;
+	private double duration;
 
 	public Rest(String pattern) {
 		super("REST",pattern);
+	}
+
+	public Rest(double duration) {
+		super("REST","rest ( TIME )");
+		this.duration = duration;
 	}
 
 	public void interpret() throws Exception {
@@ -15,12 +20,12 @@ public class Rest extends NonTerminal implements Playable {
 		}
 	}
 
-	public int getDuration(){
+	public double getDuration(){
 		return duration;
 	}
 
 	public void play() {
-		// Can this be in the music player too?
+		MusicPlayer.instance().rest(duration);
 	}
 
 	public void changePitch(int semitones) {
@@ -31,6 +36,6 @@ public class Rest extends NonTerminal implements Playable {
 	}
 
 	public Playable multiply(int times) {
-		duration *= times
+		return new Rest(duration * times);
 	}
 }

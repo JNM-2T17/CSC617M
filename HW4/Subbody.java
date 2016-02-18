@@ -1,4 +1,8 @@
+import java.util.Iterator;
+
 public class Subbody extends NonTerminal {
+	private Iterator<Elem> elems;
+
 	public Subbody(String pattern){
 		super("SUBBODY", pattern);
 	}
@@ -9,6 +13,11 @@ public class Subbody extends NonTerminal {
 		} else {
 			Elems elems = (Elems) getComponent("ELEMS");
 			elems.interpret();
+			this.elems = elems.getElems();
 		}
+	}
+
+	public Iterator<Elem> getElems() {
+		return elems;
 	}
 }

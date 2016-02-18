@@ -9,7 +9,7 @@ public class MusicPlayer {
     public static final int NOTE_COUNT = 128;
     public static final int VOLUME = 127;
     public static final int BPM = 100;
-    public static final int MS_PER_MINUTE = 6E4;
+    public static final int MS_PER_MINUTE = 60000;
     public static final int BEATS_PER_WHOLE = 4;
     private static MusicPlayer instance = null;
 
@@ -40,7 +40,7 @@ public class MusicPlayer {
         }        
     }
 
-    public MusicPlayer instance() {
+    public static MusicPlayer instance() {
         if( instance == null ) {
             instance = new MusicPlayer();
         }
@@ -62,11 +62,19 @@ public class MusicPlayer {
 
         channels[i].noteOn(note,VOLUME);
         try {
-            Thread.sleep(duration * beatLength);
+            Thread.sleep((long)(duration * beatLength));
         } catch(InterruptedException e) {
             e.printStackTrace();
         }
         channels[i].noteOff(note);
         actives[i][note] = false;
+    }
+
+    public void rest(double duration) {
+        try {
+            Thread.sleep((long)(duration * beatLength));
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }

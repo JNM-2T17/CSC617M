@@ -1,6 +1,6 @@
 public class Note extends NonTerminal implements Playable {
 	private int note;
-	private float duration;
+	private double duration;
 
 	public Note(String pattern) {
 		super("NOTE",pattern);
@@ -10,8 +10,8 @@ public class Note extends NonTerminal implements Playable {
 		if(!isSet()) {
 			throw new Exception(NOT_SET_MESSAGE);
 		} else {
-			Token pitch = (Token)getComponent("pitch");
-			pitch.interpret();
+			Token pitchToken = (Token)getComponent("pitch");
+			pitchToken.interpret();
 			note = pitchToken.intValue();
 
 			SubNote subnote = (SubNote)getComponent("SUBNOTE");
@@ -36,5 +36,6 @@ public class Note extends NonTerminal implements Playable {
 
 	public Playable multiply(int times) {
 		// Returns a seq
+		return null; //temporary
 	}
 }

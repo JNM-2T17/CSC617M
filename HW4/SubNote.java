@@ -1,6 +1,6 @@
 public class SubNote extends NonTerminal {
 	private int octave;
-	private float time;
+	private double time;
 
 	public SubNote(String pattern) {
 		super("SUBNOTE",pattern);
@@ -31,7 +31,7 @@ public class SubNote extends NonTerminal {
 		return octave;
 	}
 
-	public float getTime(){
+	public double getTime(){
 		return time;
 	}
 }

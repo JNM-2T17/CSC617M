@@ -44,6 +44,10 @@ public class SubVar extends NonTerminal
                     indices = new int[1];
                     indices[0] = index;
                 }
+            } 
+            else 
+            {
+                indices = new int[0];
             }
 		}
 	}

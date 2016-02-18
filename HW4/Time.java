@@ -13,12 +13,12 @@ public class Time extends NonTerminal {
 				case "num SUBTIME":
 					Token t = (Token) getComponent("num");
 					t.interpret();
-					timeVal = Double.parseDouble(t.intValue());
+					timeVal = Double.parseDouble("" + t.intValue());
 					break;
 				case "time SUBTIME":
-					Token t = (Token) getComponent("time");
+					t = (Token) getComponent("time");
 					t.interpret();
-					timeVal = Double.parseDouble(t.time());
+					timeVal = Double.parseDouble("" + t.time());
 					break;
 				default:
 			}

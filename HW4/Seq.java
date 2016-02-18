@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Seq extends NonTerminal {
 	private Playable[] playables;
 	
@@ -6,6 +9,7 @@ public class Seq extends NonTerminal {
 	}
 	
 	public Seq(Playable[] p){
+		super("SEQ","seq SUBBODY");
 		playables = p;
 	}
 	
@@ -15,6 +19,12 @@ public class Seq extends NonTerminal {
 		} else {
 			Subbody sb = (Subbody) getComponent("SUBBODY");
 			sb.interpret();	
+			Iterator<Elem> itr = sb.getElems();
+			ArrayList<Playable> elems = new ArrayList<Playable>();
+			while(itr.hasNext() ) {
+				elems.add(itr.next());
+			}
+			playables = elems.toArray(playables);
 		}
 	}
 	
