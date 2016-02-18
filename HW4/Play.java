@@ -32,16 +32,12 @@ public class Play extends NonTerminal implements Playable {
 		}
 	}
 
-	public void changePitch(int semitones) {
-		for(Playable p: playables) {
-			p.changePitch(semitones);
-		}
+	public Playable changePitch(int semitones) {
+		return null;
 	}
 
-	public void changeTime(double factor) {
-		for(Playable p: playables) {
-			p.changeTime(factor);
-		}
+	public Playable changeTime(double factor) {
+		return null;
 	}
 
 	public Playable multiply(int times) {

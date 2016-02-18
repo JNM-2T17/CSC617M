@@ -10,10 +10,6 @@ public class Rest extends NonTerminal implements Playable {
 		this.duration = duration;
 	}
 	
-	private Rest(double duration){
-		this.duration = duration;
-	}
-
 	public void interpret() throws Exception {
 		if(!isSet()) {
 			throw new Exception(NOT_SET_MESSAGE);

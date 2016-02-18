@@ -47,9 +47,12 @@ public class MusicPlayer {
         return instance;
     }
 
-    public void play(int note, double duration) {
+    public void play(int note, double duration) throws Exception {
         boolean free = false;
         int i;
+        if( note < 0 ) {
+            throw new Exception("Note too low");
+        }
         for(i = 0; i < actives.length; i++) {
             if( !actives[i][note] ) {
                 actives[i][note] = true;
