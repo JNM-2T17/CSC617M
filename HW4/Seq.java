@@ -42,7 +42,7 @@ public class Seq extends NonTerminal implements Playable {
 	}
 
 	public Playable changePitch(int semitones) {
-    	Playable newPlay = new Playable[playables.length];
+    	Playable[] newPlay = new Playable[playables.length];
         for(int i = 0; i < playables.length; i++) {
 		  newPlay[i] = playables[i].changePitch(semitones);
         }
@@ -50,7 +50,7 @@ public class Seq extends NonTerminal implements Playable {
 	}
 
 	public Playable changeTime(double factor) {
-        Playable newPlay = new Playable[playables.length];
+        Playable[] newPlay = new Playable[playables.length];
         for(int i = 0; i < playables.length; i++) {
 		  newPlay[i] = playables[i].changeTime(factor);
         }

@@ -37,12 +37,12 @@ public class Elem extends NonTerminal implements Playable {
 		play.play();
 	}
 
-	public void changePitch(int semitones) {
-		play.changePitch(semitones);
+	public Playable changePitch(int semitones) {
+		return play.changePitch(semitones);
 	}
 
-	public void changeTime(double factor) {
-		play.changeTime(factor);
+	public Playable changeTime(double factor) {
+		return play.changeTime(factor);
 	}
 
 	public Playable multiply(int times) {

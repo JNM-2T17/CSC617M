@@ -71,6 +71,9 @@ public class Tokenizer {
 						state = 8;
 						currToken = "";
 					} else {
+						if( c == '\n') {
+							lineNo++;
+						}
 						i--;
 						state = 7;
 					}
@@ -79,12 +82,17 @@ public class Tokenizer {
 				case 8:
 					if( c == '*') {
 						state = 9;
+					} else if( c == '\n') {
+						lineNo++;
 					}
 					break;
 				case 9:
 					if( c == '/') {
 						state = 0;
 					} else {
+						if( c == '\n') {
+							lineNo++;
+						}
 						state = 8;
 					}
 					break;
