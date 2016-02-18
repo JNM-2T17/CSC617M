@@ -13,7 +13,7 @@ public class Prog extends NonTerminal {
 			throw new Exception(NOT_SET_MESSAGE);
 		} else {
 			switch(getProdString()) {
-				case "ELEMS nl PLAY SUBELEMS2 NL":
+				case "ELEMS newline PLAY SUBELEMS2 NL":
 					Elems e = (Elems)getComponent("ELEM");
                     e.interpret();
 					SubElems2 se2_1 = (SubElems2)getComponent("SUBELEMS2");
@@ -25,11 +25,13 @@ public class Prog extends NonTerminal {
                 case "PLAY SUBELEMS2 NL":
 					SubElems2 se2_2 = (SubElems2)getComponent("SUBELEMS2");
                     se2_2.interpret();
+                    System.out.println("HALT MOTHERFUCKER");
                     Play play2 = (Play)getComponent("PLAY");
                     play2.interpret();
+                    System.out.println("NIGGA");
                     play = play2;
                     break;
-                case "nl PROG NL":
+                case "newline PROG NL":
                     Prog pr = (Prog)getComponent("PROG");
                     pr.interpret();
                     play = pr.getPlay();

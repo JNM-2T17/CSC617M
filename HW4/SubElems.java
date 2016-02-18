@@ -13,16 +13,17 @@ public class SubElems extends NonTerminal {
 		} 
 	}
 
-	public void build(List<Elem> elems) {
+	public List<Elem> build(List<Elem> elems) {
 		switch(getProdString()) {
 			case "-> varname SUBELEMS2":
 				SymbolTable.instance()
 					.put(((Token)getComponent("varname")).token()
 							,elems.get(elems.size() - 1));
+				System.out.println("Setting " + ((Token)getComponent("varname")).token());
 				SubElems2 se2 = (SubElems2)getComponent("SUBELEMS2");
-				se2.build(elems);
+				elems = se2.build(elems);
 				break;	
-			case "nl ELEMS":
+			case "newline ELEMS":
 				try {
 					Elems e = (Elems)getComponent("ELEMS");
 					e.interpret();
@@ -36,5 +37,6 @@ public class SubElems extends NonTerminal {
 				break;	
 			default:
 		}
+		return elems;
 	}
 }

@@ -20,18 +20,6 @@ seq {
     rest(1/16)
 } -> ANote
 
-/**
- * Start First Part
- */
-seq {
-    firstSlur
-    CEASlur
-    BEGsBSlur
-    E(4,1/16)
-    firstSlur
-    CEASlur
-} -> firstPart
-
 seq {
     seq {
         E(5,1/16)
@@ -109,3 +97,12 @@ seq {
     C(5,1/16)
     D(5,1/16)
 } -> BCuCsuSlur
+
+seq {
+    firstSlur
+    CEASlur
+    BEGsBSlur
+    E(4,1/16)
+    firstSlur
+    CEASlur
+} -> firstPart

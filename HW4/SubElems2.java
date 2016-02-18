@@ -14,7 +14,7 @@ public class SubElems2 extends NonTerminal {
 			throw new Exception(NOT_SET_MESSAGE);
 		} else {
 			switch(getProdString()) {
-				case "nl ELEMS":
+				case "newline ELEMS":
 					try {
 						Elems e = (Elems)getComponent("ELEMS");
 						e.interpret();
@@ -33,9 +33,9 @@ public class SubElems2 extends NonTerminal {
 		return itr;
 	}
 
-	public void build(List<Elem> elems) {
+	public List<Elem> build(List<Elem> elems) {
 		switch(getProdString()) {
-			case "nl ELEMS":
+			case "newline ELEMS":
 				try {
 					Elems e = (Elems)getComponent("ELEMS");
 					e.interpret();
@@ -49,5 +49,6 @@ public class SubElems2 extends NonTerminal {
 				break;	
 			default:
 		}
+		return elems;
 	}
 }

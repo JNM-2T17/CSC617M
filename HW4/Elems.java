@@ -23,7 +23,7 @@ public class Elems extends NonTerminal {
 					e.interpret();
 					elems.add(e);
 					SubElems se = (SubElems)getComponent("SUBELEMS");
-					se.build(elems);
+					elems = (ArrayList<Elem>)se.build(elems);
 					break;
 				default:
 			}
