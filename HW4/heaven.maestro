@@ -1,6 +1,7 @@
 play{
-
-	heaven < 3 > 2
+	heaven < 2
+	heaven
+	heaven < 3 > 2 * 2
 }
 
 seq{

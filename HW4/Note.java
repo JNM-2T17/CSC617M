@@ -6,6 +6,12 @@ public class Note extends NonTerminal implements Playable {
 		super("NOTE",pattern);
 	}
 
+	public Note(int note, double duration) {
+		super("NOTE","pitch ( SUBNOTE");
+		this.note = note;
+		this.duration = duration;
+	}
+
 	public void interpret() throws Exception {
 		if(!isSet()) {
 			throw new Exception(NOT_SET_MESSAGE);
@@ -13,6 +19,9 @@ public class Note extends NonTerminal implements Playable {
 			Token pitchToken = (Token)getComponent("pitch");
 			pitchToken.interpret();
 			note = pitchToken.intValue();
+			if( note > 127 ) {
+				throw Exception("Pitch too high");
+			}
 
 			SubNote subnote = (SubNote)getComponent("SUBNOTE");
 			subnote.interpret();
@@ -26,16 +35,21 @@ public class Note extends NonTerminal implements Playable {
 		MusicPlayer.instance().play(note, duration);
 	}
 
-	public void changePitch(int semitones) {
-		note += semitones;
+	public Playble changePitch(int semitones) {
+		int note = this.note + semitones;
+		return new Note(note, duration);
 	}
 
-	public void changeTime(double factor) {
-		duration *= factor;
+	public Playble changeTime(double factor) {
+		double duration = this.duration * factor;
+		return new Note(note, duration);
 	}
 
 	public Playable multiply(int times) {
-		// Returns a seq
-		return null; //temporary
+		Playable[] newSeq = new Playable[times];
+		for(int i = 0; i < times; i++ ) {
+			newSeq[i] = this;
+		}
+		return new Seq(newSeq);
 	}
 }
