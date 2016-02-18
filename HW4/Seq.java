@@ -42,13 +42,19 @@ public class Seq extends NonTerminal implements Playable {
 	}
 
 	public Playable changePitch(int semitones) {
-		Playable[] newPlayabls
+    	Playable newPlay = new Playable[playables.length];
+        for(int i = 0; i < playables.length; i++) {
+		  newPlay[i] = playables[i].changePitch(semitones);
+        }
+        return new Seq(newPlay);
 	}
 
 	public Playable changeTime(double factor) {
-		Seq newSeq = new Seq(this);
-		newSeq.modifyTime(factor);
-		return newSeq;
+        Playable newPlay = new Playable[playables.length];
+        for(int i = 0; i < playables.length; i++) {
+		  newPlay[i] = playables[i].changeTime(factor);
+        }
+        return new Seq(newPlay);
 	}
 
 	public Playable multiply(int times) {

@@ -25,10 +25,8 @@ public class Prog extends NonTerminal {
                 case "PLAY SUBELEMS2 NL":
 					SubElems2 se2_2 = (SubElems2)getComponent("SUBELEMS2");
                     se2_2.interpret();
-                    System.out.println("HALT MOTHERFUCKER");
                     Play play2 = (Play)getComponent("PLAY");
                     play2.interpret();
-                    System.out.println("NIGGA");
                     play = play2;
                     break;
                 case "newline PROG NL":

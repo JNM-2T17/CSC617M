@@ -19,7 +19,6 @@ public class SubElems extends NonTerminal {
 				SymbolTable.instance()
 					.put(((Token)getComponent("varname")).token()
 							,elems.get(elems.size() - 1));
-				System.out.println("Setting " + ((Token)getComponent("varname")).token());
 				SubElems2 se2 = (SubElems2)getComponent("SUBELEMS2");
 				elems = se2.build(elems);
 				break;	

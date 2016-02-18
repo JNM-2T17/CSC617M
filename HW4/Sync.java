@@ -60,16 +60,22 @@ public class Sync extends NonTerminal implements Playable
 		}
 	}
 
-	public void changePitch(int semitones)
+	public Playable changePitch(int semitones)
     {
-        for(int i = 0; i < playables.length; i++)
-		  playables[i].changePitch(semitones);
+    	Playable newPlay = new Playable[playables.length];
+        for(int i = 0; i < playables.length; i++) {
+		  newPlay[i] = playables[i].changePitch(semitones);
+        }
+        return new Sync(newPlay);
 	}
 
-	public void changeTime(double factor)
+	public Playable changeTime(double factor)
     {
-        for(int i = 0; i < playables.length; i++)
-		  playables[i].changeTime(factor);
+        Playable newPlay = new Playable[playables.length];
+        for(int i = 0; i < playables.length; i++) {
+		  newPlay[i] = playables[i].changeTime(factor);
+        }
+        return new Sync(newPlay);
 	}
 
 	public Playable multiply(int times)

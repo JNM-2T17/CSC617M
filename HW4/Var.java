@@ -63,14 +63,14 @@ public class Var extends NonTerminal implements Playable
 		play.play();
 	}
 
-	public void changePitch(int semitones)
+	public Playable changePitch(int semitones)
     {
-		play.changePitch(semitones);
+		return play.changePitch(semitones);
 	}
 
-	public void changeTime(double factor)
+	public Playable changeTime(double factor)
     {
-		play.changeTime(factor);
+		return play.changeTime(factor);
 	}
 
 	public Playable multiply(int times)
