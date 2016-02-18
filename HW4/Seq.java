@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Seq extends NonTerminal {
+public class Seq extends NonTerminal implements Playable {
 	private Playable[] playables;
 	
 	public Seq(String pattern){
@@ -31,4 +31,31 @@ public class Seq extends NonTerminal {
 	public Playable[] getPlayables(){
 		return playables;
 	}
+
+	public void play() {
+		for(Playable p: playables) {
+			p.play();
+		}
+	}
+
+	public void changePitch(int semitones) {
+		for(Playable p: playables) {
+			p.changePitch(semitones);
+		}
+	}
+
+	public void changeTime(double factor) {
+		for(Playable p: playables) {
+			p.changeTime(factor);
+		}
+	}
+
+	public Playable multiply(int times) {
+		Playable[] newSeq = new Playable[times];
+		for(int i = 0; i < times; i++) {
+			newSeq[i] = this;
+		}
+		return new Seq(newSeq);
+	}
+
 }

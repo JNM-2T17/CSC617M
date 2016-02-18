@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Play extends NonTerminal {
+public class Play extends NonTerminal implements Playable {
 	private Playable[] playables;
 
 	public Play(String pattern){
@@ -22,4 +22,25 @@ public class Play extends NonTerminal {
 			playables = elems.toArray(playables);
 		}
 	}
+
+	public void play() {
+		for(Playable p: playables) {
+			p.play();
+		}
+	}
+
+	public void changePitch(int semitones) {
+		for(Playable p: playables) {
+			p.changePitch(semitones);
+		}
+	}
+
+	public void changeTime(double factor) {
+		for(Playable p: playables) {
+			p.changeTime(factor);
+		}
+	}
+
+	public Playable multiply(int times) {}
+
 }

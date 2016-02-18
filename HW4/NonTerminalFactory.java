@@ -30,7 +30,7 @@ public class NonTerminalFactory {
 				return new SubVar(pattern);
 				break;
 			case "SUB2VAR":
-				return new Sub2Var(pattern);
+				return new SubVar2(pattern);
 				break;
 			case "ELEMS":
 				return new Elems(pattern);

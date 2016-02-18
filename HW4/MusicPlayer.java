@@ -61,6 +61,7 @@ public class MusicPlayer {
         }
 
         channels[i].noteOn(note,VOLUME);
+        System.out.println("Playing " + note + " for " + (duration * beatLength));
         try {
             Thread.sleep((long)(duration * beatLength));
         } catch(InterruptedException e) {
@@ -71,6 +72,7 @@ public class MusicPlayer {
     }
 
     public void rest(double duration) {
+        System.out.println("Resting for " + (duration * beatLength));
         try {
             Thread.sleep((long)(duration * beatLength));
         } catch(Exception e) {

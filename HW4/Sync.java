@@ -16,6 +16,10 @@ public class Sync extends NonTerminal implements Playable
 		playables = p;
 	}
 
+	public Playable[] getPlayables() {
+		return playables;
+	}
+
 	public void interpret() throws Exception
     {
 		if(!isSet())
@@ -38,7 +42,16 @@ public class Sync extends NonTerminal implements Playable
 
 	public void play()
     {
-		//GGWP
+		SeqThread[] seqs = new SeqThread[playables.length];
+		for(int i = 0; i < seqs.length; i++) {
+			seqs[i] = new SeqThread(playables[i]);
+		}
+		for(int i = 0; i < seqs.length; i++) {
+			seqs[i].start();
+		}
+		for(int i = 0; i < seqs.length; i++) {
+			seqs[i].join();
+		}
 	}
 
 	public void changePitch(int semitones)
@@ -59,5 +72,17 @@ public class Sync extends NonTerminal implements Playable
         for(int i = 0; i < times; i++)
             syncs[i] = new Sync(playables);
         return new Seq(syncs);
+	}
+
+	private class SeqThread extends Thread {
+		private Playable p;
+
+		public SeqThread(Playable p) {
+			this.p = p;
+		}
+
+		public void run() {
+			p.play();
+		}
 	}
 }
