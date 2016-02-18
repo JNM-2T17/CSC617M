@@ -11,10 +11,10 @@ public class SubVar extends NonTerminal
 	}
 
 	public void interpret() throws Exception
-    {
-		if(!isSet())
+    {   
+        if(!isSet())
         {
-			throw new Exception(NOT_SET_MESSAGE);
+         	throw new Exception(NOT_SET_MESSAGE);
 		}
         else
         {
@@ -22,12 +22,14 @@ public class SubVar extends NonTerminal
             Token openingBracket = (Token)getComponent("[");
             if(openingBracket != null)
             {
-                int index = ((Token)getComponent("num")).intValue();
-                SubVar2 sv2 = (SubVar2)getComponent("SUBVAR2");
+                Token t = ((Token)getComponent("num"));
+                t.interpret();
+                int index = t.intValue();
+                SubVar2 sv2 = (SubVar2)getComponent("SUB2VAR");
                 sv2.interpret();
-                Integer index2 = sv2.getIndex();
+                int index2 = sv2.getIndex();
                 if(index < 0)
-                    throw new Exception("Index is not greater than 0.");
+                    throw new Exception("Error at line " + t.lineNo() + ": Index is not greater than 0.");
                 else if(index2 != -1)
                 {
                     if(index2 > index)
@@ -37,7 +39,7 @@ public class SubVar extends NonTerminal
                         indices[1] = index2;
                     }
                     else
-                        throw new Exception("Second index is not higher than first index.");
+                        throw new Exception("Error at line " + t.lineNo() + ": Second index is not higher than first index.");
                 }
                 else
                 {
@@ -45,10 +47,6 @@ public class SubVar extends NonTerminal
                     indices[0] = index;
                 }
             } 
-            else 
-            {
-                indices = new int[0];
-            }
 		}
 	}
     

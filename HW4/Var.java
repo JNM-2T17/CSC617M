@@ -12,16 +12,19 @@ public class Var extends NonTerminal implements Playable
 
 	public void interpret() throws Exception
     {
-		if(!isSet())
+        if(!isSet())
         {
-			throw new Exception(NOT_SET_MESSAGE);
+        	throw new Exception(NOT_SET_MESSAGE);
 		}
         else
         {
-            play = SymbolTable.instance().get(((Token) getComponent("varname")).token());
+            Elem elem = (Elem)SymbolTable.instance().get(((Token) getComponent("varname")).token());
             
-            if(play == null)
-                throw new Exception("Variable \"" + ((Token) getComponent("varname")).token() + "\"does not exist.");
+            if(elem == null){
+                throw new Exception("Variable \"" 
+                                        + ((Token) getComponent("varname"))
+                                            .token() + "\" does not exist.");
+            }
             else
             {
                 SubVar sv = (SubVar)getComponent("SUBVAR");
@@ -29,30 +32,40 @@ public class Var extends NonTerminal implements Playable
                 int[] indices = sv.getIndices();
                 if(indices != null)
                 {
-                    if(play instanceof Note || play instanceof Rest)
-                        throw new Exception("Indexing not applicable.");
-                    else if(play instanceof Sync)
-                    {
-                        Playable[] originalSync = ((Sync) play).getPlayables();
-                        int lengthSync = 1;
-                        if(indices.length == 2)
-                            lengthSync = indices[1] - indices[0];
-                        Playable[] newSyncPlayables = new Playable[lengthSync];
-                        for(int i = 0, curIndex = indices[0] - 1; i < lengthSync; i++, curIndex++)
-                            newSyncPlayables[i] = originalSync[curIndex];
-                        play = new Sync(newSyncPlayables);
+                    switch(elem.type()) {
+                        case "NOTE":
+                        case "REST":
+                            throw new Exception("Indexing not applicable.");
+                        case "SYNC":
+                            Playable[] originalSync = elem.getPlayables();
+                            int lengthSync = 1;
+                            if(indices.length == 2) {
+                                lengthSync = indices[1] - indices[0] + 1;
+                                Playable[] newSyncPlayables = new Playable[lengthSync];
+                                for(int i = 0, curIndex = indices[0] - 1; i < lengthSync; i++, curIndex++)
+                                    newSyncPlayables[i] = originalSync[curIndex];
+                                play = new Sync(newSyncPlayables);
+                            } else {
+                                play = originalSync[indices[0] - 1];
+                            }
+                            break;
+                        case "SEQ":
+                            Playable[] originalSeq = elem.getPlayables();
+                            int lengthSeq = 1;
+                            if(indices.length == 2) {
+                                lengthSeq = indices[1] - indices[0] + 1;
+                                Playable[] newSeqPlayables = new Playable[lengthSeq];
+                                for(int i = 0, curIndex = indices[0] - 1; i < lengthSeq; i++, curIndex++)
+                                    newSeqPlayables[i] = originalSeq[curIndex];
+                                play = new Seq(newSeqPlayables);
+                            } else {
+                                play = originalSeq[indices[0] - 1];
+                            }
+                            break;
+                        default:
                     }
-                    else if(play instanceof Seq)
-                    {
-                        Playable[] originalSeq = ((Seq) play).getPlayables();
-                        int lengthSeq = 1;
-                        if(indices.length == 2)
-                            lengthSeq = indices[1] - indices[0];
-                        Playable[] newSeqPlayables = new Playable[lengthSeq];
-                        for(int i = 0, curIndex = indices[0] - 1; i < lengthSeq; i++, curIndex++)
-                            newSeqPlayables[i] = originalSeq[curIndex];
-                        play = new Seq(newSeqPlayables);
-                    }
+                } else {
+                    play = elem;
                 }
             }
 		}

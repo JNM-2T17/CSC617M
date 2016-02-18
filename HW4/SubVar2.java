@@ -12,15 +12,17 @@ public class SubVar2 extends NonTerminal
 
 	public void interpret() throws Exception
     {
-		if(!isSet())
+        if(!isSet())
         {
-			throw new Exception(NOT_SET_MESSAGE);
+		    throw new Exception(NOT_SET_MESSAGE);
 		}
         else
         {
             if(getComponent("~") != null)
             {
-                index = ((Token)getComponent("num")).intValue();
+                Token t = ((Token)getComponent("num"));
+                t.interpret();
+                index = t.intValue();
             }
             else
                 index = -1;

@@ -1,5 +1,6 @@
 public class Elem extends NonTerminal implements Playable {
 	private Playable play;
+	private String type;
 
 	public Elem(String pattern) {
 		super("ELEM",pattern);
@@ -20,6 +21,7 @@ public class Elem extends NonTerminal implements Playable {
 				play = (Playable)getComponent(s);
 
 				if( play != null ) {
+					type = s;
 					break;
 				}
 			}
@@ -31,6 +33,21 @@ public class Elem extends NonTerminal implements Playable {
 			SubElem subelem = (SubElem)getComponent("SUBELEM");
 			play = subelem.value(play);
 		}
+	}
+
+	public Playable[] getPlayables() {
+		switch(type) {
+			case "SYNC":
+				return ((Sync)play).getPlayables();
+			case "SEQ":
+				return ((Seq)play).getPlayables();
+			default:
+				return null;
+		}
+	}
+
+	public String type() {
+		return type;
 	}
 
 	public void play() {
