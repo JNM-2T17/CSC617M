@@ -9,6 +9,10 @@ public class Rest extends NonTerminal implements Playable {
 		super("REST","rest ( TIME )");
 		this.duration = duration;
 	}
+	
+	private Rest(double duration){
+		this.duration = duration;
+	}
 
 	public void interpret() throws Exception {
 		if(!isSet()) {
@@ -28,11 +32,12 @@ public class Rest extends NonTerminal implements Playable {
 		MusicPlayer.instance().rest(duration);
 	}
 
-	public void changePitch(int semitones) {
+	public Playable changePitch(int semitones) {
+		return new Rest(this.duration);
 	}
 
-	public void changeTime(double factor) {
-		duration *= factor;
+	public Playable changeTime(double factor) {
+		return new Rest(this.duration*factor);
 	}
 
 	public Playable multiply(int times) {

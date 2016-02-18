@@ -41,16 +41,14 @@ public class Seq extends NonTerminal implements Playable {
 		}
 	}
 
-	public void changePitch(int semitones) {
-		for(Playable p: playables) {
-			p.changePitch(semitones);
-		}
+	public Playable changePitch(int semitones) {
+		Playable[] newPlayabls
 	}
 
-	public void changeTime(double factor) {
-		for(Playable p: playables) {
-			p.changeTime(factor);
-		}
+	public Playable changeTime(double factor) {
+		Seq newSeq = new Seq(this);
+		newSeq.modifyTime(factor);
+		return newSeq;
 	}
 
 	public Playable multiply(int times) {

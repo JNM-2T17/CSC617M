@@ -5,6 +5,11 @@ public class Note extends NonTerminal implements Playable {
 	public Note(String pattern) {
 		super("NOTE",pattern);
 	}
+	
+	private Note(int note, double duration){
+		this.note = note;
+		this.duration = duration;
+	}
 
 	public void interpret() throws Exception {
 		if(!isSet()) {
@@ -37,5 +42,9 @@ public class Note extends NonTerminal implements Playable {
 	public Playable multiply(int times) {
 		// Returns a seq
 		return null; //temporary
+	}
+	
+	public Playable clone(){
+		
 	}
 }
