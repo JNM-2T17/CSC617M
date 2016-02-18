@@ -42,15 +42,19 @@ public class Sync extends NonTerminal implements Playable
 
 	public void play()
     {
-		SeqThread[] seqs = new SeqThread[playables.length];
-		for(int i = 0; i < seqs.length; i++) {
-			seqs[i] = new SeqThread(playables[i]);
-		}
-		for(int i = 0; i < seqs.length; i++) {
-			seqs[i].start();
-		}
-		for(int i = 0; i < seqs.length; i++) {
-			seqs[i].join();
+    	try {
+			SeqThread[] seqs = new SeqThread[playables.length];
+			for(int i = 0; i < seqs.length; i++) {
+				seqs[i] = new SeqThread(playables[i]);
+			}
+			for(int i = 0; i < seqs.length; i++) {
+				seqs[i].start();
+			}
+			for(int i = 0; i < seqs.length; i++) {
+				seqs[i].join();
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
 

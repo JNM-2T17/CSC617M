@@ -144,7 +144,11 @@ public class Parser {
 			pw.close();
 			// System.out.println(tokens.size() + " tokens; index: " + i);
 			if(!error && stack.size() == 0 && i == tokens.size()) {
-				start.interpret();
+				try {
+					start.interpret();
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
 				return start;
 			} else {
 				return null;
@@ -205,13 +209,22 @@ public class Parser {
 				return curr;
 			}
 			top = nonTerminals.peek();
-			top.setNext(curr);
+			try {
+				top.setNext(curr);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
+		return null;
 	}
 
 	private NonTerminal rollup(Token currToken) {
 		NonTerminal curr = nonTerminals.peek();
-		curr.setNext(currToken);
+		try {
+			curr.setNext(currToken);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 		return rollup();
 	}
 

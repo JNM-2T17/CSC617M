@@ -41,6 +41,8 @@ public class Play extends NonTerminal implements Playable {
 		}
 	}
 
-	public Playable multiply(int times) {}
+	public Playable multiply(int times) {
+		return null;
+	}
 
 }
