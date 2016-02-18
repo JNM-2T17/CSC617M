@@ -18,12 +18,14 @@ public class Var extends NonTerminal implements Playable
 		}
         else
         {
-            Elem elem = (Elem)SymbolTable.instance().get(((Token) getComponent("varname")).token());
+            Token t = ((Token) getComponent("varname"));
+            Elem elem = (Elem)SymbolTable.instance().get(t.token());
             
             if(elem == null){
-                throw new Exception("Variable \"" 
+                throw new Exception("Error - Line " + t.lineNo() 
+                                        + ": Variable \"" 
                                         + ((Token) getComponent("varname"))
-                                            .token() + "\" does not exist.");
+                                            .token() + "\" is not defined.");
             }
             else
             {
