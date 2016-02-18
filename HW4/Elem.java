@@ -23,6 +23,11 @@ public class Elem extends NonTerminal implements Playable {
 					break;
 				}
 			}
+			try {
+				play.interpret();
+			} catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
 			SubElem subelem = (SubElem)getComponent("SUBELEM");
 			play = subelem.value(play);
 		}
