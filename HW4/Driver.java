@@ -43,6 +43,6 @@ public class Driver {
 		// pw.close();
 
 		Parser p = new Parser(tokens);
-		System.out.println((p.parse() ? "Valid" : "Invalid") + " code");
+		System.out.println((p.parse() != null ? "Valid" : "Invalid") + " code");
 	}
 }

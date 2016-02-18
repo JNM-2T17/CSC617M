@@ -8,19 +8,21 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Stack;
 
 public class Parser {
 	private List<Token> tokens;
 	private HashMap<String,HashMap<String,String>> parseTable;
 	private ArrayList<String> stack;
 	private PrintWriter pw;
+	private Stack<NonTerminal> nonTerminals;
 
 	public Parser(List<Token> tokens) {
 		this.tokens = tokens;
 		parseTable = new HashMap<String,HashMap<String,String>>();
 		stack = new ArrayList<String>();
 		ArrayList<String> terminals = new ArrayList<String>();
-
+		nonTerminals = new Stack<NonTerminal>();
 
 		try {
 			BufferedReader br = new BufferedReader(
@@ -60,7 +62,7 @@ public class Parser {
 
 	}
 
-	public boolean parse() {
+	public NonTerminal parse() {
 		try {
 			pw = new PrintWriter(
 								new BufferedWriter(
@@ -70,6 +72,8 @@ public class Parser {
 			push("PROG");
 			int i = 0;
 			boolean error = false;
+			NonTerminal start = null;
+
 			// printStack();
 			while(stack.size() > 0) {
 				String top = peek();
@@ -118,11 +122,13 @@ public class Parser {
 						}
 						// System.out.println(top + " -> " + prod);
 						// pw.println(top + " -> " + prod);
-						updateStack(prod);
+						updateStack(top,prod);
+						start = rollup();
 					}
 				} else if( currToken.type().equals(top)) {
 					i++;
 					pop();
+					start = rollup(currToken);
 				} else {
 					if( currToken.type().equals("newline")) {
 						pop();
@@ -137,10 +143,15 @@ public class Parser {
 			}
 			pw.close();
 			// System.out.println(tokens.size() + " tokens; index: " + i);
-			return !error && stack.size() == 0 && i == tokens.size();
+			if(!error && stack.size() == 0 && i == tokens.size()) {
+				start.interpret();
+				return start;
+			} else {
+				return null;
+			}
 		} catch(IOException ioe) {
 			ioe.printStackTrace();
-			return false;
+			return null;
 		}
 	}
 
@@ -185,9 +196,30 @@ public class Parser {
 		return s.charAt(0) >= 'A' && s.charAt(0) <= 'Z';
 	}
 
-	private void updateStack(String production) {
+	private NonTerminal rollup() {
+		NonTerminal curr = nonTerminals.peek();
+		NonTerminal top = curr;
+		while(top.isSet()) {
+			curr = nonTerminals.pop();
+			if( nonTerminals.empty()) {
+				return curr;
+			}
+			top = nonTerminals.peek();
+			top.setNext(curr);
+		}
+	}
+
+	private NonTerminal rollup(Token currToken) {
+		NonTerminal curr = nonTerminals.peek();
+		curr.setNext(currToken);
+		return rollup();
+	}
+
+	private void updateStack(String type,String production) {
 		String[] arr = production.split(" ");
 		pop();
+		nonTerminals.push(NonTerminalFactory.instance()
+							.getNonTerminal(type,production));
 		for(int i = arr.length - 1; i >= 0; i--) {
 			if( arr[i].length() > 0) {
 				if(!arr[i].equals("e")) {
