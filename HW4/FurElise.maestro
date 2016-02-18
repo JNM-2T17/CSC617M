@@ -1,5 +1,11 @@
 play {
     rest(1/8)
+    firstPart
+    ECuBSlurtrue
+    firstPart
+    firstPartEnd
+    BCuCsuSlur
+    secondPart
     sync {
         sync {
             E(4,1/16)
