@@ -32,10 +32,12 @@ public class Sync extends NonTerminal implements Playable
 			sb.interpret();
             Iterator<Elem> itr = sb.getElems();
 			ArrayList<Playable> elems = new ArrayList<Playable>();
-			while(itr.hasNext() )
-            {
+			int ctr = 0;
+			while(itr.hasNext() ) {
 				elems.add(itr.next());
+				ctr++;
 			}
+			playables = new Playable[ctr];
 			playables = elems.toArray(playables);
 		}
 	}

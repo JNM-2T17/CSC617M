@@ -21,9 +21,12 @@ public class Seq extends NonTerminal implements Playable {
 			sb.interpret();	
 			Iterator<Elem> itr = sb.getElems();
 			ArrayList<Playable> elems = new ArrayList<Playable>();
+			int ctr = 0;
 			while(itr.hasNext() ) {
 				elems.add(itr.next());
+				ctr++;
 			}
+			playables = new Playable[ctr];
 			playables = elems.toArray(playables);
 		}
 	}

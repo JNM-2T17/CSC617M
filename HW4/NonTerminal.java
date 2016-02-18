@@ -19,7 +19,13 @@ public abstract class NonTerminal implements ParseObject {
 		components = new HashMap<String,ParseObject>();
 		this.type = type;
 		this.production = prod.equals("e") ? new String[0] : prod.split(" ");
+		// System.out.println(type + " ->" + getProdString() + ": " 
+		// 						+ this.production.length + " parts");
 		setCtr = 0;
+	}
+
+	public String type() {
+		return type;
 	}
 
 	/** 
@@ -75,6 +81,7 @@ public abstract class NonTerminal implements ParseObject {
 	 * @return whether this object is fully set or not
 	 */
 	public boolean isSet() {
+		// System.out.println(setCtr + "==" + production.length);
 		return setCtr == production.length;
 	}
 }

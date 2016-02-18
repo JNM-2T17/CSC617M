@@ -20,6 +20,7 @@ public class Elems extends NonTerminal {
 			switch(getProdString()) {
 				case "ELEM SUBELEMS":
 					Elem e = (Elem)getComponent("ELEM");
+					e.interpret();
 					elems.add(e);
 					SubElems se = (SubElems)getComponent("SUBELEMS");
 					se.build(elems);

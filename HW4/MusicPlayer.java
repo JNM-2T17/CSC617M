@@ -54,6 +54,7 @@ public class MusicPlayer {
             if( !actives[i][note] ) {
                 actives[i][note] = true;
                 free = true;
+                break;
             }
         }
         if( !free ) {

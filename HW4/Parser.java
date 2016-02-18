@@ -143,6 +143,7 @@ public class Parser {
 			}
 			pw.close();
 			// System.out.println(tokens.size() + " tokens; index: " + i);
+			// System.out.println("Error: " + error + "; stack size: " + stack.size());
 			if(!error && stack.size() == 0 && i == tokens.size()) {
 				try {
 					start.interpret();
@@ -206,11 +207,14 @@ public class Parser {
 		while(top.isSet()) {
 			curr = nonTerminals.pop();
 			if( nonTerminals.empty()) {
+				// System.out.println(curr.type() + " is last on stack");
 				return curr;
 			}
 			top = nonTerminals.peek();
 			try {
+				// System.out.println("Setting " + curr.type() + " to " + top.type());
 				top.setNext(curr);
+				// System.out.println(top.type() + " is " + (top.isSet() ? "" : "not ") + "set");
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -221,7 +225,9 @@ public class Parser {
 	private NonTerminal rollup(Token currToken) {
 		NonTerminal curr = nonTerminals.peek();
 		try {
+			// System.out.println("Setting " + currToken + " to " + curr.type());
 			curr.setNext(currToken);
+			// System.out.println(curr.type() + " is " + (curr.isSet() ? "" : "not ") + "set");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -231,6 +237,7 @@ public class Parser {
 	private void updateStack(String type,String production) {
 		String[] arr = production.split(" ");
 		pop();
+		// System.out.println("Pushing " + type + " on the stack");
 		nonTerminals.push(NonTerminalFactory.instance()
 							.getNonTerminal(type,production));
 		for(int i = arr.length - 1; i >= 0; i--) {

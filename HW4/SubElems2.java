@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
 
@@ -12,12 +13,18 @@ public class SubElems2 extends NonTerminal {
 		if(!isSet()) {
 			throw new Exception(NOT_SET_MESSAGE);
 		} else {
-			try {
-				Elems e = (Elems)getComponent("ELEMS");
-				e.interpret();
-				itr = e.getElems();
-			} catch(Exception e) {
-				e.printStackTrace();
+			switch(getProdString()) {
+				case "nl ELEMS":
+					try {
+						Elems e = (Elems)getComponent("ELEMS");
+						e.interpret();
+						itr = e.getElems();
+					} catch(Exception e) {
+						e.printStackTrace();
+					}
+					break;
+				default:
+					itr = (new ArrayList<Elem>()).iterator();
 			}
 		}
 	}

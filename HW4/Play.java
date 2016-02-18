@@ -16,9 +16,12 @@ public class Play extends NonTerminal implements Playable {
 			sb.interpret();	
 			ArrayList<Playable> elems = new ArrayList<Playable>();
 			Iterator<Elem> itr = sb.getElems();
+			int ctr = 0;
 			while(itr.hasNext()) {
 				elems.add(itr.next());
+				ctr++;
 			}
+			playables = new Playable[ctr];
 			playables = elems.toArray(playables);
 		}
 	}
