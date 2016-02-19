@@ -1,3 +1,8 @@
+/**
+ * Dancing Queen.maestro
+ * @author Clarisse Poblete
+ * @20160219
+ */
 play{
 	sync{
 		G(4, 1/4.)

@@ -1,4 +1,9 @@
-play{
+/**
+ * heaven.maestro
+ * @author Marc San Pedro
+ * @20160219
+ */
+ play{
 	sync{
 		heavenRight
 		heavenRight + 4

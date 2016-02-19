@@ -1,9 +1,25 @@
+/**
+ * DoReMi.maestro
+ * @author Austin Fernandez
+ * @20160219
+ */
 play {
 	/*seq {
 	fourChords * 13
 	rest(1)
 	fourChords2 * 36
 	} < 10*/
+	
+	doremi < 2 > 3
+
+	/*chordTest + 6
+	fuck
+	fuck[1] < 2 > 3
+	fuck[2~3]
+	fuck[4] < 2 > 3*/
+}
+
+seq {
 	C(4,1/8.)
 	D(4,1/16)
 	E(4,1/8.)
@@ -65,13 +81,7 @@ play {
 	B(4,1/8)
 	G(4,1/8)
 	C(5,1/2)
-	
-	chordTest + 6
-	fuck
-	fuck[1] < 2 > 3
-	fuck[2~3]
-	fuck[4] < 2 > 3
-}
+} -> doremi
 
 seq {
 	maj(G,3,1/4.)

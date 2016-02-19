@@ -1,4 +1,9 @@
-play {
+/**
+ * Canon.maestro
+ * @author Marc San Pedro
+ * @20160219
+ */
+ play {
 	left1
 	
 	sync {

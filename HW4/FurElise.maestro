@@ -1,4 +1,9 @@
-play {
+/**
+ * FurElise.maestro
+ * @author Johansson Tan
+ * @20160218
+ */
+ play {
     rest(1/8)
     firstPart
     ECuBSlurtrue
