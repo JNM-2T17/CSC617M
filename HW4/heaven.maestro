@@ -1,13 +1,13 @@
 play{
-	heavenRight < 3 > 2 -> heavenRight
 	sync{
 		heavenRight
 		heavenRight + 4
 		heavenRight + 7
 	}
-	heavenLeft - 48
-	heavenRight < 3 > 2 + 12
-	heavenRight < 3 > 2
+	sync {
+		heavenLeft
+		heavenRight
+	}
 } 
 seq{
 	D(4, 1/4)
