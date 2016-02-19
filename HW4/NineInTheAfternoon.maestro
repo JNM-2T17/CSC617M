@@ -4,10 +4,7 @@
  * @20150219
  */
 play {
-	sync {
-		left
-		right
-	} < 3 > 2
+	song < 3 > 2
 }
 
 seq {
@@ -26,6 +23,9 @@ seq {
 		Bb(3,1/4)
 	} -> left_2
 	left_2 * 3
+} -> leftPart1
+
+seq {
 	sync {
 		A(2,1/4)
 		D(3,1/4)
@@ -43,7 +43,6 @@ seq {
 		Bb(2,1/4)
 		Eb(3,1/4)
 	} -> left_7
-	//start of section
 	seq {
 		sync {
 			Bb(2,1/4)
@@ -75,6 +74,9 @@ seq {
 	left_5
 	left_6
 	left_7 > 2
+} -> leftPart2
+
+seq {
 	sync {
 		G(2,1/4)
 		D(3,1/4)
@@ -111,6 +113,9 @@ seq {
 	left_10
 	left_9
 	left_8 > 4
+} -> leftPart3
+
+seq {
 	sync {
 		D(2,1/4)
 		F(2,1/4)
@@ -148,6 +153,9 @@ seq {
 	left_1
 	left_4 * 2
 	left_4 > 2
+} -> leftPart4
+
+seq {
 	left_13 > 2
 	sync {
 		F(2,1/2)
@@ -173,6 +181,9 @@ seq {
 	left_15 > 2
 	left_7 * 2
 	left_7 > 2
+} -> leftPart5
+
+seq {
 	left_3 * 2
 	left_1
 	sync {
@@ -205,7 +216,7 @@ seq {
 	}
 	left_18 - 12 > 3 < 2
 	rest(1/4)
-} -> left
+} -> leftPart6
 
 seq {
 	rest(2)
@@ -234,6 +245,9 @@ seq {
 		rest(1/4)
 	} -> right_2
 	Bb(4,1/4)
+} -> rightPart1
+
+seq {
 	D(5,1/4)
 	C(5,1/4)
 	D(5,1/4.)
@@ -253,6 +267,9 @@ seq {
 		Eb(5,1/4)
 	}
 	right_3
+} -> rightPart2
+
+seq {
 	seq {
 		D(5,1/8) * 3
 		D(5,1/4.)
@@ -265,6 +282,9 @@ seq {
 	right_4
 	right_2[2~4]
 	G(4,1/2.)
+} -> rightPart3
+
+seq {
 	sync {
 		D(4,1/4)
 		D(5,1/4)
@@ -298,18 +318,19 @@ seq {
 	G(4,5/8)
 	rest(1/4)
 	Bb(4,1/8) * 2
-	D(5,1/8) * 2
-	C(5,1/8)
-	D(5,1/4.)
+} -> rightPart4
+
+seq {
+	seq {
+		D(5,1/8) * 2
+		C(5,1/8)
+		D(5,1/4.)
+	} -> right_7
 	C(5,1/8)
 	D(5,5/8)
 	rest(1/4)
 	Bb(4,1/8) * 2
-	seq {
-		D(5,1/8) * 2
-		C(5,1/8)
-		D(5,1/4)
-	} -> right_7
+	right_7
 	D(5,1/8)
 	C(5,1/8)
 	D(5,1/2..)
@@ -327,6 +348,9 @@ seq {
 		Bb(4,1/8) * 2
 	} -> right_6
 	right_6
+} -> rightPart5
+
+seq {
 	right_7
 	C(5,1/8)
 	D(5,1/2..)
@@ -389,4 +413,31 @@ seq {
 	right_9
 	right_12 > 7
 	rest(1/8)
-} -> right
+} -> rightPart6
+
+seq {
+	sync {
+		leftPart1
+		rightPart1
+	}
+	sync {
+		leftPart2
+		rightPart2
+	}
+	sync {
+		leftPart3
+		rightPart3
+	}
+	sync {
+		leftPart4
+		rightPart4
+	}
+	sync {
+		leftPart5
+		rightPart5
+	}
+	sync {
+		leftPart6
+		rightPart6
+	}
+} -> song
