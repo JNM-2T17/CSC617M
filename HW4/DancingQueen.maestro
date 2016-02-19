@@ -12,6 +12,7 @@ play{
 // Intro
 
 seq{
+	volume 90
 	rest(1/16)
 	A(4, 1/16)
 	A(4, 1/8)
@@ -53,6 +54,7 @@ seq{
 } -> intro_S1
 
 seq{
+	volume 90
 	seq{
 		seq{
 			C(5, 1/16)
@@ -90,6 +92,7 @@ seq{
 } -> intro_S2
 
 seq{
+	volume 90
 	intro_S2_2 - 5
 
 	intro_S2_3[1] - 4
@@ -99,6 +102,7 @@ seq{
 } -> intro_A
 
 seq{
+	volume 90
 	seq{
 		C(4, 1/8.)
 		C(4, 1/8.)
@@ -182,6 +186,7 @@ seq{
 } -> chorus_S1
 
 seq{
+	volume 90
 	chorus_S1[1] - 5
 	chorus_S1[2~3] - 3
 
@@ -215,6 +220,7 @@ seq{
 } -> chorus_S2
 
 seq{
+	volume 90
 	chorus_S2[1~2] - 4
 
 	chorus_S2[3~9] - 3
@@ -223,6 +229,7 @@ seq{
 } -> chorus_A
 
 seq{
+	volume 90
 	G(3, 1/8.)
 	G(3, 1/8.)
 	G(3, 1/8)
@@ -291,18 +298,21 @@ seq{
 } -> chorusEndFinal_S1
 
 seq{
+	volume 90
 	G(4, 1/8.)
 	G(4, 1/8.)
 	G(4, 5/8)
 } -> chorusEndFinal_S2
 
 seq{
+	volume 90
 	E(4, 1/8.)
 	E(4, 1/8.)
 	E(4, 5/8)
 } -> chorusEndFinal_A
 
 seq{
+	volume 90
 	C(3, 1/8.)
 	C(3, 1/8.)
 	C(3, 5/8)

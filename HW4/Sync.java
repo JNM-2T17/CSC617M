@@ -60,6 +60,9 @@ public class Sync extends NonTerminal implements Playable
     	Playable[] newPlay = new Playable[playables.length];
         for(int i = 0; i < playables.length; i++) {
 		  newPlay[i] = playables[i].changePitch(semitones);
+		  if( newPlay[i] == null ) {
+		  	newPlay[i] = playables[i];
+		  }
         }
         return new Sync(newPlay);
 	}
@@ -69,6 +72,9 @@ public class Sync extends NonTerminal implements Playable
         Playable[] newPlay = new Playable[playables.length];
         for(int i = 0; i < playables.length; i++) {
 		  newPlay[i] = playables[i].changeTime(factor);
+		  if( newPlay[i] == null ) {
+		  	newPlay[i] = playables[i];
+		  }
         }
         return new Sync(newPlay);
 	}
@@ -99,6 +105,7 @@ public class Sync extends NonTerminal implements Playable
             }
         }
 
+        int volume = MusicPlayer.DEFAULT_VOLUME;
         for(int i = 0; i < streams.length; i++) {
         	List<NoteAction> temp = playables[i].getStream();
 			streams[i] = new ArrayList<NoteAction>();
@@ -108,17 +115,25 @@ public class Sync extends NonTerminal implements Playable
 					switch(na.type()) {
 						case NoteAction.ON:
 						case NoteAction.OFF:
-							newNa = new NoteAction(na.type(),na.note(),na.index());
+							newNa = new NoteAction(na.type(),na.note()
+													,na.index(), volume 
+													!= MusicPlayer
+														.DEFAULT_VOLUME 
+													? volume : na.volume());
 							break;
 						case NoteAction.SLEEP:
 							newNa = new NoteAction(na.type(),na.duration());
 							break;
 						default:
 					}
-					streams[i].add(newNa);
-					// System.out.print(na + " ");
+					if( newNa != null ) {
+						streams[i].add(newNa);
+						// System.out.print(na + " ");
+					}
 				}
 				// System.out.println();
+			} else {
+				volume = ((Elem)playables[i]).volume();
 			}
 		}
 

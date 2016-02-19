@@ -22,7 +22,7 @@ PROG -> ELEMS nl PLAY SUBELEMS2 NL | PLAY SUBELEMS2 NL
 		| nl PROG NL
 NL -> nl | e 
 ELEM -> SYNC SUBELEM | SEQ SUBELEM | NOTE SUBELEM | REST SUBELEM | VAR SUBELEM 
-		| CHORD SUBELEM | bpm num
+		| CHORD SUBELEM | bpm num | volume num
 SUBELEM -> + num SUBELEM | ++ SUBELEM | - num SUBELEM | -- SUBELEM 
 			| < num SUBELEM | << SUBELEM | > num SUBELEM | >> SUBELEM | e 
 			| * num
@@ -48,13 +48,13 @@ SUB3TIME -> e | .
 
 FIRST
 
-PROG -> sync, seq, pitch, rest, varname, play, nl, bpm
-ELEM -> sync, seq, pitch, rest, varname,chord, bpm
+PROG -> sync, seq, pitch, rest, varname, play, nl, bpm, volume
+ELEM -> sync, seq, pitch, rest, varname,chord, bpm, volume
 SUBELEM -> +,++,-,--,<,<<,>,>>,*,e
 VAR -> varname
 SUBVAR -> [,e
 SUB2VAR -> ],~
-ELEMS -> sync, seq, pitch, rest, varname, bpm
+ELEMS -> sync, seq, pitch, rest, varname, bpm, volume
 SUBELEMS -> nl, ->,e
 SUBELEMS2 -> nl,e
 SEQ -> seq

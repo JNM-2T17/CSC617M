@@ -3,6 +3,7 @@ play {
 }
 
 seq {
+	volume 90
 	C(2,1/12)
 	G(2,1/12)
 	C(3,1/12)
@@ -47,7 +48,7 @@ sync {
 } -> introSub
 
 seq {
-	bpm 150
+	bpm 125
 	introSub * 4
 	bpm 100
 	rest(1/4)

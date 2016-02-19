@@ -6,9 +6,11 @@
 play {
 	bpm 150
 	song
+	
 }
 
 seq {
+	volume 100
 	Bb(2,1/4)
 	sync {
 		D(3,1/4)
@@ -27,6 +29,7 @@ seq {
 } -> leftPart1
 
 seq {
+	volume 100
 	sync {
 		A(2,1/4)
 		D(3,1/4)
@@ -78,6 +81,7 @@ seq {
 } -> leftPart2
 
 seq {
+	volume 100
 	sync {
 		G(2,1/4)
 		D(3,1/4)
@@ -117,6 +121,7 @@ seq {
 } -> leftPart3
 
 seq {
+	volume 100
 	sync {
 		D(2,1/4)
 		F(2,1/4)
@@ -157,6 +162,7 @@ seq {
 } -> leftPart4
 
 seq {
+	volume 100
 	left_13 > 2
 	sync {
 		F(2,1/2)
@@ -185,6 +191,7 @@ seq {
 } -> leftPart5
 
 seq {
+	volume 100
 	left_3 * 2
 	left_1
 	sync {

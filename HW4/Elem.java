@@ -1,12 +1,16 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Elem extends NonTerminal implements Playable {
 	private Playable play;
 	private String elemType;
 	private int bpm;
+	private int volume;
 
 	public Elem(String pattern) {
 		super("ELEM",pattern);
+		bpm = 0;
+		volume = -1;
 	}
 
 	public void interpret() throws Exception {
@@ -20,13 +24,22 @@ public class Elem extends NonTerminal implements Playable {
 				"SYNC",
 				"SEQ",
 				"CHORD",
-				"bpm"
+				"bpm",
+				"volume"
 			};
 			if( getComponent("bpm") != null) {
 				Token t = (Token)getComponent("num");
 				t.interpret();
 				bpm = t.intValue();
 				if( bpm <= 0 ) {
+					throw new Exception("Error at line " + t.lineNo() 
+											+ ": Tempo must be positive.");
+				}
+			} else if(getComponent("volume") != null ) {
+				Token t = (Token)getComponent("num");
+				t.interpret();
+				volume = t.intValue();
+				if( volume <= 0 ) {
 					throw new Exception("Error at line " + t.lineNo() 
 											+ ": Tempo must be positive.");
 				}
@@ -52,7 +65,13 @@ public class Elem extends NonTerminal implements Playable {
 	}
 
 	public String getType() {
-		return play.getType();
+		if( volume != -1 ) {
+			return "VOLUME";
+		} else if(bpm != 0 ) {
+			return "TEMPO";
+		} else {
+			return play.getType();
+		}
 	}
 	
 	public Playable[] getPlayables() {
@@ -76,18 +95,29 @@ public class Elem extends NonTerminal implements Playable {
 	}
 
 	public Playable changePitch(int semitones) {
-		return bpm == 0 ? play.changePitch(semitones) : null;
+		return bpm == 0 && volume == -1 ? play.changePitch(semitones) : null;
 	}
 
 	public Playable changeTime(double factor) {
-		return bpm == 0 ? play.changeTime(factor) : null;
+		return bpm == 0 && volume == -1 ? play.changeTime(factor) : null;
 	}
 
 	public Playable multiply(int times) {
-		return bpm == 0 ? play.multiply(times) : null;
+		return bpm == 0 && volume == -1 ? play.multiply(times) : null;
+	}
+
+	public int volume() {
+		return volume;
 	}
 
 	public List<NoteAction> getStream() {
+		if( bpm != 0 ) {
+			ArrayList<NoteAction> stream = new ArrayList<NoteAction>();
+			stream.add(new NoteAction(NoteAction.TEMPO,bpm));
+			return stream;
+		} else if( volume != -1 ) {
+			return null;
+		}
         return bpm == 0 ? play.getStream() : null;
     }
 
