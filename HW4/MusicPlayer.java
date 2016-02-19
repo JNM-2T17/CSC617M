@@ -65,7 +65,7 @@ public class MusicPlayer {
         }
 
         channels[i].noteOn(note,VOLUME);
-        System.out.println("Playing " + note + " for " + (duration * beatLength));
+        // System.out.println("Playing " + note + " for " + (duration * beatLength));
         try {
             Thread.sleep((long)(duration * beatLength));
         } catch(InterruptedException e) {
@@ -76,7 +76,7 @@ public class MusicPlayer {
     }
 
     public void rest(double duration) {
-        System.out.println("Resting for " + (duration * beatLength));
+        // System.out.println("Resting for " + (duration * beatLength));
         try {
             Thread.sleep((long)(duration * beatLength));
         } catch(Exception e) {
@@ -87,11 +87,11 @@ public class MusicPlayer {
     public void play(NoteAction na) {
         switch(na.type()) {
             case NoteAction.ON:
-                System.out.println("Turning " + na.note() + ":" + na.index() + " on");
+                // System.out.println("Turning " + na.note() + ":" + na.index() + " on");
                 channels[na.index()].noteOn(na.note(),VOLUME);
                 break;
             case NoteAction.OFF:
-                System.out.println("Turning " + na.note() + ":" + na.index() + " off");
+                // System.out.println("Turning " + na.note() + ":" + na.index() + " off");
                 channels[na.index()].noteOff(na.note());
                 break;
             case NoteAction.SLEEP:

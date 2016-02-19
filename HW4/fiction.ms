@@ -47,7 +47,7 @@ sync {
 } -> introSub
 
 seq {
-	introSub < 3 > 2 * 4
+	introSub * 4
 	rest(1/4)
 	lastIntro
 } -> intro
