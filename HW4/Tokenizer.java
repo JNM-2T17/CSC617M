@@ -18,7 +18,7 @@ public class Tokenizer {
 		state = 0;
 		currToken = "";
 		reserved = new String[] {
-			"play", "rest", "seq", "sync"
+			"play", "rest", "seq", "sync","bpm"
 		};
 		operators = new String[] {
 			"->", "+", "++", "-", "--", ">", ">>", "<", "<<", "~", "*", 

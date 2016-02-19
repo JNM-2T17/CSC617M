@@ -20,9 +20,11 @@ public class Seq extends NonTerminal implements Playable {
 		ArrayList<NoteAction> nas = new ArrayList<NoteAction>();
 		for(Playable p: playables) {
 			List<NoteAction> stream = p.getStream();
-			for(NoteAction na: stream) {
-				nas.add(na);
-				// System.out.print(na + " ");
+			if( stream != null ) {
+				for(NoteAction na: stream) {
+					nas.add(na);
+					// System.out.print(na + " ");
+				}
 			}
 		}
 		// System.out.println();

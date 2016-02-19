@@ -6,9 +6,10 @@ public class MusicPlayer {
     private MidiChannel[] channels;
     private boolean[][] actives;
     private int beatLength;
+    private int bpm;
     public static final int NOTE_COUNT = 128;
+    public static final int DEFAULT_BPM = 100;
     public static final int VOLUME = 127;
-    public static final int BPM = 100;
     public static final int MS_PER_MINUTE = 60000;
     public static final int BEATS_PER_WHOLE = 4;
     private static MusicPlayer instance = null;
@@ -33,11 +34,15 @@ public class MusicPlayer {
                     actives[i][j] = false;
                 }
             }
-
-            beatLength = MS_PER_MINUTE / BPM * BEATS_PER_WHOLE;
+            setTempo(DEFAULT_BPM);
         } catch(Exception e) {
             e.printStackTrace();
         }        
+    }
+
+    public void setTempo(int bpm) {
+        this.bpm = bpm;
+        beatLength = MS_PER_MINUTE / bpm * BEATS_PER_WHOLE;
     }
 
     public static MusicPlayer instance() {

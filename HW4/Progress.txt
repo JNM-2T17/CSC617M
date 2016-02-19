@@ -19,8 +19,8 @@ SUBVAR x
 SUB2VAR x
 
 Marc
-SEQ 
-PLAY
+SEQ x
+PLAY x
 SUBBODY x
 NL x
 TIME x

@@ -4,7 +4,8 @@
  * @20150219
  */
 play {
-	song < 3 > 2
+	bpm 150
+	song
 }
 
 seq {

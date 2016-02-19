@@ -47,7 +47,9 @@ sync {
 } -> introSub
 
 seq {
-	introSub < 3 > 2 * 4
+	bpm 150
+	introSub * 4
+	bpm 100
 	rest(1/4)
 	lastIntro
 } -> intro
