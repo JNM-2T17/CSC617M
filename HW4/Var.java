@@ -38,6 +38,7 @@ public class Var extends NonTerminal implements Playable
                     switch(elem.type()) {
                         case "NOTE":
                         case "REST":
+                        case "CHORD":
                             throw new Exception("Indexing not applicable.");
                         case "SYNC":
                             Playable[] originalSync = elem.getPlayables();

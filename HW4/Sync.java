@@ -92,10 +92,10 @@ public class Sync extends NonTerminal implements Playable
 
         for(int i = 0; i < streams.length; i++) {
 			streams[i] = playables[i].getStream();
-			for(NoteAction na: streams[i]) {
-				System.out.print(na + " ");
-			}
-			System.out.println();
+			// for(NoteAction na: streams[i]) {
+			// 	System.out.print(na + " ");
+			// }
+			// System.out.println();
 		}
 
 		boolean finished = false;
@@ -192,10 +192,10 @@ public class Sync extends NonTerminal implements Playable
 			}
 		}
 		stream = nas;
-		for(NoteAction na: nas) {
-			System.out.print(na + " ");
-		}
-		System.out.println();
+		// for(NoteAction na: nas) {
+		// 	System.out.print(na + " ");
+		// }
+		// System.out.println();
 	}
 
 	public List<NoteAction> getStream() {

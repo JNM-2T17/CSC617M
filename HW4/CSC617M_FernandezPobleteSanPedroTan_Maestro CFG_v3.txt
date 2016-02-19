@@ -22,6 +22,7 @@ PROG -> ELEMS nl PLAY SUBELEMS2 NL | PLAY SUBELEMS2 NL
 		| nl PROG NL
 NL -> nl | e 
 ELEM -> SYNC SUBELEM | SEQ SUBELEM | NOTE SUBELEM | REST SUBELEM | VAR SUBELEM 
+		| CHORD SUBELEM
 SUBELEM -> + num SUBELEM | ++ SUBELEM | - num SUBELEM | -- SUBELEM 
 			| < num SUBELEM | << SUBELEM | > num SUBELEM | >> SUBELEM | e 
 			| * num
@@ -34,6 +35,7 @@ SUBELEMS2 -> nl ELEMS | e
 SEQ -> seq SUBBODY
 SYNC -> sync SUBBODY
 PLAY -> play SUBBODY
+CHORD -> chord(pitch,SUBNOTE
 SUBBODY -> { nl ELEMS nl } | nl { nl ELEMS nl }
 NOTE -> pitch(SUBNOTE
 SUBNOTE -> num,TIME) | OCTAVE,TIME)

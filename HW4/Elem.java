@@ -17,7 +17,8 @@ public class Elem extends NonTerminal implements Playable {
 				"REST",
 				"VAR",
 				"SYNC",
-				"SEQ"
+				"SEQ",
+				"CHORD"
 			};
 			for(String s: possible) {
 				play = (Playable)getComponent(s);

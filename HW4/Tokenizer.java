@@ -10,6 +10,7 @@ public class Tokenizer {
 	private int lineNo;
 	private static String[] reserved;
 	private static String[] operators;
+	private static String[] chords;
 
 	public Tokenizer(String code) {
 		this.code = code;
@@ -22,6 +23,10 @@ public class Tokenizer {
 		operators = new String[] {
 			"->", "+", "++", "-", "--", ">", ">>", "<", "<<", "~", "*", 
 			"(", ")", "{", "}", ",","[","]","."
+		};
+		chords = new String[] {
+			"maj", "m", "aug", "dim", "dim7","min7","mmaj7","dom7","maj7",
+			"aug7","dom9","dom11","dom13","add9","add11","sus2","sus4"
 		};
 	}
 
@@ -264,6 +269,12 @@ public class Tokenizer {
 		for(String s: operators) {
 			if(s.equals(currToken)) {
 				return s;
+			}
+		}
+
+		for(String s: chords) {
+			if(s.equals(currToken)) {
+				return "chord";
 			}
 		}
 
