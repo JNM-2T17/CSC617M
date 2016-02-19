@@ -44,6 +44,7 @@ public class Driver {
 
 		Parser p = new Parser(tokens);
 		Prog prog = (Prog)p.parse();
+		// System.out.println(prog);
 		// System.out.println((prog != null ? "Valid" : "Invalid") + " code");
 		if( prog != null ) {
 			prog.execute();

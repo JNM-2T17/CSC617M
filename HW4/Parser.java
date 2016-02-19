@@ -97,7 +97,7 @@ public class Parser {
 						i++;
 						error = true;
 					} else if( prod.equals("SYNCH") ) {
-						// System.out.println("Error at token " + currToken);
+						System.out.println("Error at token " + currToken);
 						pop();
 						error = true;
 					} else {

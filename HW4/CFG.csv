@@ -1,7 +1,7 @@
 ,sync,seq,pitch,rest,varname,play,newline,+,++,-,--,<,<<,>,>>,*,->,[,],~,time,{,.,),num,octave,chord,EOF
 PROG,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,PLAY SUBELEMS2 NL,newline PROG NL,,,,,,,,,,,,,,,,,,,,,SYNCH
 ELEM,SYNC SUBELEM,SEQ SUBELEM,NOTE SUBELEM,REST SUBELEM,VAR SUBELEM,,SYNCH,,,,,,,,,,SYNCH,,,,,,,,,,CHORD SUBELEM,
-SUBELEM,,,,,,,e,+ num SUBELEM,++ SUBELEM,- num SUBELEM,-- SUBELEM,< num SUBELEM,<< SUBELEM,> num SUBELEM,>> SUBELEM,* num,e,,,,,,,,,,,SYNCH
+SUBELEM,,,,,,,e,+ num SUBELEM,++ SUBELEM,- num SUBELEM,-- SUBELEM,< num SUBELEM,<< SUBELEM,> num SUBELEM,>> SUBELEM,* num,e,,,,,,,,,,,e
 VAR,,,,,varname SUBVAR,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,,
 SUBVAR,,,,,,,e,e,e,e,e,e,e,e,e,e,e,[ num SUB2VAR,,,,,,,,,,
 SUB2VAR,,,,,,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,],~ num ],,,,,,,,
