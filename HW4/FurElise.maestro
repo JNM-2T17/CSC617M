@@ -11,6 +11,7 @@ play {
     BCuDuSlur
     secondPart
     firstPart
+    firstPartEnd
     sync {
         sync {
             E(4,1/16)
@@ -584,8 +585,87 @@ play {
             rest(1/4)
         }
     }
+    sync {
+        seq {
+            A(3,1/24)
+            C(4,1/24)
+            E(4,1/24)
+            A(4,1/24)
+            C(5,1/24)
+            E(5,1/24)
+            D(5,1/24)
+            C(5,1/24)
+            B(4,1/24)
+        }
+        seq {
+            A(1,1/8)
+            rest(1/8)
+            AChord
+        }
+    }
+    sync {
+        AtoA
+        AChord
+    }
+    sync {
+        AtoA + 12
+        AChord
+    }
+    sync {
+        seq {
+            Bb(6,1/24)
+            A(6,1/24)
+            G#(6,1/24)
+            G(6,1/24)
+            F#(6,1/24)
+            F(6,1/24)
+            E(6,1/24)
+            Eb(6,1/24)
+            D(6,1/24)
+        }
+        seq {
+            AChord
+            rest(1/8)
+            rest(1/8)
+        }
+    }
+    seq {
+        C#(6,1/24)
+        C(6,1/24)
+        B(5,1/24)
+        Bb(5,1/24)
+        A(5,1/24)
+        G#(5,1/24)
+        G(5,1/24)
+        F#(5,1/24)
+        F(5,1/24)
+    }
+    seq {
+        seq {
+            E(5,1/16)
+            D#(5,1/16)
+        }
+        firstSlur [2~7]
+        firstPart [2~6]
+    }
+    firstPartEnd
+    BCuDuSlur
+    secondPart
+    firstPart
+    ECuBSlurfalse
+    sync {
+        sync {
+            C(4,1/4.)
+            A(4,1/4.)
+        }
+        sync {
+            A(2,1/4.)
+            A(1,1/4.)
+        }
+    }
     rest(1/8)
 }
+//End Play
 
 seq {
     sync {
@@ -823,3 +903,27 @@ seq {
     B(2,1/16) * 6
 } -> BSixteenth
 
+
+sync {
+    A(3,1/8)
+    C(4,1/8)
+    E(4,1/8)
+} -> AChord
+
+seq {
+    AChord
+    rest(1/8)
+    AChord
+} -> AChordMeasure
+
+seq {
+    A(4,1/24)
+    C(5,1/24)
+    E(5,1/24)
+    A(5,1/24)
+    C(6,1/24)
+    E(6,1/24)
+    D(6,1/24)
+    C(6,1/24)
+    B(5,1/24)
+} ->AtoA
