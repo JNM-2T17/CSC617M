@@ -22,11 +22,17 @@ public class Seq extends NonTerminal implements Playable {
 			List<NoteAction> stream = p.getStream();
 			for(NoteAction na: stream) {
 				nas.add(na);
+				// System.out.print(na + " ");
 			}
 		}
+		// System.out.println();
 		stream = nas;
 	}
-	
+
+	public String getType() {
+		return "SEQ";
+	}
+
 	public void interpret() throws Exception{
 		if(!isSet()) {
 			throw new Exception(NOT_SET_MESSAGE);

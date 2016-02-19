@@ -58,6 +58,10 @@ public class Chord extends NonTerminal implements Playable {
 		}
 	}
 
+	public String getType() {
+		return "CHORD";
+	}
+
 	private void buildChord() {
 		ArrayList<Playable> notes = new ArrayList<Playable>();
 		Note n = new Note(note,duration);

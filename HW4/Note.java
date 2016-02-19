@@ -45,6 +45,10 @@ public class Note extends NonTerminal implements Playable {
 		}
 	}
 
+	public String getType() {
+		return "NOTE";
+	}
+
 	public void play() {
 		try {
 			MusicPlayer.instance().play(note, duration);

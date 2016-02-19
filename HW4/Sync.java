@@ -16,6 +16,7 @@ public class Sync extends NonTerminal implements Playable
     {
 		super("SYNC","sync SUBBODY");
 		playables = p;
+
 		buildStream();
 	}
 
@@ -49,6 +50,7 @@ public class Sync extends NonTerminal implements Playable
 	public void play()
     {
     	for(NoteAction na: stream) {
+    		// System.out.println(na);
     		MusicPlayer.instance().play(na);
     	}
 	}
@@ -75,8 +77,15 @@ public class Sync extends NonTerminal implements Playable
     {
         Playable[] syncs = new Playable[times];
         for(int i = 0; i < times; i++)
+        {
             syncs[i] = new Sync(playables);
+
+        }
         return new Seq(syncs);
+	}
+
+	public String getType() {
+		return "SYNC";
 	}
 
 	private void buildStream() {
@@ -91,10 +100,23 @@ public class Sync extends NonTerminal implements Playable
         }
 
         for(int i = 0; i < streams.length; i++) {
-			streams[i] = playables[i].getStream();
-			// for(NoteAction na: streams[i]) {
-			// 	System.out.print(na + " ");
-			// }
+        	List<NoteAction> temp = playables[i].getStream();
+			streams[i] = new ArrayList<NoteAction>();
+			for(NoteAction na: temp) {
+				NoteAction newNa = null;
+				switch(na.type()) {
+					case NoteAction.ON:
+					case NoteAction.OFF:
+						newNa = new NoteAction(na.type(),na.note(),na.index());
+						break;
+					case NoteAction.SLEEP:
+						newNa = new NoteAction(na.type(),na.duration());
+						break;
+					default:
+				}
+				streams[i].add(newNa);
+				// System.out.print(na + " ");
+			}
 			// System.out.println();
 		}
 

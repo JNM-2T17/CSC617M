@@ -35,11 +35,16 @@ public class Elem extends NonTerminal implements Playable {
 			}
 			SubElem subelem = (SubElem)getComponent("SUBELEM");
 			play = subelem.value(play);
+			// System.out.println(play.getType());
 		}
 	}
 
+	public String getType() {
+		return play.getType();
+	}
+	
 	public Playable[] getPlayables() {
-		switch(type) {
+		switch(getType()) {
 			case "SYNC":
 				return ((Sync)play).getPlayables();
 			case "SEQ":
@@ -47,10 +52,6 @@ public class Elem extends NonTerminal implements Playable {
 			default:
 				return null;
 		}
-	}
-
-	public String type() {
-		return type;
 	}
 
 	public void play() {
@@ -71,5 +72,9 @@ public class Elem extends NonTerminal implements Playable {
 
 	public List<NoteAction> getStream() {
         return play.getStream();
+    }
+
+    public String toString() {
+    	return play.getType();
     }
 }

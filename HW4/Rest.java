@@ -36,6 +36,10 @@ public class Rest extends NonTerminal implements Playable {
 		return duration;
 	}
 
+	public String getType() {
+		return "REST";
+	}
+
 	public void play() {
 		MusicPlayer.instance().rest(duration);
 	}

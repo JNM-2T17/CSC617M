@@ -6,4 +6,5 @@ public interface Playable extends ParseObject {
 	public Playable changeTime(double factor);
 	public Playable multiply(int times);
 	public List<NoteAction> getStream();
+	public String getType();
 }

@@ -5,11 +5,23 @@ import java.util.List;
 public class Var extends NonTerminal implements Playable
 {
 	private Playable play;
-    
+    private String type;
+
 	public Var(String pattern)
     {
 		super("VAR",pattern);
 	}
+
+    public String toString() {
+        return type;
+    }
+
+    public String getType() {
+        if(play instanceof Elem) {
+            System.out.println("FUCK");
+        }
+        return play.getType();
+    }
 
 	public void interpret() throws Exception
     {
@@ -21,7 +33,6 @@ public class Var extends NonTerminal implements Playable
         {
             Token t = ((Token) getComponent("varname"));
             Elem elem = (Elem)SymbolTable.instance().get(t.token());
-            
             if(elem == null){
                 throw new Exception("Error - Line " + t.lineNo() 
                                         + ": Variable \"" 
@@ -30,12 +41,13 @@ public class Var extends NonTerminal implements Playable
             }
             else
             {
+                type = elem.type();
                 SubVar sv = (SubVar)getComponent("SUBVAR");
                 sv.interpret();
                 int[] indices = sv.getIndices();
                 if(indices != null)
                 {
-                    switch(elem.type()) {
+                    switch(elem.getType()) {
                         case "NOTE":
                         case "REST":
                         case "CHORD":

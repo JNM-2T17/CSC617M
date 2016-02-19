@@ -1,10 +1,44 @@
 play {
+	seq {
+	fourChords * 13
+	rest(1)
+	fourChords2 * 36
+	} < 10
 	chordTest + 6
 	fuck
 	fuck[1] < 2 > 3
 	fuck[2~3]
 	fuck[4] < 2 > 3
 }
+
+seq {
+	maj(G,3,1/4.)
+	maj(G,3,1/4)
+	maj(G,3,1/8) * 3
+} -> GMaj
+
+seq {
+	GMaj
+	GMaj - 5 -> DMaj
+	m(E,4,1/4.)
+	m(E,4,1/4)
+	m(E,4,1/8) * 3
+	DMaj - 2
+} -> fourChords
+
+seq {
+	maj(G,3,1/2) * 2
+} -> GMaj2
+
+seq {
+	GMaj2
+	GMaj2 - 5 -> DMaj2
+	m(E,4,1/2) * 2
+	DMaj2 - 2
+} -> fourChords2
+
+fourChords < 3 > 2 -> fourChords
+fourChords2 < 3 -> fourChords2
 
 seq {
 	maj(C,3,1/2)

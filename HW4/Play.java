@@ -48,4 +48,8 @@ public class Play extends NonTerminal implements Playable {
 	public List<NoteAction> getStream() {
 		return null;
 	}
+
+	public String getType() {
+		return "PLAY";
+	}
 }
