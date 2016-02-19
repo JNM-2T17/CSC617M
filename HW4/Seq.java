@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Seq extends NonTerminal implements Playable {
 	private Playable[] playables;
+	private List<NoteAction> stream;
 	
 	public Seq(String pattern){
 		super("SEQ", pattern);
@@ -11,6 +13,18 @@ public class Seq extends NonTerminal implements Playable {
 	public Seq(Playable[] p){
 		super("SEQ","seq SUBBODY");
 		playables = p;
+		buildStream();
+	}
+	
+	private void buildStream() {
+		ArrayList<NoteAction> nas = new ArrayList<NoteAction>();
+		for(Playable p: playables) {
+			List<NoteAction> stream = p.getStream();
+			for(NoteAction na: stream) {
+				nas.add(na);
+			}
+		}
+		stream = nas;
 	}
 	
 	public void interpret() throws Exception{
@@ -28,6 +42,7 @@ public class Seq extends NonTerminal implements Playable {
 			}
 			playables = new Playable[ctr];
 			playables = elems.toArray(playables);
+			buildStream();
 		}
 	}
 	
@@ -65,4 +80,7 @@ public class Seq extends NonTerminal implements Playable {
 		return new Seq(newSeq);
 	}
 
+	public List<NoteAction> getStream() {
+		return stream;
+	}
 }

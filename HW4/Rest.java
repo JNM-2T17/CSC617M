@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Rest extends NonTerminal implements Playable {
 	private double duration;
+	private List<NoteAction> stream;
 
 	public Rest(String pattern) {
 		super("REST",pattern);
@@ -8,6 +12,13 @@ public class Rest extends NonTerminal implements Playable {
 	public Rest(double duration) {
 		super("REST","rest ( TIME )");
 		this.duration = duration;
+		buildStream();
+	}
+
+	private void buildStream() {
+		ArrayList<NoteAction> nas = new ArrayList<NoteAction>();
+		nas.add(new NoteAction(NoteAction.SLEEP,duration));
+		stream = nas;
 	}
 	
 	public void interpret() throws Exception {
@@ -17,6 +28,7 @@ public class Rest extends NonTerminal implements Playable {
 			Time tm = (Time)getComponent("TIME");
 			tm.interpret();
 			duration = tm.getTime();
+			buildStream();
 		}
 	}
 
@@ -38,5 +50,9 @@ public class Rest extends NonTerminal implements Playable {
 
 	public Playable multiply(int times) {
 		return new Rest(duration * times);
+	}
+
+	public List<NoteAction> getStream() {
+		return stream;
 	}
 }

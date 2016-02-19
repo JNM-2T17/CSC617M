@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Elem extends NonTerminal implements Playable {
 	private Playable play;
 	private String type;
@@ -65,4 +67,8 @@ public class Elem extends NonTerminal implements Playable {
 	public Playable multiply(int times) {
 		return play.multiply(times);
 	}
+
+	public List<NoteAction> getStream() {
+        return play.getStream();
+    }
 }

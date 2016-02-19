@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Play extends NonTerminal implements Playable {
 	private Playable[] playables;
@@ -44,4 +45,7 @@ public class Play extends NonTerminal implements Playable {
 		return null;
 	}
 
+	public List<NoteAction> getStream() {
+		return null;
+	}
 }

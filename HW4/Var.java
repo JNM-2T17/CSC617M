@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Var extends NonTerminal implements Playable
 {
@@ -92,4 +93,9 @@ public class Var extends NonTerminal implements Playable
     {
 		return (play = play.multiply(times));
 	}
+
+    public List<NoteAction> getStream()
+    {
+        return play.getStream();
+    }
 }

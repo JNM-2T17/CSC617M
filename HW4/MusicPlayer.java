@@ -83,4 +83,21 @@ public class MusicPlayer {
             e.printStackTrace();
         }
     }
+
+    public void play(NoteAction na) {
+        switch(na.type()) {
+            case NoteAction.ON:
+                System.out.println("Turning " + na.note() + ":" + na.index() + " on");
+                channels[na.index()].noteOn(na.note(),VOLUME);
+                break;
+            case NoteAction.OFF:
+                System.out.println("Turning " + na.note() + ":" + na.index() + " off");
+                channels[na.index()].noteOff(na.note());
+                break;
+            case NoteAction.SLEEP:
+                rest(na.duration());
+                break;
+            default:
+        }
+    }
 }
