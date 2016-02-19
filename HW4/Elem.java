@@ -39,9 +39,8 @@ public class Elem extends NonTerminal implements Playable {
 				Token t = (Token)getComponent("num");
 				t.interpret();
 				volume = t.intValue();
-				if( volume <= 0 ) {
-					throw new Exception("Error at line " + t.lineNo() 
-											+ ": Tempo must be positive.");
+				if( volume > 127 ) {
+					volume = 127;
 				}
 			} else {
 				for(String s: possible) {
