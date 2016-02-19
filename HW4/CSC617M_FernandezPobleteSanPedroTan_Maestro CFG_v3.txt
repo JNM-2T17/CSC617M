@@ -49,7 +49,7 @@ SUB3TIME -> e | .
 FIRST
 
 PROG -> sync, seq, pitch, rest, varname, play, nl
-ELEM -> sync, seq, pitch, rest, varname
+ELEM -> sync, seq, pitch, rest, varname,chord
 SUBELEM -> +,++,-,--,<,<<,>,>>,*,e
 VAR -> varname
 SUBVAR -> [,e
@@ -68,6 +68,7 @@ TIME -> time,num
 SUBTIME -> .,e
 SUB2TIME -> .,e
 SUB3TIME -> .,e
+CHORD -> chord
 
 FOLLOW
 
@@ -85,6 +86,8 @@ SYNC -> +,++,-,--,<,<<,>,>>,*,nl, ->
 PLAY -> +,++,-,--,<,<<,>,>>,*,EOF,nl
 SUBBODY -> +,++,-,--,<,<<,>,>>,*,EOF,nl
 NOTE -> +,++,-,--,<,<<,>,>>,*,nl, ->
+SUBNOTE -> +,++,-,--,<,<<,>,>>,*,nl, ->
+CHORD -> +,++,-,--,<,<<,>,>>,*,nl, ->
 REST -> +,++,-,--,<,<<,>,>>,*,nl, ->
 TIME -> )
 SUBTIME -> )

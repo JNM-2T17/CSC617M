@@ -1,5 +1,12 @@
 play {
-	
+	chordTest + 6
+	fuck
+	fuck[1] < 2 > 3
+	fuck[2~3]
+	fuck[4] < 2 > 3
+}
+
+seq {
 	maj(C,3,1/2)
 	m(C,3,1/2)
 	aug(C,3,1/2)
@@ -17,11 +24,7 @@ play {
 	add11(C,3,1/2)
 	sus2(C,3,1/2)
 	sus4(C,3,1/2)
-	fuck
-	fuck[1] < 2 > 3
-	fuck[2~3]
-	fuck[4] < 2 > 3
-}
+} -> chordTest
 
 seq {
 	A(3,1)
