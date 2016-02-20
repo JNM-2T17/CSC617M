@@ -17,9 +17,6 @@ public class Var extends NonTerminal implements Playable
     }
 
     public String getType() {
-        if(play instanceof Elem) {
-            System.out.println("FUCK");
-        }
         return play.getType();
     }
 
