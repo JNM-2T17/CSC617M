@@ -461,7 +461,8 @@ sync {
 		} * 2
 	} -> mamaR
 	seq {
-		
+		Bb(2,1/8)
+
 	} -> mamaL
 } -> mama
 

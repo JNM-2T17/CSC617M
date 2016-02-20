@@ -36,7 +36,7 @@ SEQ -> seq SUBBODY
 SYNC -> sync SUBBODY
 PLAY -> play SUBBODY
 CHORD -> chord(pitch,SUBNOTE
-SUBBODY -> { nl ELEMS nl } | nl { nl ELEMS nl }
+SUBBODY -> { nl ELEMS NL } | nl { nl ELEMS NL }
 NOTE -> pitch(SUBNOTE
 SUBNOTE -> num,TIME) | OCTAVE,TIME)
 OCTAVE -> octave | -num
@@ -78,7 +78,7 @@ SUBELEM -> nl, ->
 VAR -> +,++,-,--,<,<<,>,>>,*,nl, ->
 SUBVAR -> +,++,-,--,<,<<,>,>>,*,nl, ->
 SUB2VAR -> +,++,-,--,<,<<,>,>>,*,nl, ->
-ELEMS -> nl,EOF
+ELEMS -> nl,EOF,}
 SUBELEMS -> nl,EOF
 SUBELEMS2 -> nl,EOF
 SEQ -> +,++,-,--,<,<<,>,>>,*,nl, ->
