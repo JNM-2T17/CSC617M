@@ -282,6 +282,8 @@ public class Tokenizer {
 			int i = Integer.parseInt(currToken);
 			if( i > 0 ) {
 				return "num";
+			} else if( i == 0 ) {
+				return "octave";
 			} else {
 				return "Invalid number, must be positiive";
 			}
