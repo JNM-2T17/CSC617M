@@ -1,0 +1,226 @@
+/**
+ * BohemianRhapsody.maestro
+ * @author Austin Fernandez
+ * @20150220
+ */
+play {
+	intro
+}
+
+sync {
+	seq {
+		sync {
+			G(4,1/8)
+			Bb(4,1/8)
+		} -> introR_1
+		introR_1 * 2
+		introR_1 > 2
+		introR_1 > 3
+		introR_1 * 5
+		G(4,1/4.)
+		sync {
+			F(4,1/8)
+			A(4,1/8)
+		} -> introR_2
+		introR_2 * 2
+		introR_1 > 2
+		introR_2 > 2
+		F(4,1/8)
+		Bb(4,1/8) * 2
+		introR_1
+		sync {
+			F(4,1/8)
+			Bb(4,1/8)
+		} -> introR_3
+		A(4,1/8)
+		F(4,1/4.)
+		sync {
+			Bb(3,1/8)
+			D(4,1/8)
+		} -> introR_4
+		introR_4
+		sync {
+			A(3,1/8)
+			Bb(3,1/8)
+			D(4,1/8)
+		}
+		sync {
+			G(3,1/2)
+			Bb(3,1/2)
+			D(4,1/2)
+		}
+		sync {
+			Bb(3,1/8)
+			D(4,1/8)
+		}
+		sync {
+			seq {
+				Ab(3,1/8) * 3
+				Ab(3,1/4.)
+			}
+			seq {
+				D(4,1/8) * 2
+				Eb(4,1/8)
+				sync {
+					D(4,1/4.)
+					F(4,1/4.)
+				}
+			}
+		}
+		Bb(4,1/4)
+		sync {
+			G(3,1/2)
+			Bb(3,1/2)
+			G(4,1/2)
+		}
+		G(3,1/2)
+		rest(1/8)
+		sync {
+			Eb(4,1/8)
+			G(4,1/8)
+		} -> introR_5
+		introR_5
+		sync {
+			D(4,1/8)
+			Eb(4,1/8)
+			G(4,1/8)
+		}
+		m(C,4,1/4)
+		sync {
+			Bb(3,1/4)
+			Eb(4,1/4)
+			G(4,1/4)
+		}
+		rest(1/8)
+		sync {
+			A(3,1/8)
+			Eb(4,1/8)
+			F(4,1/8)
+		} -> introR_6
+		introR_6
+		G(4,1/8)
+		sync {
+			introR_6[1]
+			introR_6[3]
+		} -> introR_8
+		Eb(4,1/8)
+		C(4,1/8)
+		G(4,1/8)
+		A(4,1/8)
+		Bb(4,1/8)
+		seq {
+			sync {
+				Gb(4,1/8)
+				B(4,1/8)
+			}
+			B(4,1/8)
+			sync {
+				F(4,1/4)
+				Bb(4,1/4)
+			} -> introR_7
+			sync {
+				E(4,1/8)
+				A(4,1/8)
+			}
+			A(4,1/8)
+			introR_7
+		} -> littleHigh
+		littleHigh
+		sync {
+			Bb(3,1/8)
+			Eb(4,1/8)
+			G(4,1/8)
+		}
+		G(4,1/8) * 3
+		F(4,1/4)
+		Bb(4,1/4)
+		sync {
+			C#(4,1/8)
+			E(4,1/8)
+		}
+		E(4,1/8) * 3
+		introR_8 > 3
+		A(3,1/8)
+		A(4,1/2.)
+		A(3,1/8)
+		Bb(3,1/8)
+	} -> introR
+	seq {
+		volume 80
+		D(4,1/8) * 3
+		D(4,1/4)
+		D(4,1/4.)
+		sync {
+			C(4,1/8)
+			E(4,1/8)
+		} -> introL_1
+		introL_1
+		sync {
+			D(4,1/8)
+			F(4,1/8)
+		}
+		introL_1 * 2
+		sync {
+			Bb(3,1/4.)
+			Eb(4,1/4.)
+		}
+		introL_1 * 3
+		introL_1 > 2 * 2
+		sync {
+			F(3,1/8)
+			E(4,1/8)
+		} * 2
+		sync {
+			Bb(4,1/8)
+			D(4,1/8)
+		} -> introL_2
+		introL_2
+		introL_1
+		sync {
+			introL_1[1] - 2
+			introL_1[2]
+		}
+		sync {
+			A(3,1/8)
+			D(4,1/8)
+		}
+		sync {
+			F(3,1/4.)
+			D(4,1/4.)
+		}
+		G(2,1/2.)
+		G(2,1/4)
+		Bb(2,1/2.)
+		D(2,1/4)
+		Eb(2,1/4)
+		Bb(2,1/2)
+		Bb(2,1/4)
+		sync {
+			C(2,1)
+			C(3,1)
+		}
+		sync {
+			F(2,1/2.)
+			A(3,1/2.)
+		}
+		A(3,1/8)
+		Bb(3,1/8)
+		C(4,1/8)
+		D(4,1/8)
+		seq {
+			Eb(3,1/4)
+			D(3,1/4)
+			C#(3,1/4)
+			D(3,1/4)
+		} -> introL_3
+		introL_3
+		Eb(3,1/2)
+		D(3,1/2)
+		C#(3,1/2)
+		C(3,1/4)
+		F(3,1/4)
+		F(2,1/4)
+		C(3,1/4)
+		F(3,1/2)
+	} -> introL
+} -> intro
