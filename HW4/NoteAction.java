@@ -83,7 +83,7 @@ public class NoteAction {
 			case ON:
 				typ = "ON";
 			case OFF:
-				return typ + " " + note + " " + internalIndex;
+				return typ + " " + note + " " + internalIndex + " " + volume;
 			case TEMPO:
 				return tempo + " " + tempo;
 			case SLEEP:
