@@ -8,6 +8,7 @@ play {
 	//mama
 	//mama2
 	solo
+	silhouetto
 }
 
 sync {
@@ -165,7 +166,7 @@ sync {
 		introL_1 * 2
 		sync {
 			Bb(3,1/4.)
-			Eb(4,1/4.)
+			E(4,1/4.)
 		}
 		introL_1 * 3
 		introL_1 > 2 * 2
@@ -1070,7 +1071,93 @@ sync {
 		soloR_4 + 2
 		soloR_4 + 4
 		soloR_4 + 6
-		soloR_4 + 7
+		soloR_4 + 7 > 4
+
+		Bb(5,1/24)
+		Ab(5,1/24)
+		G(5,1/24)
+		Ab(5,1/24)
+		G(5,1/24)
+		F(5,1/24)
+		G(5,1/24)
+		F(5,1/24)
+		Eb(5,1/24)
+		F(5,1/24)
+		Eb(5,1/24)
+		D(5,1/24)
+		Eb(5,1/24)
+		D(5,1/24)
+		C(5,1/24)
+		D(5,1/24)
+		C(5,1/24)
+		Bb(5,1/24)
+		Bb(4,1/4)
+
+		rest(1/16)
+		D(5,1/16)
+		Eb(5,1/16)
+		F(5,1/16)
+		Eb(5,1/32)
+		F(5,1/32)
+		G(5,1/32)
+		Ab(5,1/32)
+		Bb(5,1/8.)
+		Bb(4,1/16)
+		C(5,1/16)
+		Eb(5,1/16)
+		Eb(5,1/32)
+		F(5,1/32)
+		G(5,1/32)
+		Ab(5,1/32)
+		Bb(5,1/8)
+
+		sync {
+			C(5,1/4.)
+			Eb(5,1/4.)
+			G(5,1/4.)
+			C(6,1/4.)
+		}
+		octup(D,5,1/16)
+		octup(Eb,5,1/16)
+		octup(C,5,1/8)
+		octup(D,5,1/16)
+		octup(Eb,5,1/16)
+		octup(C,5,1/8)
+		octup(D,5,1/16)
+		octup(Eb,5,1/16)
+		
+		sync {
+			F(5,1/4)
+			Ab(5,1/4)
+			C(6,1/4)
+			F(6,1/4)
+		}
+		rest(1/8)
+		octup(F,5,1/16)
+		octup(G,5,1/16)
+		octup(Ab,5,1/4)
+		sync {
+			F(5,1/4)
+			Ab(5,1/4)
+			C#(6,1/4)
+			F(6,1/4)	
+		}
+
+		sync {
+			Ab(5,1/4.)
+			C#(6,1/4.)
+			F(6,1/4.)
+			Ab(6,1/4.)
+		}
+		octup(Ab,5,1/16)
+		octup(C#,5,1/16)
+		sync {
+			C#(6,1/4)
+			F(6,1/4)
+			Ab(6,1/4)
+			C#(6,1/4)
+		}
+		C#(4,1/4)
 	} -> soloR
 	seq {
 		sync {
@@ -1093,12 +1180,12 @@ sync {
 		sync {
 			F(1,1/4)
 			F(2,1/4)
-		} -> mama2L_4
-		mama2L_4 - 1
-		mama2L_4 - 2
-		mama2L_4 - 3
+		} -> soloL_1
+		soloL_1 - 1
+		soloL_1 - 2
+		soloL_1 - 3
 
-		mama2L_4 - 7 < 2 > 3
+		soloL_1 - 7 < 2 > 3
 		Bb(2,1/8)
 		D(3,1/8)
 		F(3,1/8)
@@ -1108,5 +1195,52 @@ sync {
 			Bb(3,1/8)
 			D(4,1/8)
 		}
+
+		soloL_1 - 2
+		sync {
+			Eb(3,1/8)
+			Bb(3,1/8)
+			C(4,1/8)
+		}
+		soloL_1 - 2 < 2
+		soloL_1 - 3
+		sync {
+			Bb(3,1/8)
+			D(4,1/8)
+			F(4,1/8)
+		}
+		soloL_1 - 3 < 2
+
+		octup(C,1,1/4) * 2
+		rest(1/16)
+		C(2,1/16)
+		C(1,1/16)
+		C(2,1/16)
+		C(1,1/16)
+		C(2,1/8.)
+		
+		octup(F,1,1/4.)
+		octup(E,1,1/8)
+		octup(Eb,1,1/4)
+		octup(D,1,1/4)
+
+		octup(Db,1,1/4.)
+		octup(Db,1,1/16)
+		octup(C,1,1/16)
+		octup(B,0,1/4)
+		octup(Bb,0,1/4)
 	}
 } -> solo
+
+sync {
+	seq {
+		sync {
+			A(3,1/8)
+			C#(4,1/8)
+		} * 8
+	} -> silhouettoR
+	seq {
+		octup(A,2,1/4)
+		rest(1/2.)
+	} -> silhouettoL
+} -> silhouetto

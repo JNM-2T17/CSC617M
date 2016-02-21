@@ -26,7 +26,7 @@ public class Tokenizer {
 		};
 		chords = new String[] {
 			"maj", "m", "aug", "dim", "dim7","min7","mmaj7","dom7","maj7",
-			"aug7","dom9","dom11","dom13","add9","add11","sus2","sus4"
+			"aug7","dom9","dom11","dom13","add9","add11","sus2","sus4","octup"
 		};
 	}
 

@@ -23,7 +23,8 @@ public class Chord extends NonTerminal implements Playable {
 	public static final String ADD11 = "add11";
 	public static final String SUS2 = "sus2";
 	public static final String SUS4 = "sus4";
-
+	public static final String OCTUP = "octup";
+	
 	public Chord(String pattern) {
 		super("CHORD",pattern);
 	}
@@ -142,6 +143,9 @@ public class Chord extends NonTerminal implements Playable {
 			case SUS4:
 				notes.add(n.changePitch(5));
 				notes.add(n.changePitch(7));
+				break;
+			case OCTUP:
+				notes.add(n.changePitch(12));
 				break;
 			default:
 		}
