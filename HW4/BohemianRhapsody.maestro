@@ -1,15 +1,19 @@
 /**
  * BohemianRhapsody.maestro
  * @author Austin Fernandez
- * @20150220
+ * @20150222
  */
 play {
 	// intro
 	// mama
 	// mama2
 	// solo
-	//silhouetto
-	solo2
+	// silhouetto
+	bpm 125
+	// solo2
+	//soYou
+	bpm 100
+	final
 }
 
 sync {
@@ -1755,9 +1759,442 @@ sync {
 
 sync {
 	seq {
+		sync {
+			Eb(5,1/8)
+			G(5,1/8)
+			Bb(5,1/8)
+			Eb(6,1/8)
+		} -> solo2R_1
+		octup(G,4,1/8)
+		octup(Ab,4,1/8)
+		octup(Bb,4,1/8)
+		octup(C,5,1/16)
+		octup(D,5,1/16)
+		octup(Eb,5,1/8)
 
+		solo2R_1
+		octup(G,4,1/8)
+		octup(Ab,4,1/8)
+		octup(Bb,4,1/8)
+		octup(C,5,1/8)
+		octup(Bb,4,1/8)
+
+		octup(Eb,5,1/8)
+		octup(G,4,1/8)
+		octup(Ab,4,1/8)
+		octup(Bb,4,1/8)
+		octup(C,5,1/16)
+		octup(D,5,1/16)
+		octup(Eb,5,1/8)
+
+		octup(F,5,1/8)
+		octup(A,4,1/8)
+		octup(B,4,1/8)
+		octup(C,4,1/8)
+		octup(D,4,1/8)
+		octup(C,4,1/8)
 	} -> solo2R
 	seq {
+		octup(Eb,1,1/8.)
+		Eb(4,1/16)
+		Bb(3,1/8)
+		Eb(3,1/8)
+		Bb(2,1/8)
+		Eb(2,1/8)
 
+		octup(Eb,1,1/8.)
+		Eb(4,1/16)
+		Bb(3,1/8)
+		Eb(3,1/8)
+		Bb(2,1/4)
+
+		octup(Eb,1,1/4.)
+		sync {
+			Bb(3,1/4.)
+			Eb(4,1/4.)
+		}
+
+		octup(F,2,1/8.)
+		F(4,1/16)
+		C(4,1/8)
+		A(3,1/8)
+		F(3,1/8)
+		C(3,1/8)
 	} -> solo2L
 } -> solo2
+
+sync {
+	seq {
+		rest(1/8)
+		sync {
+			Ab(4,1/8)
+			Bb(4,1/8)
+			D(5,1/8)
+			Ab(5,1/8)
+		} * 3
+		sync {
+			G(4,1/8)
+			Bb(4,1/8)
+			Eb(5,1/8)
+			G(5,1/8)
+		} -> solo2R_2
+		solo2R_2
+
+		solo2R_2
+		sync {
+			F(4,1/8)
+			Bb(4,1/8)
+			D(5,1/8)
+			F(5,1/8)
+		} * 3
+		octup(Eb,4,1/8)
+		sync {
+			Eb(4,1/8)
+			G(4,1/8)
+			Bb(4,1/8)
+			Eb(5,1/8)
+		}
+
+		sync {
+			D(4,1/16)
+			F(4,1/16)
+			Bb(4,1/16)
+			D(5,1/16)
+		}
+		octup(E,4,1/16)
+		octup(F,4,1/2)
+		rest(1/8)
+
+		rest(1/8)
+		C#(3,1/4)
+		C#(3,1/8)
+
+		rest(1/8)
+		sync {
+			Ab(4,1/8)
+			D(5,1/8)
+			F(5,1/8)
+			Ab(5,1/8)
+		} * 3
+		sync {
+			G(4,1/8)
+			Bb(4,1/8)
+			Eb(5,1/8)
+			G(5,1/8)
+		} -> soYouR_1
+		soYouR_1
+
+		soYouR_1
+		sync {
+			F(4,1/8)
+			Bb(4,1/8)
+			D(5,1/8)
+			F(5,1/8)
+		} -> soYouR_2
+		soYouR_2 * 2
+		octup(Eb,4,1/8)
+		sync {
+			Eb(4,1/8)
+			G(4,1/8)
+			Bb(4,1/8)
+			Eb(5,1/8)
+		}
+
+		octup(Ab,4,1/16)
+		octup(Bb,4,1/16)
+		octup(C,4,1/2)
+
+		sync {
+			G(4,1/16)
+			C(5,1/16)
+			G(5,1/16)
+		}
+		sync {
+			G(4,1/2)
+			C(5,1/2)
+			Ab(5,1/2)
+		}
+		rest(1/8.)
+
+		sync {
+			G(4,1/8)
+			Bb(4,1/8)
+			D(5,1/8)
+			G(5,1/8)
+		}
+		sync {
+			F(4,1/2)
+			Bb(4,1/2)
+			D(5,1/2)
+			F(5,1/2)
+		}
+		rest(1/8)
+
+		rest(1/8)
+		sync {
+			Ab(4,1/8)
+			C(5,1/8)
+			Eb(5,1/8)
+			Ab(5,1/8)
+		} * 3
+		sync {
+			G(4,1/8)
+			C(5,1/8)
+			Eb(5,1/8)
+			G(5,1/8)
+		} * 3
+
+		sync {
+			F(4,1/2)
+			Bb(4,1/2)
+			D(5,1/2)
+			F(5,1/2)
+		}
+		rest(1/8)
+
+		sync {
+			Eb(4,1/8)
+			Ab(4,1/8)
+			C(5,1/8)
+			Eb(5,1/8)
+		} -> soYouR_3
+		soYouR_3 < 2 * 2
+		soYouR_3
+		sync {
+			F(4,1/4.)
+			Bb(4,1/4.)
+			D(5,1/4.)
+			F(5,1/4.)
+		} -> soYouR_4
+
+		soYouR_3
+		soYouR_3 < 2 * 2
+		soYouR_3
+		soYouR_4 < 3
+		octup(Eb,4,1/8)
+		octup(D,4,1/8)
+
+		sync {
+			Eb(4,1/8)
+			G(4,1/8)
+			Bb(4,1/8)
+			Eb(5,1/8)
+		}
+		G(4,1/8)
+		Ab(4,1/8)
+		Bb(4,1/8)
+		C(5,1/16)
+		D(5,1/16)
+		Eb(5,1/8)
+
+		sync {
+			G(4,1/8)
+			Bb(4,1/8)
+			Eb(5,1/8)
+		}
+		G(4,1/8)
+		Ab(4,1/8)
+		sync {
+			G(4,1/8)
+			Bb(4,1/8)
+		}
+		sync {
+			G(4,1/8)
+			C(4,1/8)
+		}
+		sync {
+			G(4,1/8)
+			Bb(4,1/8)
+		}
+
+		sync {
+			D(4,1/2)
+			F(4,1/2)
+			Bb(4,1/2)
+		}
+		Bb(3,1/24)
+		D(4,1/24)
+		D(5,1/24)
+		D(4,1/24)
+		F(4,1/24)
+		F(5,1/24)
+
+		F(4,1/24)
+		Ab(4,1/24)
+		Ab(5,1/24)
+		Ab(4,1/24)
+		Bb(4,1/24)
+		Bb(5,1/24)
+		Bb(4,1/24)
+		D(4,1/24)
+		D(5,1/24)
+		D(5,1/24)
+		F(5,1/24)
+		F(6,1/24)
+		F(5,1/24)
+		Ab(5,1/24)
+		Ab(6,1/24)
+		Ab(5,1/24)
+		Bb(5,1/24)
+		Bb(6,1/24)
+
+		Bb(5,1/24)
+		D(5,1/24)
+		D(6,1/24)
+		D(5,1/24)
+		F(5,1/24)
+		F(6,1/24)
+		F(5,1/24)
+		Ab(5,1/24)
+		Ab(6,1/24)
+		Ab(5,1/16)
+		Bb(5,1/16)
+		Bb(6,1/4)
+	} -> soYouR
+	seq {
+		octup(Bb,0,1/4)
+		sync {
+			D(3,1/8)
+			F(3,1/8)
+			Bb(3,1/8)
+		} -> soYouL_1
+		soYouL_1 > 3
+		Bb(2,1/16)
+		Bb(1,1/8)
+
+		octup(Bb,1,1/8)
+		octup(Bb,0,1/16) * 2
+		octup(Bb,0,1/8) * 2
+		octup(Bb,0,1/16)
+		octup(Bb,0,1/8)
+
+		octup(Bb,1,1/4)
+		sync {
+			D(3,1/8)
+			F(3,1/8)
+			Bb(3,1/8)
+		} * 2
+		Bb(2,1/8)
+		Bb(1,1/8)
+
+		octup(Bb,1,1/8)
+		octup(C#,2,1/8) -> soYouL_2
+		soYouL_2 < 2 * 2
+		soYouL_2
+
+		octup(Bb,1,1/8.)
+		sync {
+			D(3,1/16)
+			F(3,1/16)
+			Bb(3,1/16)
+		} -> soYouL_3
+		soYouL_3 > 2
+		soYouL_3 > 3
+		octup(Bb,2,1/16)
+		octup(Bb,2,1/8)
+
+		octup(Bb,2,1/8.)
+		sync {
+			D(2,1/16)
+			F(2,1/16)
+			Bb(2,1/16)
+		} -> soYouL_4
+		soYouL_4 > 2
+		octup(Bb,1,1/8.)
+		octup(Bb,1,1/16)
+		octup(Bb,1,1/8)
+
+		octup(Ab,1,1/4)
+		octup(Ab,1,1/8) * 2
+		octup(G,1,1/8)
+
+		seq {
+			octup(F,2,1/4)
+			octup(F,2,1/8)
+		} * 2
+
+		seq {
+			octup(Bb,0,1/4)
+			octup(Bb,0,1/8)
+		}
+
+		octup(F,2,1/8.)
+		G(3,1/16)
+		C(3,1/8)
+		sync {
+			Ab(2,1/8.)
+			C(3,1/8.)
+			F(3,1/8.)
+		}
+		F(2,1/16)
+		F(1,1/8)
+
+		octup(Bb,0,1/4)
+		sync {
+			D(2,1/8)
+			F(2,1/8)
+			Bb(2,1/8)
+		} * 2
+		Bb(1,1/8)
+		Bb(0,1/8)
+
+		sync {
+			F(2,1/8)
+			Bb(2,1/8)
+			D(3,1/8)
+			F(3,1/8)
+		} -> soYouL_5
+		soYouL_5 < 2 * 2
+		soYouL_5
+		octup(Bb,1,1/8)
+		octup(Bb,1,1/16) * 2
+		octup(Bb,1,1/8)
+
+		soYouL_5
+		soYouL_5 < 2 * 2
+		soYouL_5
+		octup(Bb,1,1/8.)
+		octup(Bb,1,1/16)
+		octup(Bb,1,1/8)
+
+		octup(Eb,2,1/8.)
+		Eb(4,1/16)
+		Bb(3,1/8)
+		Eb(3,1/8)
+		Bb(2,1/8)
+		octup(Eb,1,1/8)
+
+		octup(Eb,1,1/8.)
+		Eb(4,1/16)
+		Bb(3,1/8)
+		Eb(3,1/8)
+		Eb(3,1/16)
+		Eb(2,1/16)
+		Eb(3,1/8)
+		
+		octup(Bb,2,1/8)
+		D(3,1/24)
+		F(3,1/24)
+		F(4,1/24)
+		F(3,1/24)
+		Ab(3,1/24)
+		Ab(4,1/24)
+		Ab(3,1/24)
+		Bb(3,1/24)
+		Bb(4,1/24)
+		rest(1/4)
+
+		rest(1/2.)
+
+		rest(1/2.)
+	} -> soYouL
+} -> soYou
+
+sync {
+	seq {
+
+	} -> finalR
+	seq {
+
+	} -> finalL
+} -> final

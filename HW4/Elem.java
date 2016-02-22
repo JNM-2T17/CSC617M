@@ -54,7 +54,11 @@ public class Elem extends NonTerminal implements Playable {
 				try {
 					play.interpret(); 
 				} catch(Exception e) {
-					System.out.println(e.getMessage());
+					if( e.getMessage() == null ) {
+						e.printStackTrace();
+					} else {
+						System.out.println(e.getMessage());
+					}
 				}
 				SubElem subelem = (SubElem)getComponent("SUBELEM");
 				play = subelem.value(play);
@@ -85,7 +89,7 @@ public class Elem extends NonTerminal implements Playable {
 	}
 
 	public void play() {
-		if( bpm == 0 ) {
+		if( play != null ) {
 			play.play();	
 		} else {
 			MusicPlayer.instance().setTempo(bpm);
@@ -94,15 +98,15 @@ public class Elem extends NonTerminal implements Playable {
 	}
 
 	public Playable changePitch(int semitones) {
-		return bpm == 0 && volume == -1 ? play.changePitch(semitones) : null;
+		return play != null ? play.changePitch(semitones) : null;
 	}
 
 	public Playable changeTime(double factor) {
-		return bpm == 0 && volume == -1 ? play.changeTime(factor) : null;
+		return play != null ? play.changeTime(factor) : null;
 	}
 
 	public Playable multiply(int times) {
-		return bpm == 0 && volume == -1 ? play.multiply(times) : null;
+		return play != null ? play.multiply(times) : null;
 	}
 
 	public int volume() {
@@ -121,6 +125,12 @@ public class Elem extends NonTerminal implements Playable {
     }
 
     public String toString() {
-    	return play.getType();
+    	if( bpm != 0 ) {
+    		return "TEMPO " + bpm;
+    	} else if( volume != -1 ) {
+    		return "VOLUME " + volume;
+    	} else {
+    		return play.getType();
+    	}
     }
 }

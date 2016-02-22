@@ -55,6 +55,7 @@ public class Seq extends NonTerminal implements Playable {
 			int ctr = 0;
 			while(itr.hasNext() ) {
 				elems.add(itr.next());
+				// System.out.println(elems.get(elems.size() - 1));
 				ctr++;
 			}
 			playables = new Playable[ctr];

@@ -17,7 +17,7 @@ public class Var extends NonTerminal implements Playable
     }
 
     public String getType() {
-        return play.getType();
+        return type;
     }
 
 	public void interpret() throws Exception
@@ -38,13 +38,13 @@ public class Var extends NonTerminal implements Playable
             }
             else
             {
-                type = elem.type();
+                type = elem.getType();
                 SubVar sv = (SubVar)getComponent("SUBVAR");
                 sv.interpret();
                 int[] indices = sv.getIndices();
                 if(indices != null)
                 {
-                    switch(elem.getType()) {
+                    switch(type) {
                         case "NOTE":
                         case "REST":
                         case "CHORD":
@@ -55,8 +55,23 @@ public class Var extends NonTerminal implements Playable
                             if(indices.length == 2) {
                                 lengthSync = indices[1] - indices[0] + 1;
                                 Playable[] newSyncPlayables = new Playable[lengthSync];
-                                for(int i = 0, curIndex = indices[0] - 1; i < lengthSync; i++, curIndex++)
-                                    newSyncPlayables[i] = originalSync[curIndex];
+                                int i = 0;
+                                int curIndex = 0;
+                                while(i < indices[0] - 1) {
+                                    String type = originalSync[curIndex].getType();
+                                    if( !type.equals("VOLUME") && !type.equals("TEMPO")) {
+                                        i++;
+                                    }
+                                    curIndex++;
+                                }
+                                for(i = 0; i < lengthSync; ) {
+                                    String type = originalSync[curIndex].getType();
+                                    if( !type.equals("VOLUME") && !type.equals("TEMPO")) {
+                                        newSyncPlayables[i] = originalSync[curIndex];
+                                        i++;
+                                    }
+                                    curIndex++;
+                                }
                                 play = new Sync(newSyncPlayables);
                             } else {
                                 play = originalSync[indices[0] - 1];
@@ -68,8 +83,23 @@ public class Var extends NonTerminal implements Playable
                             if(indices.length == 2) {
                                 lengthSeq = indices[1] - indices[0] + 1;
                                 Playable[] newSeqPlayables = new Playable[lengthSeq];
-                                for(int i = 0, curIndex = indices[0] - 1; i < lengthSeq; i++, curIndex++)
-                                    newSeqPlayables[i] = originalSeq[curIndex];
+                                int i = 0;
+                                int curIndex = 0;
+                                while(i < indices[0] - 1) {
+                                    String type = originalSeq[curIndex].getType();
+                                    if( !type.equals("VOLUME") && !type.equals("TEMPO")) {
+                                        i++;
+                                    }
+                                    curIndex++;
+                                }
+                                for(i = 0; i < lengthSeq; ) {
+                                    String type = originalSeq[curIndex].getType();
+                                    if( !type.equals("VOLUME") && !type.equals("TEMPO")) {
+                                        newSeqPlayables[i] = originalSeq[curIndex];
+                                        i++;
+                                    }
+                                    curIndex++;
+                                }
                                 play = new Seq(newSeqPlayables);
                             } else {
                                 play = originalSeq[indices[0] - 1];
@@ -91,21 +121,37 @@ public class Var extends NonTerminal implements Playable
 
 	public Playable changePitch(int semitones)
     {
-		return play.changePitch(semitones);
+        if( play == null ) {
+            return null;
+        } else {
+            return play.changePitch(semitones);
+        }
 	}
 
 	public Playable changeTime(double factor)
     {
-		return play.changeTime(factor);
+        if( play == null ) {
+            return null;
+        } else {
+		  return play.changeTime(factor);
+        }
 	}
 
 	public Playable multiply(int times)
     {
-		return (play = play.multiply(times));
+        if( play == null ) {
+            return null;
+        } else {
+		  return (play = play.multiply(times));
+        }
 	}
 
     public List<NoteAction> getStream()
     {
-        return play.getStream();
+        if( play == null ) {
+            return null;
+        } else {
+            return play.getStream();
+        }
     }
 }

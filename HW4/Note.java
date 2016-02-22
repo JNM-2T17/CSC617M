@@ -53,7 +53,11 @@ public class Note extends NonTerminal implements Playable {
 		try {
 			MusicPlayer.instance().play(note, duration);
 		} catch(Exception e) {
-			System.out.println(e.getMessage());
+			if( e.getMessage() == null ) {
+				e.printStackTrace();
+			} else {
+				System.out.println(e.getMessage());
+			}
 		}
 	}
 
