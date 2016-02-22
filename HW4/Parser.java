@@ -82,15 +82,13 @@ public class Parser {
 									: tokens.get(i);
 				// System.out.println(currToken);
 				if( currToken.type().equals("other") ) {
-					System.out.println("Unrecognized token " + currToken.token() 
-										+ " at line " + currToken.lineNo() );
-					pw.println("Unrecognized token " + currToken.token() 
-								+ " at line " + currToken.lineNo() );
+					System.out.println("Unrecognized token " + currToken );
+					pw.println("Unrecognized token " + currToken );
 				}
-
+				// System.out.print(currToken.type() + "\t");
+				// printStack();
 				if( isVariable(top) ) {
 					String prod = parseTable.get(top).get(currToken.type());
-					
 					if( prod == null ) {
 						System.out.println("Error: unexpected " + currToken);
 						pw.println("Error: unexpected " + currToken);
@@ -130,16 +128,15 @@ public class Parser {
 					pop();
 					start = rollup(currToken);
 				} else {
+					System.out.println("Error at token " + currToken 
+										+ " expected " + top);
 					if( currToken.type().equals("newline")) {
 						pop();
 					} else {
 						i++;
-						System.out.println("Error at token " + currToken + " expected " + top);
-						pw.println("Error at token " + currToken);
 					}
 					error = true;
 				}
-				// printStack();
 			}
 			pw.close();
 			// System.out.println(tokens.size() + " tokens; index: " + i);
@@ -152,6 +149,10 @@ public class Parser {
 				}
 				return start;
 			} else {
+				Token currToken = i == tokens.size() ? new Token("EOF","EOF"
+									,tokens.get(tokens.size() - 1).lineNo()) 
+									: tokens.get(i);
+				System.out.println("Error at token " + currToken);
 				return null;
 			}
 		} catch(IOException ioe) {
