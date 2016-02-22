@@ -4,6 +4,7 @@
  * @20160219
  */
  play {
+ 	bpm 300
 	left1
 	
 	sync {
