@@ -21,6 +21,11 @@ public class Play extends Seq {
 		return null;
 	}
 
+	public void play() {
+		MusicPlayer.instance().rest(0.125);
+		super.play();
+	}
+
 	public String getType() {
 		return "PLAY";
 	}

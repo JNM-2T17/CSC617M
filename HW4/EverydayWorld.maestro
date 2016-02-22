@@ -1,0 +1,56 @@
+play {
+	bpm 63
+	measure1
+	measure2R
+}
+
+seq {
+	E(5,1/16)
+	D(5,1/16)
+	E(5,1/16)
+	A(5,1/8)
+	E(5,1/8)
+	D(5,1/16)
+	E(5,1/4)
+	A(5,1/4)
+} -> measure1R
+seq {
+	m(D,4,1/2)
+	aug(C,4,1/4)
+	F(4,1/8)
+	G(4,1/8)
+} -> measure1L
+
+sync {
+	measure1L
+	measure1R
+} -> measure1
+
+seq{
+	E(5,1/16)
+	D(5,1/16)
+	E(5,1/16)
+	A(5,1/8)
+	sync{
+		D(6,1/16)
+		F#(5,1/16)
+	}
+	sync{
+		C#(6,1/16)
+		E(5,1/16)
+	}
+
+	sync{
+		sync{
+			A(5,9/16)
+			C#(5,9/16)
+		} 
+		seq{
+			rest(1/16)
+			A(4,1/8)
+			G(4,1/16)
+			F#(4,1/16)
+		}
+	}
+	
+} -> measure2R

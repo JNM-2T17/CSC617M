@@ -4,19 +4,20 @@
  * @20160219
  */
 play {
+	bpm 150
 	/*seq {
 	fourChords * 13
 	rest(1)
 	fourChords2 * 36
 	} < 10*/
 	
-	doremi < 2 > 3
+	doremi
 
-	/*chordTest + 6
+	chordTest + 6
 	fuck
 	fuck[1] < 2 > 3
 	fuck[2~3]
-	fuck[4] < 2 > 3*/
+	fuck[4] < 2 > 3
 }
 
 seq {
