@@ -1,0 +1,712 @@
+play {
+	bpm 63
+	rest(1/16)
+	measure1
+	measure2
+	measure3
+	measure4
+	measure5
+	measure6
+	measure7
+	measure8
+	measure9
+	measure10
+	measure11
+	measure12
+	measure13
+	measure14
+}
+
+seq {
+	E(5,1/16)
+	D(5,1/16)
+	E(5,1/16)
+	A(5,1/8)
+	E(5,1/8)
+	D(5,1/16)
+	E(5,1/4)
+	A(5,1/4)
+} -> measure1R
+seq {
+	m(D,4,1/2)
+	aug(C,4,1/4)
+	F(4,1/8)
+	G(4,1/8)
+} -> measure1L
+
+sync {
+	measure1L
+	measure1R
+} -> measure1
+
+seq{
+	E(5,1/16)
+	D(5,1/16)
+	E(5,1/16)
+	A(5,1/8)
+	sync{
+		D(6,1/16)
+		F#(5,1/16)
+	}
+	sync{
+		C#(6,1/16)
+		E(5,1/16)
+	}
+
+	sync{
+		sync{
+			A(5,5/16)
+			C#(5,5/16)
+		} 
+		seq{
+			rest(1/16)
+			A(4,1/8)
+			G(4,1/16)
+			F#(4,1/16)
+		}
+	}
+
+	sync{
+		D(4,1/8)
+		B(3,1/8)
+	}
+
+	sync{
+		C(4,1/8)
+		E(4,1/8)
+	}
+} -> measure2R
+
+seq{
+	sync{
+		seq{
+			sync{
+				A(4,1/2)
+				C(4,1/2)
+			}
+			rest(1/4)
+			A(3,1/4)
+		}
+		
+		seq{
+			F(4,1/2.)
+			B(2,1/8)
+			A(2,1/8)
+		}
+	}
+} -> measure2L
+
+sync{
+	measure2L
+	measure2R
+} -> measure2
+
+seq{
+	sync{
+		D(4,1/4)
+		B(3,1/4)
+		A(3,1/4)
+	}
+
+	sync{
+		B(4,1/4.)
+		D(5,1/4.)
+	}
+
+	A(4,1/8)
+	sync{
+		A(4,1/8)
+		B(4,1/8)
+		D(5,1/8)
+		F(5,1/8)
+	}
+
+	D(5,1/8)
+} -> measure3R
+
+seq{
+	volume 80
+	sync{
+		seq{
+			G(2,1/2)
+		}
+		seq{
+			rest(1/8)
+			D(3,1/16)
+			A(3,1/16)
+			B(3,1/16)
+			C#(4,1/16)
+			D(4,1/16)
+			E(4,1/16)
+			D(4,1/16)
+			A(3,1/16)
+			D(3,1/16)
+			G(2,1/16)
+			E(2,1/8)
+			F#(2,1/8)
+		}
+	}
+
+} -> measure3L
+
+sync{
+	measure3L
+	measure3R
+} -> measure3
+
+seq{
+	volume 80
+	sync{
+		seq{
+			A(2,5/8)
+			A(2,3/8)
+		}
+
+		seq{
+			rest(1/16)
+			E(3,1/16)
+			G(3,1/16)
+			B(3,1/16)
+			D(4,1/16)
+			E(4,1/16)
+			A(4,1/8)
+			sync{
+				C#(4,1/4)
+				E(3,1/4)
+			}
+		}
+	}
+} -> measure4L
+
+seq{
+	sync{
+		A(5,1/8)
+		D(5,1/8)
+		B(4,1/8)
+	}
+
+	G(5,1/16)
+	F#(5,1/16)
+
+	sync{
+		D(5,1/8)
+		B(4,1/8)
+	}
+
+	E(5,1/8)
+
+	sync{
+		F#(5,1/4)
+		D(5,1/4)
+		B(4,1/4)
+	}
+
+	sync{
+		E(5,1/8)
+		C#(5,1/8)
+		A(4,1/8)
+	}
+
+} -> measure4R
+
+sync{
+	measure4L
+	measure4R
+} -> measure4
+
+seq{
+	E(4,1/4)
+	E(4,1/8)
+	D(4,1/16)
+	F#(4,5/16)
+	A(3,1/8)
+	D(4,1/8)
+} -> measure5R
+
+seq{
+	volume 80
+	sync{
+		seq{
+			D(2,1/2..)
+			C#(3,1/8)
+		}
+		seq{
+			sync{
+				A(3,1/4)
+				F#(3,1/4)
+			}
+			sync{
+				A(3,1/4)
+				F#(3,1/4)
+			}
+			sync{
+				A(3,1/4)
+				F#(3,1/4)
+			}
+
+			F#(3,1/4)
+		}
+	}
+} -> measure5L
+
+sync{
+	measure5L
+	measure5R
+} -> measure5
+
+seq{
+	E(4,1/4)
+	E(4,1/8)
+	G(4,1/16)
+	F#(4,3/8)
+	F#(4,1/8)
+	E(4,1/16)
+} -> measure6R
+
+seq{
+	volume 80
+	sync{
+		seq{
+			B(2,1/2..)
+			A(2,1/8)
+		}
+		seq{
+			sync{
+			A(3,1/4)
+			F#(3,1/4)
+			}
+			sync{
+				A(3,1/4)
+				F#(3,1/4)
+			}
+			sync{
+				A(3,1/4)
+				F#(3,1/4)
+			}
+			sync{
+				A(3,1/4)
+				F#(3,1/4)
+			}
+		}
+	}
+} -> measure6L
+
+sync{
+	measure6L
+	measure6R
+} -> measure6
+
+seq{
+	sync{
+		D(4,1/8)
+		B(3,1/8)
+	}
+	B(3,1/8)
+	C#(4,1/8)
+	D(4,1/8)
+
+	sync{
+		E(4,1/8)
+		B(3,1/8)
+	}
+	D(4,1/8)
+	C#(4,1/8)
+	B(3,1/8)
+} -> measure7R
+
+seq{
+	volume 80
+	sync{
+		seq{
+			sync{
+				D(3,1/4.)
+				G(2,1/4.)
+			}
+			G(2,1/8)
+			sync{
+				A(2,1/4.)
+				E(3,1/4.)
+			}
+			A(2,1/8)
+		}
+		seq{
+			A(3,1/4)
+			G(3,1/4)
+			G(3,1/4)
+			A(3,1/4)
+		}
+	}
+} -> measure7L
+
+sync{
+	measure7L
+	measure7R
+} -> measure7
+
+seq{
+	B(3,1/8)
+	A(3,1/16)
+	A(3,11/16)
+	A(4,1/8)
+} -> measure8R
+
+seq{
+	volume 80
+	sync{
+		seq{
+			sync{
+				D(2,1/4.)
+				D(3,1/4.)
+			}
+			D(2,1/8)
+			A(2,1/2)
+		}
+		seq{
+			G(3,1/4)
+			sync{
+				F#(3,1/4)
+				D(3,1/4)
+			}
+			G(3,1/16)
+			E(3,1/16)
+			G(3,1/16)
+			D(4,1/16)
+			C#(4,1/16)
+			A(3,1/16)
+			E(3,1/16)
+			A(2,1/16)
+		}
+	}
+} -> measure8L
+
+sync{
+	measure8L
+	measure8R
+} -> measure8
+
+seq{
+	sync{
+		seq{
+			sync{
+				A(4,1/4)
+				F#(4,1/4)
+			}
+			sync{
+				A(4,1/4)
+				F#(4,1/4)
+			}
+			sync{
+				A(4,1/4)
+				F#(4,1/4)
+			}
+			sync{
+				A(4,1/4)
+				F#(4,1/4)
+			}
+		}
+
+		seq{
+			E(5,1/4)
+			E(5,1/8)
+			D(5,1/16)
+			F#(5,7/16)
+			D(5,1/8)
+		}
+	}
+} -> measure9R
+
+seq{
+	volume 80
+	sync{
+		seq{
+			sync{
+				D(3,1/2..)
+				D(3,1/2..)
+			}
+			C#(3,1/8)
+		}
+
+		seq{
+			rest(1/4)
+			sync{
+				D(4,1/4)
+				E(4,1/4)
+			}
+			sync{
+				D(4,1/4)
+				E(4,1/4)
+			}
+			sync{
+				D(4,1/4)
+				E(4,1/4)
+			}
+		}
+	}
+} -> measure9L
+
+sync{
+	measure9L
+	measure9R
+} -> measure9
+
+seq{
+	sync{
+		seq{
+			sync{
+				A(4,1/4)
+				F#(4,1/4)
+			}
+			sync{
+				A(4,1/4)
+				F#(4,1/4)
+			}
+			sync{
+				A(4,1/4)
+				C#(5,1/4)
+			}
+			sync{
+				A(4,1/4)
+				C#(5,1/4)
+			}
+		}
+
+		seq{
+			E(5,1/4)
+			E(5,1/8)
+			A(5,1/16)
+			F#(5,1/4.)
+			E(5,1/8)
+			F#(5,1/16)
+		}
+	}
+} -> measure10R
+
+seq{
+	volume 80
+	sync{
+		seq{
+			B(2,1/4.)
+			B(2,1/8)
+			F#(2,1/4.)
+			F#(2,1/8)
+		}
+		seq{
+			D(4,1/4)
+			D(4,1/4)
+			A(3,1/4)
+			A(3,1/4)
+		}
+	}
+} -> measure10L
+
+sync{
+	measure10L
+	measure10R
+} -> measure10
+
+seq{
+	sync{
+		seq{
+			sync{
+				D(5,1/4)
+				B(4,1/4)
+			}
+			sync{
+				D(5,1/4)
+				B(4,1/4)
+			}
+			sync{
+				G(4,1/4)
+				B(4,1/4)
+				D#(4,1/4)
+			}
+			B(4,1/8)
+			D(5,1/8)
+		}
+
+		seq{
+			G(5,1/4)
+			G(5,1/8)
+			F#(5,1/16)
+			E(5,5/16)
+		}
+	}
+} -> measure11R
+
+seq{
+	volume 80
+	sync{
+		seq{
+			E(2,1/2)
+			E(2,1/2)
+		}
+
+		seq{
+			G(3,1/8)
+			B(2,1/8)
+			sync{
+				G(4,1/4)
+				D(4,1/4)
+				B(3,1/4)
+			}
+			G(3,1/8)
+			B(2,1/8)
+			sync{
+				G(4,1/4)
+				D(4,1/4)
+				B(3,1/4)
+			}
+		}
+	}
+} -> measure11L
+
+sync{
+	measure11L
+	measure11R
+} -> measure11
+
+seq{
+	sync{
+		seq{
+			sync{
+				D(5,1/4)
+				B(4,1/4)
+			}
+			sync{
+				D(5,1/4)
+				B(4,1/4)
+			}
+			sync{
+				C#(5,1/4)
+				A(4,1/4)
+				E(4,1/4)
+			}
+			sync{
+				C#(5,1/4)
+				A#(4,1/4)
+				E(4,1/4)
+				F#(4,1/4)
+			}
+		}
+		seq{
+			G(5,1/8)
+			A(5,1/8)
+			G(5,1/8)
+			F#(5,1/16)
+			E(5,1/4.)
+			D(5,1/8)
+			E(5,1/16)
+		}
+	}
+} -> measure12R
+
+seq{
+	volume 80
+	sync{
+		seq{
+			E(2,1/2)
+			A(2,1/4)
+			A#(2,1/4)
+		}
+		seq{
+			G(3,1/8)
+			B(2,1/8)
+			sync{
+				G(4,1/4)
+				D(4,1/4)
+				B(3,1/4)
+			}
+			A(3,1/8)
+			E(3,1/8)
+			A#(3,1/8)
+			F#(3,1/8)
+		}
+	}
+} -> measure12L
+
+sync{
+	measure12L
+	measure12R
+} -> measure12
+
+seq{
+	sync{	
+		F#(5,1/4)
+		D(5,1/4)
+		B(4,1/4)
+	}
+	F#(5,1/8)
+	E(5,1/16)
+	D(5,3/16)
+	B(4,1/8)
+	D(5,1/8)
+	E(5,1/8)
+
+} -> measure13R
+
+seq{
+	volume 80
+	sync{
+		seq{
+			B(2,1/2)
+			A#(2,1/2)
+		}
+
+		seq{
+			rest(1/16)
+			F#(3,1/16)
+			B(3,1/16)
+			C#(4,1/16)
+			D(4,1/4)
+			F#(3,1/16)
+			A#(3,1/16)
+			C#(4,1/16)
+			F#(4,1/16)
+		}
+	}
+} -> measure13L
+
+sync{
+	measure13L
+	measure13R
+} -> measure13
+
+seq{
+	sync{
+		F#(5,1/8)
+		D(5,1/8)
+		A(4,1/8)
+	}
+	B(5,1/16)
+	F#(5,1/8)
+	E(5,1/8)
+	D(5,5/16)
+	D(5,1/8)
+	E(5,1/16)
+} -> measure14R
+
+seq{
+	volume 80
+	sync{
+		seq{
+			A(2,1/2)
+			G#(2,1/2)
+		}
+		seq{
+			rest(1/16)
+			F#(3,1/16)
+			A(3,1/16)
+			C#(4,1/16)
+			D(4,1/4)
+			E(3,1/16)
+			G#(3,1/16)
+			B(3,1/16)
+			E(4,1/4)
+		}
+	}
+} -> measure14L
+
+sync{
+	measure14L
+	measure14R
+} -> measure14

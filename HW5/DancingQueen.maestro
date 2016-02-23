@@ -1,0 +1,329 @@
+/**
+ * Dancing Queen.maestro
+ * @author Clarisse Poblete
+ * @20160219
+ */
+play{
+	bpm 110
+
+	intro
+	chorus
+	chorusEndFinal
+}
+
+// Intro
+
+seq{
+	rest(1/16)
+	A(4, 1/16)
+	A(4, 1/8)
+	rest(1/16)
+	B(4, 1/16)
+	B(4, 1/8)
+} -> intro_baba
+
+seq{
+	seq{
+		E(5, 3/4)
+		D(5, 1/4)
+
+		F(5, 3/4)
+		E(5, 1/16)
+		D(5, 1/8)
+		C(5, 1/16)
+
+		D(5, 1/8.)
+		E(5, 3/16)
+		E(5, 5/16)
+		C(5, 1/16)
+		C(5, 1/8.)
+		B(4, 1/16)
+
+		B(4, 1/8.)
+		A(4, 1/16)
+		A(4, 1/4)
+		intro_baba
+	} -> intro_S1_1
+
+	intro_S1_1[1~8]
+	E(5, 1/4.)
+	D(5, 1/4)
+
+	E(5, 1/16)
+	D(5, 1/16)
+	C(5, 5/8)
+} -> intro_S1
+
+seq{
+	volume 90
+	seq{
+		seq{
+			C(5, 1/16)
+			C(5, 1/8.)
+			C(5, 1/8.)
+			C(5, 3/16)
+			C(5, 1/4.)
+		} -> intro_S2_1
+
+		intro_S2_1
+
+		intro_S2_1[1~4]
+		rest(1/16)
+		G(4, 1/16)
+		G(4, 1/8.)
+		G(4, 1/16)
+
+		G(4, 1/8.)
+		F(4, 1/16)
+		F(4, 1/4)
+		intro_baba - 4
+
+		intro_S2_1 * 2
+	} -> intro_S2_2
+
+	seq{
+		B(4, 1/8.)
+		C(5, 3/16)
+		C(5, 5/8)
+
+		A(4, 1/8.)
+		A(4, 1/8.)
+		G(4, 1/4.)
+	} -> intro_S2_3
+} -> intro_S2
+
+seq{
+	volume 90
+	intro_S2_2 - 5
+
+	intro_S2_3[1] - 4
+	intro_S2_3[2~3] - 5
+	intro_S2_3[4~5] - 4
+	intro_S2_3[6] - 3
+} -> intro_A
+
+seq{
+	volume 90
+	seq{
+		C(4, 1/8.)
+		C(4, 1/8.)
+		C(4, 1/4)
+		G(3, 1/16)
+		A(3, 1/16)
+		C(4, 1/4)
+
+		C(4, 1/8.)
+		C(4, 1/8.)
+		C(4, 1/4)
+		A(3, 1/16)
+		A(3, 1/16)
+		G(3, 1/8)
+		G(3, 1/8)
+	} -> intro_CA_1
+
+	intro_CA_1 * 2
+
+	intro_CA_1[1~3]
+	C(4, 1/16)
+	C(4, 1/16)
+	C(4, 1/8)
+	B(3, 1/8)
+
+	A(3, 1/8.)
+	A(3, 1/8.)
+	G(3, 1/4)
+	G(3, 1/8)
+	D(3, 1/16)
+	E(3, 1/16)
+	F(3, 1/8)
+} -> intro_CA
+
+sync{
+	intro_S1
+	intro_S2
+	intro_A
+	intro_CA
+} -> intro
+
+// Chorus
+
+seq{
+	E(5, 1/4)
+	D(5, 1/8)
+	D(5, 5/8)
+
+	E(5, 1/4)
+	D(5, 1/8)
+	D(5, 1/4)
+	E(5, 1/4.)
+
+	seq{
+		C(5, 1/8.)
+		D(5, 1/8.)
+		B(4, 1/8)
+	} * 2
+
+	C(5, 1/16)
+	B(4, 1/16)
+	A(4, 1/4.)
+	E(5, 1/8)
+	D(5, 1/16)
+	E(5, 1/16)
+	D(5, 1/16)
+	C(5, 1/8.)
+
+	B(4, 1/8.)
+	C(5, 1/16)
+	rest(1/8)
+	C(5, 5/8)
+
+	B(4, 1/8.)
+	C(5, 1/16)
+	rest(1/8)
+	C(5, 1/4.)
+	D(5, 1/16)
+	C(5, 1/8)
+	C(5, 1/16)
+} -> chorus_S1
+
+seq{
+	volume 90
+	chorus_S1[1] - 5
+	chorus_S1[2~3] - 3
+
+	chorus_S1[4] - 5
+	chorus_S1[5] - 3
+	chorus_S1[6] > 3 < 2 - 3
+
+	C(5, 1/8)
+	B(4, 1/8)
+
+	seq{
+		G(4, 1/8.)
+		G(4, 1/8.)
+		G(4, 1/8)
+	} * 2 -> chorus_S2_1
+
+	chorus_S2_1 + 2
+
+	A(4, 1/8.)
+	A(4, 1/16)
+	rest(1/8)
+	A(4, 5/8)
+
+	A(4, 1/8.)
+	A(4, 1/16)
+	rest(1/8)
+	A(4, 1/4.)
+	A(4, 1/16)
+	A(4, 1/8)
+	A(4, 1/16)
+} -> chorus_S2
+
+seq{
+	volume 90
+	chorus_S2[1~2] - 4
+
+	chorus_S2[3~9] - 3
+
+	chorus_S2[10~20] - 4
+} -> chorus_A
+
+seq{
+	volume 90
+	G(3, 1/8.)
+	G(3, 1/8.)
+	G(3, 1/8)
+	rest(1/16)
+	G(3, 1/16)
+	G(3, 1/8)
+	G(3, 1/16)
+	D(3, 1/16)
+	D#(3, 1/8)
+
+	E(3, 1/8.)
+	E(3, 1/8.)
+	E(3, 1/8)
+	rest(1/16)
+	E(3, 1/16)
+	F(3, 1/8)
+	F#(3, 1/8)
+	G(3, 1/16)
+	G#(3, 1/16)
+
+	A(3, 1/8.)
+	A(3, 1/8.)
+	A(3, 1/8)
+	rest(1/16)
+	A(3, 1/16)
+	A(3, 1/8)
+	A(3, 1/16)
+	G(3, 1/8.)
+
+	Gb(3, 1/8.)
+	Gb(3, 1/8.)
+	Gb(3, 1/8)
+	rest(1/16)
+	Gb(3, 1/16)
+	D(3, 1/8)
+	D(3, 1/16)
+	Gb(3, 1/8.)
+
+	F(3, 1/8.)
+	F(3, 1/16)
+	rest(1/8)
+	F(3, 1/4)
+	F(3, 1/8.)
+	E(3, 1/8.)
+
+	D(3, 1/8.)
+	D(3, 1/16)
+	rest(1/8)
+	D(3, 1/8.)
+	D(3, 1/8)
+	E(3, 1/8)
+	D(3, 1/8)
+} -> chorus_CA
+
+sync{
+	chorus_S1
+	chorus_S2
+	chorus_A
+	chorus_CA
+} -> chorus
+
+// Chorus Ending (End of Whole Song)
+
+seq{
+	B(4, 1/8.)
+	C(5, 1/8.)
+	C(5, 5/8)
+} -> chorusEndFinal_S1
+
+seq{
+	volume 90
+	G(4, 1/8.)
+	G(4, 1/8.)
+	G(4, 5/8)
+} -> chorusEndFinal_S2
+
+seq{
+	volume 90
+	E(4, 1/8.)
+	E(4, 1/8.)
+	E(4, 5/8)
+} -> chorusEndFinal_A
+
+seq{
+	volume 90
+	C(3, 1/8.)
+	C(3, 1/8.)
+	C(3, 5/8)
+} -> chorusEndFinal_CA
+
+sync{
+	chorusEndFinal_S1
+	chorusEndFinal_S2
+	chorusEndFinal_A
+	chorusEndFinal_CA
+} -> chorusEndFinal

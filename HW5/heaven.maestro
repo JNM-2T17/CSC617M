@@ -1,0 +1,57 @@
+/**
+ * heaven.maestro
+ * @author Marc San Pedro
+ * @20160219
+ */
+ play{
+	sync{
+		heavenRight
+		heavenRight + 4
+		heavenRight + 7
+	}
+	sync {
+		heavenLeft
+		heavenRight
+	}
+} 
+seq{
+	D(4, 1/4)
+	F(4, 1/4)
+	E(4, 1/4)
+	D(4, 1/4)
+	C#(4, 1/4)
+	D(4, 1/8)
+	E(4, 1/8)
+	D(4, 1/4)
+	A(3, 1/4)
+	A#(3, 1/4)
+	G(3, 1/4)
+	A(3, 1/4)
+	F(3, 1/4)
+	G(3, 1/4)
+	A(3, 1/8)
+	A#(3, 1/8)
+	C#(4, 1/4)
+	A(3, 1/4)
+} -> heavenRight
+
+seq {
+	A#(5, 1/4)
+	F(5, 1/4)
+	E(5, 1/4)
+	D(5, 1/4)
+	C#(5, 1/4)
+	D(5, 1/8)
+	E(5, 1/8)
+	D(5, 1/4)
+	A(4, 1/4)
+	A#(4, 1/4)
+	G(4, 1/4)
+	A(4, 1/4)
+	F(4, 1/4)
+	G(4, 1/4)
+	A(4, 1/8)
+	A#(4, 1/8)
+	C#(5, 1/4)
+	A(4, 1/4)
+} -> heavenLeft
