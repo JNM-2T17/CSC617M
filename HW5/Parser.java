@@ -23,32 +23,41 @@ public class Parser {
 		boolean error = false;
 		boolean accepted = false;
 
-		while(!accepted) {
+		while(currIndex < tokens.size() && !accepted) {
 			State topState = states.peek();
 			Token currToken = tokens.get(currIndex);
 
 			Action act = topState.getAction(currToken.type());
 
 			if( act == null ) {
-				System.out.println("Error: Unexpected token " + currToken);
+				error = true;
 				// System.out.println(topState);
-				printStack();
-				while(!topState.hasFollow()) {
-					topState = states.pop();
-					parsing.pop();
-				}
-				String recover;
+				// printStack();
+				// while(!topState.hasFollow()) {
+				// 	topState = states.pop();
+				// 	parsing.pop();
+				// }
+				// String recover;
+				// do {
+				// 	recover = topState.getRecovery(currToken.type());
+				// 	if( recover == null ) {
+				// 		currIndex++;
+				// 	} else {
+				// 		NonTerminal reco = ntf.getNonTerminal(recover,"");
+				// 		parsing.push(reco);
+				// 		states.push(parseTable[topState.getGoto(reco.type())]);
+				// 	}
+				// } while(currIndex < tokens.size() && recover == null);
+				// if( currIndex == tokens.size() ) {
+				// 	break;
+				// }
 				do {
-					recover = topState.getRecovery(currToken.type());
-					if( recover == null ) {
-						currIndex++;
-					} else {
-						NonTerminal reco = ntf.getNonTerminal(recover,"");
-						parsing.push(reco);
-						states.push(parseTable[topState.getGoto(reco.type())]);
-					}
-				} while(currIndex < tokens.size() && recover == null);
-			} else {
+					System.out.println("Error: Unexpected token " + currToken);
+					currIndex++;
+					currToken = tokens.get(currIndex);
+					act = topState.getAction(currToken.type());
+				} while( act == null && currIndex < tokens.size() );
+			} if(act != null ) {//else {
 				switch(act.type()) {
 					case "ACCEPT":
 						accepted = true;
@@ -88,6 +97,8 @@ public class Parser {
 						break;
 					default:	
 				}
+			} else {
+				break;
 			}
 		}
 
