@@ -28,6 +28,8 @@ public class Parser {
 			Token currToken = tokens.get(currIndex);
 
 			Action act = topState.getAction(currToken.type());
+			// printStack();
+				
 
 			if( act == null ) {
 				error = true;

@@ -1,0 +1,1980 @@
+play {
+    bpm 90
+    rest(1/4)
+    sync {
+        seq {
+            CsGsEGs_Up * 4
+            DsGsDsGs_Up * 4
+        }
+        seq {
+            CsGsCsGs_Low * 4
+            BsGsBsGs_Low * 4
+        }
+    }
+    sync {
+        seq {
+            EsGsEsGs_Up * 4
+            FsAFsA_Up * 4
+        }
+        seq {
+            BGsBGs_Low * 4
+            ACsFsCs_Low * 4
+        }
+    }
+    sync {
+        seq {
+            GsCsGsCs_Up * 2
+            ACsACs_Up * 2
+            BFsBFs_Up * 2
+            GsEBE_Up * 2
+        }
+        seq {
+            EsCsEsCs_Low * 2
+            FsCsFsCs_Low * 2
+            DsBDsB_Low * 2
+            EBEB_Low * 2
+        }
+    }
+    sync {
+        seq {
+            ADAD_Up * 2
+            FsDAD_Up * 2
+            EsBsGsBs_Up
+            DsBsGsBs_Up
+            GsDsBsDs_Up
+            BsDsBsDs_Up
+        }
+        seq {
+            FsADA_Low * 4
+            GsDsGsDs_Low * 4
+        }
+    }
+    sync {
+        Measure5_Up
+        Measure5_Low
+    }
+    sync {
+        Measure6_Up
+        Measure6_Low
+    }
+    sync {
+        Measure7_Up
+        Measure7_Low
+    }
+    sync {
+        Measure8_Up
+        Measure8_Low
+    }
+    sync {
+        Measure9_Up
+        Measure9_Low
+    }
+    sync {
+        Measure10_Up
+        Measure10_Low
+    }
+    sync {
+        Measure11_Up
+        Measure11_Low
+    }
+    sync {
+        Measure12_Up
+        Measure12_Low
+    }
+    sync {
+        Measure13_Up
+        Measure13_Low
+    }
+    sync {
+        Measure14_Up
+        Measure14_Low
+    }
+    sync {
+        Measure15_Up
+        Measure15_Low
+    }
+    sync {
+        Measure16_Up
+        Measure16_Low
+    }
+    sync {
+        Measure17_Up
+        Measure17_Low
+    }
+    sync {
+        Measure18_Up
+        Measure18_Low
+    }
+    sync {
+        Measure19_Up
+        Measure19_Low
+    }
+    sync {
+        Measure20_Up
+        Measure20_Low
+    }
+    sync {
+        Measure21_Up
+        Measure21_Low
+    }
+    sync {
+        Measure22_Up
+        Measure22_Low
+    }
+    sync {
+        Measure23_Up
+        Measure23_Low
+    }
+    sync {
+        Measure24_Up
+        Measure24_Low
+    }
+    Measure25
+    sync {
+        Measure26_Up
+        Measure26_Low
+    }
+    sync {
+        Measure27_Up
+        Measure27_Low
+    }
+    Measure28
+    sync {
+        Measure29_Up
+        Measure29_Low
+    }
+    sync {
+        Measure30_Up
+        Measure30_Low
+    }
+    sync {
+        Measure31_Up
+        Measure31_Low
+    }
+    Measure32
+    sync {
+        Measure33_Up
+        Measure33_Low
+    }
+    sync {
+        Measure34_Up
+        Measure34_Low
+    }
+    sync {
+        Measure35_Up
+        Measure35_Low
+    }
+    sync {
+        Measure36_Up
+        Measure36_Low
+    }
+    sync {
+        Measure37_Up
+        Measure37_Low
+    }
+    sync {
+        Measure38_Up
+        Measure38_Low
+    }
+    sync {
+        Measure39_Up
+        Measure39_Low
+    }
+    sync {
+        Measure40_Up
+        Measure40_Low
+    }
+    sync {
+        Measure41_Up
+        Measure41_Low
+    }
+    sync {
+        Measure42_Up
+        Measure42_Low
+    }
+    sync {
+        Measure43_Up
+        Measure43_Low
+    }
+    rest(1/4)
+}
+
+seq {
+    C#(5,1/32)
+    G#(4,1/32)
+    E(4,1/32)
+    G#(4,1/32)
+} -> CsGsEGs_Up
+
+seq {
+    D#(5,1/32)
+    G#(4,1/32)
+    D#(4,1/32)
+    G#(4,1/32)
+} -> DsGsDsGs_Up
+
+seq {
+    C#(3,1/32)
+    G#(3,1/32)
+    C#(4,1/32)
+    G#(3,1/32)
+} -> CsGsCsGs_Low
+
+seq {
+    B#(2,1/32)
+    G#(3,1/32)
+    B#(3,1/32)
+    G#(3,1/32)
+} -> BsGsBsGs_Low
+
+seq {
+    E#(5,1/32)
+    G#(4,1/32)
+    E#(4,1/32)
+    G#(4,1/32)
+} -> EsGsEsGs_Up
+
+seq {
+    F#(5,1/32)
+    A(4,1/32)
+    F#(4,1/32)
+    A(4,1/32)
+} -> FsAFsA_Up
+
+seq {
+    B(2,1/32)
+    G#(3,1/32)
+    B(3,1/32)
+    G#(3,1/32)
+} -> BGsBGs_Low
+
+seq {
+    A(2,1/32)
+    C#(3,1/32)
+    F#(3,1/32)
+    C#(3,1/32)
+} -> ACsFsCs_Low
+
+seq {
+    G#(5,1/32)
+    C#(5,1/32)
+    G#(4,1/32)
+    C#(5,1/32)
+} -> GsCsGsCs_Up
+
+seq {
+    A(5,1/32)
+    C#(5,1/32)
+    A(4,1/32)
+    C#(5,1/32)
+} -> ACsACs_Up
+
+seq {
+    B(5,1/32)
+    F#(5,1/32)
+    B(4,1/32)
+    F#(5,1/32)
+} -> BFsBFs_Up
+
+seq {
+    G#(5,1/32)
+    E(5,1/32)
+    B(4,1/32)
+    E(5,1/32)
+} -> GsEBE_Up
+
+seq {
+    E#(2,1/32)
+    C#(3,1/32)
+    E#(3,1/32)
+    C#(3,1/32)
+} -> EsCsEsCs_Low
+
+seq {
+    F#(2,1/32)
+    C#(3,1/32)
+    F#(3,1/32)
+    C#(3,1/32)
+} -> FsCsFsCs_Low
+
+seq {
+    D#(2,1/32)
+    B(2,1/32)
+    D#(3,1/32)
+    B(2,1/32)
+} -> DsBDsB_Low
+
+seq {
+    E(2,1/32)
+    B(2,1/32)
+    E(3,1/32)
+    B(2,1/32)
+} -> EBEB_Low
+
+seq {
+    A(5,1/32)
+    D(5,1/32)
+    A(4,1/32)
+    D(5,1/32)
+} -> ADAD_Up
+
+seq {
+    F#(5,1/32)
+    D(5,1/32)
+    A(4,1/32)
+    D(5,1/32)
+} -> FsDAD_Up
+
+seq {
+    E#(5,1/32)
+    B#(4,1/32)
+    G#(4,1/32)
+    B#(4,1/32)
+} -> EsBsGsBs_Up
+
+seq {
+    D#(5,1/32)
+    B#(4,1/32)
+    G#(4,1/32)
+    B#(4,1/32)
+} -> DsBsGsBs_Up
+
+seq {
+    G#(5,1/32)
+    D#(5,1/32)
+    B#(4,1/32)
+    D#(5,1/32)
+} -> GsDsBsDs_Up
+
+seq {
+    B#(5,1/32)
+    D#(5,1/32)
+    B#(4,1/32)
+    D#(5,1/32)
+} -> BsDsBsDs_Up
+
+seq {
+    F#(2,1/32)
+    A(2,1/32)
+    D(3,1/32)
+    A(2,1/32)
+} -> FsADA_Low
+
+seq {
+    G#(2,1/32)
+    D#(2,1/32)
+    G#(3,1/32)
+    D#(2,1/32)
+} -> GsDsGsDs_Low
+
+sync {
+    E(5,1/16)
+    E(6,1/16)
+} -> Dyad_EE
+    
+sync {
+    D#(5,1/8)
+    G#(5,1/8)
+    B(5,1/8)
+    D#(6,1/8)
+} -> Chord_DsGsBDs
+    
+sync {
+    B(4,1/8)
+    D#(5,1/8)
+    G#(5,1/8)
+    B(5,1/8)
+} -> Chord_BDsGsB
+
+seq {
+    sync {
+        C#(5,1/8)
+        E(5,1/8)
+        G#(5,1/8)
+        C#(6,1/8)
+    } -> Chord_CsEGsCs
+    Dyad_EE
+    Chord_DsGsBDs
+    Chord_BDsGsB
+    Chord_CsEGsCs < 2 > 9
+} -> Measure5_Up
+    
+seq {
+    sync {
+        E(3,1/16)
+        E(4,1/16)
+    } -> SubDyad_EE
+    sync {
+        F#(3,1/16)
+        F#(4,1/16)
+    } -> SubDyad_FsFs
+    SubDyad_EE
+    sync {
+        D#(3,1/16)
+        D#(4,1/16)
+    } -> SubDyad_DsDs
+    sync {
+        C#(3,1/16)
+        C#(4,1/16)
+    } -> SubDyad_CsCs
+    SubDyad_DsDs
+    SubDyad_CsCs
+    sync {
+        B(2,1/16)
+        B(3,1/16)
+    } -> SubDyad_BB
+} -> Dyads
+    
+seq {
+    sync {
+        C#(2,1/2)
+        G#(2,1/2)
+        C#(3,1/2)
+    }
+    Dyads
+} -> Measure5_Low
+
+seq {
+    SubDyad_CsCs
+    SubDyad_DsDs
+    SubDyad_CsCs
+    SubDyad_BB
+    sync {
+        A(2,1/16)
+        A(3,1/16)
+    } -> SubDyad_AA
+    SubDyad_BB
+    SubDyad_AA
+    sync {
+        G#(2,1/16)
+        G#(3,1/16)
+    } -> SubDyad_GsGs
+} -> Dyads2
+
+seq {
+    sync {
+        C#(5,1/8)
+        E(5,1/8)
+        A(5,1/8)
+        C#(6,1/8)
+    } -> Chord_CsEACs
+    Dyad_EE
+    Chord_DsGsBDs
+    Chord_BDsGsB
+    Chord_CsEACs < 2 > 9
+} -> Measure6_Up
+    
+seq {
+    sync {
+        A(1,1/2)
+        E(2,1/2)
+        A(2,1/2)
+    }
+    Dyads2
+} -> Measure6_Low
+
+sync {
+    D#(5,1/8)
+    F#(5,1/8)
+    B(5,1/8)
+    D#(6,1/8)
+} -> Chord_DsFsBDs
+    
+sync {
+    B(4,1/8)
+    D#(5,1/8)
+    F#(5,1/8)
+    B(5,1/8)
+} -> Chord_BDsFsB
+    
+seq {
+    SubDyad_AA + 12
+    SubDyad_BB + 12
+    SubDyad_AA + 12
+    SubDyad_GsGs + 12
+    SubDyad_FsFs
+    SubDyad_GsGs + 12
+    SubDyad_FsFs
+    SubDyad_EE
+} -> Dyads3
+    
+seq {
+    sync {
+        C#(5,1/8)
+        F#(5,1/8)
+        A(5,1/8)
+        C#(6,1/8)
+    } -> Chord_CsFsACs
+    Dyad_EE
+    Chord_DsFsBDs //can be DsGsBDs with []
+    Chord_BDsFsB //can be BDsGsB with []
+    Chord_CsFsACs < 2 > 9
+} -> Measure7_Up
+    
+seq {
+    sync {
+        F#(2,1/2)
+        C#(3,1/2)
+        F#(3,1/2)
+    }
+    Dyads3
+} -> Measure7_Low
+
+sync {
+    C#(5,1/8)
+    G#(5,1/8)
+    C#(6,1/8)
+} -> Chord_CsGsCs
+    
+seq {
+    sync {
+        B#(4,1/8)
+        D#(5,1/8)
+        G#(5,1/8)
+        B#(5,1/8)
+    } -> Chord_BsDsGsBs
+    Dyad_EE - 1
+    Chord_CsGsCs
+    Chord_BsDsGsBs
+    sync {
+        G#(5,9/16)
+        B#(5,9/16)
+        D#(6,9/16)
+        G#(6,9/16)
+    } -> Chord_GsBsDsGs
+} -> Measure8_Up
+
+seq {
+    SubDyad_GsGs
+    SubDyad_AA
+    SubDyad_AA + 1
+    SubDyad_BB
+    SubDyad_BB + 1
+    SubDyad_CsCs
+    SubDyad_DsDs - 1
+    SubDyad_DsDs
+} -> Dyads4
+    
+seq {
+    sync {
+        G#(2,1/2)
+        D#(3,1/2)
+        G#(3,1/2)
+    }
+    Dyads4
+} -> Measure8_Low
+    
+seq {
+    sync {
+        G#(4,1/8)
+        C#(5,1/8)
+        E(5,1/8)
+        G#(5,1/8)
+    }
+    SubDyad_CsCs + 12
+    sync {
+        F#(4,1/8)
+        C#(5,1/8)
+        F#(5,1/8)
+    }
+    SubDyad_DsDs + 12 > 2
+    sync {
+        E(4,1/8)
+        G#(4,1/8)
+        C#(5,1/8)
+        E(5,1/8)
+    }
+    SubDyad_CsCs + 12 > 2
+    sync {
+        D#(4,1/8)
+        G#(4,1/8)
+        D#(5,1/8)
+    }
+    sync {
+        B(3,1/8.)
+        D#(4,1/8.)
+        F#(4,1/8.)
+        B(4,1/8.)
+    } -> Chord_BDsFsB_Up
+} -> Measure9_Up
+    
+seq {
+    seq {
+        C#(2,1/32)
+        C#(3,1/32)
+        G#(2,1/32)
+        C#(3,1/32)
+    } -> CsCsGsCs_Low * 7
+    seq {
+        B(1,1/32)
+        B(2,1/32)
+        F#(2,1/32)
+        B(2,1/32)
+    } -> BBFsB_Low
+} -> Measure9_Low
+    
+seq {
+    Measure9_Up [1~5]
+    SubDyad_DsDs + 12 > 2
+    sync {
+        C#(4,1/8)
+        E(4,1/8)
+        G#(4,1/8)
+        C#(5,1/8)
+    }
+    Chord_BDsFsB_Up
+} -> Measure10_Up
+    
+seq {
+    seq {
+        A(1,1/32)
+        A(2,1/32)
+        E(2,1/32)
+        A(2,1/32)
+    } * 7
+    BBFsB_Low
+} -> Measure10_Low
+    
+seq {
+    sync {
+        G#(5,1/8)
+        B(5,1/8)
+        E(6,1/8)
+        G#(6,1/8)
+    }
+    Dyad_EE
+    sync {
+        F#(5,1/8)
+        B(6,1/8)
+        F#(6,1/8)
+    }
+    SubDyad_DsDs + 24 > 2
+    sync {
+        E(5,1/8)
+        G#(5,1/8)
+        B(5,1/8)
+        E(6,1/8)
+    }
+    SubDyad_CsCs + 24 > 2
+    sync {
+        D#(5,1/8)
+        G#(5,1/8)
+        B(5,1/8)
+        D#(6,1/8)
+    }
+    sync {
+        B(4,1/8.)
+        E(5,1/8.)
+        G#(5,1/8.)
+        B(5,1/8.)
+    }
+} -> Measure11_Up
+    
+seq {
+    seq {
+        E(2,1/32)
+        E(3,1/32)
+        B(2,1/32)
+        E(3,1/32)
+    } * 8
+} -> Measure11_Low
+    
+seq {
+    sync {
+        F##(5,1/8)
+        A#(5,1/8)
+        D#(6,1/8)
+        F##(6,1/8)
+    }
+    SubDyad_DsDs + 24
+    sync {
+        E(5,1/8)
+        F##(5,1/8)
+        A#(5,1/8)
+        E(6,1/8)
+    }
+    SubDyad_CsCs + 24 > 2
+    sync {
+        D#(5,1/8)
+        F##(5,1/8)
+        A(5,1/8)
+        D#(6,1/8)
+    }
+    SubDyad_CsCs + 24 > 2
+    sync {
+        B(4,1/8)
+        D#(5,1/8)
+        F##(5,1/8)
+        B(5,1/8)
+    }
+    sync {
+        A#(4,1/8.)
+        D#(5,1/8.)
+        F##(5,1/8.)
+        A#(5,1/8.)
+    }
+} -> Measure12_Up
+    
+seq {
+    seq {
+        D#(2,1/32)
+        D#(3,1/32)
+        A#(2,1/32)
+        D#(3,1/32)
+    } * 8
+} -> Measure12_Low
+    
+seq {
+    sync {
+        D#(4,1/8)
+        G#(4,1/8)
+        B(4,1/8)
+        D#(5,1/8)
+    }
+    B(3,1/16)
+    C#(4,1/8)
+    A#(3,1/8)
+    B(3,1/8)
+    G#(3,1/8)
+    A#(3,1/8)
+    sync {
+        F#(3,1/8.)
+        seq {
+            rest(1/16)
+            seq {
+                C#(4,1/32)
+                F#(4,1/32)
+                A#(4,1/32)
+                C#(5,1/32)
+            } -> Cs32
+        }
+    }
+} -> Measure13_Up
+    
+seq {
+    sync {
+        G#(3,1/16)
+        seq {
+            G#(2,1/16)
+            D#(3,1/16)
+        } -> SubDyad_GsDs
+    }
+    SubDyad_GsDs * 7
+} -> Measure13_Low
+    
+seq {
+    Measure13_Up [1~5]
+    A#(3,1/8)
+    G#(3,1/8)
+    Measure13_Up [8]
+} -> Measure14_Up
+    
+seq {
+    sync {
+        E(3,1/16)
+        seq {
+            E(2,1/16)
+            B(2,1/16)
+        } -> SubDyad_EB
+    }
+    SubDyad_EB * 7
+} -> Measure14_Low
+    
+seq {
+    sync {
+        Measure13_Up [1~7] + 12
+        seq {
+            rest(1/8)
+            G#(4,1/16)
+            A#(4,1/8)
+            F#(4,1/8)
+            G#(4,1/8)
+            D#(4,1/8)
+            F#(4,1/8)
+        }
+    }
+    sync {
+        D#(3,1/8.)
+        Measure13_Up [8] + 12
+    }
+} -> Measure15_Up
+    
+seq {
+    seq {
+        G#(2,1/16)
+        sync {
+            D#(3,1/16)
+            G#(3,1/16)
+        }
+    } * 8
+} -> Measure15_Low
+    
+seq {
+    sync {
+        seq {
+            Measure14_Up [1~3] + 12
+            F#(4,1/8.)
+        }
+        seq {
+            rest(1/8)
+            G#(4,1/16)
+            A#(4,1/8)
+            F#(4,1/8)
+            G#(4,1/8)
+            F#(4,1/8)
+            D#(4,1/8)
+            D#(4,1/8.)
+        }
+    }
+} -> Measure16_Up
+    
+seq {
+    seq {
+        E(2,1/16)
+        sync {
+            B(2,1/16)
+            E(3,1/16)
+        }
+    } -> SubDyad_EBE * 6
+    sync {
+        F#(2,1/8)
+        F#(1,1/8)
+    }
+    sync {
+        F#(2,1/8)
+        C#(3,1/8)
+        F#(3,1/8)
+        
+    }
+} -> Measure16_Low
+    
+seq {
+    sync {
+        seq {
+            Measure13_Up [1] + 12 -> Chord_DGsBDs
+            Measure13_Up [2~7] + 24
+            F#(5,1/8.)
+        } -> M17_1
+        seq {
+            rest(1/8)
+            D#(5,1/8) * 6
+            Cs32 + 12
+        } -> M17_2
+    }
+} -> Measure17_Up
+    
+seq {
+    seq {
+        G#(2,1/16)
+        D#(3,1/16)
+        G#(3,1/16)
+        B(3,1/16)
+    } * 3
+    SubDyad_GsDs
+    SubDyad_GsDs - 2
+} -> Measure17_Low
+    
+seq {
+    sync {
+        seq {
+            Chord_DGsBDs
+            Measure13_Up [2~5] + 24
+            Measure14_Up [2~3] + 24
+            F#(5,1/8.)
+        }
+        M17_2
+    }
+} -> Measure18_Up
+    
+seq {
+    seq {
+        E(2,1/16)
+        B(3,1/16)
+        E(3,1/16)
+        G#(3,1/16)
+    } * 3
+    SubDyad_EB
+    SubDyad_EB + 2
+} -> Measure18_Low
+    
+seq {
+    sync {
+        sync {
+            M17_1
+            seq {
+                rest(1/8)
+                Measure13_Up [2~7] + 12
+            }
+        }
+        seq {
+            rest(1/16)
+            D#(5,1/16) * 13
+            Cs32 + 12
+        }
+    }
+} -> Measure19_Up
+    
+seq {
+    seq {
+        G#(2,1/16)
+        G#(3,1/16)
+        sync {
+            B(3,1/16)
+            D#(3,1/16)
+        }
+        G#(4,1/16)
+    } * 3
+    G#(2,1/16)
+    G#(3,1/16)
+    F#(2,1/16)
+    F#(3,1/16)
+} -> Measure19_Low
+    
+seq {
+    sync {
+        sync {
+            seq {
+                Chord_DGsBDs
+                Measure13_Up [2~5] + 24
+                Measure14_Up [2~3] + 24
+                F##(5,1/8.)
+            }
+            seq {
+                rest(1/8)
+                Measure13_Up [2~5] + 12
+                Measure14_Up [2~3] + 12
+                F##(4,1/8.)
+            }
+        }
+        seq {
+            rest(1/16)
+            D#(5,1/16) * 13
+            D#(5,1/8)
+        }
+    }
+} -> Measure20_Up
+    
+seq {
+    seq {
+        E(2,1/16)
+        E(3,1/16)
+        sync {
+            G#(3,1/16)
+            B(3,1/16)
+        }
+        E(4,1/16)
+    } * 3
+    sync {
+        D#(2,1/4)
+        D#(3,1/4)
+    }
+} -> Measure20_Low
+    
+seq {
+    sync {
+        E(4,1/8.)
+        G#(4,1/8.)
+        B(4,1/8.)
+    }
+    G#(4,1/16)
+    G#(4,1/16)
+    G#(4,1/16)
+    A#(4,1/16)
+    B(4,1/16)
+    sync {
+        D#(4,1/16)
+        F##(4,1/16)
+        A#(4,1/16)
+    }
+    G#(4,1/16)
+    F##(4,1/4)
+    sync {
+        D#(4,1/16)
+        D#(5,1/16)
+    } * 2
+} -> Measure21_Up
+    
+seq {
+    E(2,1/16)
+    B(2,1/16)
+    E(3,1/16)
+    sync {
+        G#(3,1/8)
+        B(3,1/8)
+    }
+    E(3,1/16)
+    B(2,1/16)
+    E(2,1/16)
+    D#(2,1/16)
+    A#(2,1/16)
+    D#(3,1/16)
+    sync {
+        F##(3,1/8)
+        A#(3,1/8)
+    }
+    D#(3,1/16)
+    A#(2,1/16)
+    D#(2,1/16)
+    
+} -> Measure21_Low
+    
+seq {
+    sync {
+        G#(4,1/8)
+        B(4,1/8)
+        D#(5,1/8)
+        G#(5,1/8)
+    }
+    sync {
+        D#(4,1/16.)
+        D#(5,1/16.)
+    }
+    sync {
+        G#(4,1/32)
+        G#(5,1/32)
+    }
+    sync {
+        A#(4,1/8)
+        C#(5,1/8)
+        F#(5,1/8)
+        A#(5,1/8)
+    }
+    sync {
+        F#(4,1/16.)
+        F#(5,1/16.)
+    }
+    sync {
+        A#(4,1/32)
+        A#(5,1/32)
+    }
+    sync {
+        B(4,1/8)
+        D#(5,1/8)
+        F#(5,1/8)
+        B(5,1/8)
+    }
+    sync {
+        F#(4,1/16.)
+        F#(5,1/16.)
+    }
+    sync {
+        B(4,1/32)
+        B(5,1/32)
+    }
+    sync {
+        B#(4,1/8.)
+        D#(5,1/8.)
+        G#(5,1/8.)
+        B#(5,1/8.)
+    }
+    sync {
+        C#(5,1/8)
+        E(5,1/8)
+        G#(5,1/8)
+        C#(6,1/8)
+    } //has 1/16th of Measure23
+} -> Measure22_Up
+    
+seq {
+    sync {
+        G#(1,1/8)
+        G#(2,1/8)
+    }
+    sync {
+        B(2,1/8)
+        D#(3,1/8)
+        G#(3,1/8)
+    }
+    sync {
+        A#(1,1/8)
+        A#(2,1/8)
+    }
+    sync {
+        C#(3,1/8)
+        F#(3,1/8)
+        A#(3,1/8)
+    }
+    sync {
+        B(1,1/8)
+        B(2,1/8)
+    }
+    sync {
+        D#(3,1/8)
+        F#(3,1/8)
+        B(3,1/8)
+    }
+    sync {
+        B#(2,1/8)
+        B#(1,1/8)
+    }
+    sync {
+        G#(1,1/16)
+        G#(2,1/16)
+    }
+    sync {
+        C#(1,1/8)
+        C#(2,1/8)
+    } //has 1/16th of measure 23
+} -> Measure22_Low
+    
+seq {
+    //1/16th with measure 22
+    C#(5,1/16) * 2
+    G#(4,1/8)
+    C#(5,1/8)
+    sync {
+        B(4,1/8)
+        D#(5,1/8)
+        F#(5,1/8)
+        B(5,1/8)
+    }
+    B(4,1/16) * 2
+    F#(4,1/8)
+    B(4,1/8)
+    sync {
+        C#(5,1/8)
+        E(5,1/8)
+        A(5,1/8)
+        C#(5,1/8)
+    } //has 1/16th of measure 24
+} -> Measure23_Up
+    
+seq {
+    //1/16th with measure 22
+    C#(3,1/16)
+    E(3,1/16)
+    G#(3,1/16)
+    C#(4,1/16)
+    G#(3,1/16)
+    E(3,1/16)
+    sync {
+        B(1,1/8)
+        B(2,1/8)
+    }
+    B(2,1/16)
+    D#(3,1/16)
+    F#(3,1/16)
+    B(3,1/16)
+    F#(3,1/16)
+    D#(3,1/16)
+    sync {
+        A(1,1/8)
+        A(2,1/8)
+    } //has 1/16th of measure 24
+} -> Measure23_Low
+    
+seq {
+    //1/16th with measure 23
+    sync {
+        C#(5,1/8)
+        C#(6,1/8)
+    } -> M24_Sync1
+    M24_Sync1 < 2
+    sync {
+        A(4,1/8)
+        C#(5,1/8)
+        E(5,1/8)
+        A(5,1/8)
+    }
+    M24_Sync1 < 2 * 2
+    sync {
+        C#(5,1/8.)
+        D#(5,1/8.)
+        G#(5,1/8.)
+        C#(5,1/8.)
+    }
+    M24_Sync1 < 2 - 1
+    sync {
+        B#(4,1/4)
+        D#(5,1/4)
+        G#(5,1/4)
+        B#(5,1/4)
+    }
+} -> Measure24_Up
+    
+seq {
+    //1/16th with measure 23
+    A(2,1/16)
+    C#(3,1/16)
+    E(3,1/16)
+    A(3,1/16)
+    E(3,1/16)
+    C#(3,1/16)
+    A(2,1/16)
+    A(1,1/16)
+    G#(2,1/16)
+    B#(2,1/16)
+    D#(3,1/16)
+    G#(3,1/16)
+    B#(3,1/16)
+    D#(4,1/16)
+    G#(4,1/16)
+} -> Measure24_Low
+
+
+    
+seq {
+    A(6,1/32)
+    F#(6,1/32)
+    D#(6,1/32)
+    C(5,1/32)
+    A(5,1/32)
+    F#(5,1/32)
+    D#(5,1/32)
+    C(5,1/32)
+    A(4,1/40)
+    F#(4,1/40)
+    D#(4,1/40)
+    C(4,1/40)
+    A(3,1/40)
+    F#(3,1/48)
+    D#(3,1/48)
+    C(3,1/48)
+    G#(2,1/48)
+    D#(2,1/48)
+    G#(1,1/48)
+} -> Measure25
+    
+seq {
+    sync {
+        C#(5,1/16)
+        E(5,1/16)
+        G#(5,1/16)
+        C#(6,1/16)
+    }
+    SubDyad_CsCs + 24
+    SubDyad_EE + 24
+    sync {
+        D#(5,1/8)
+        G#(5,1/8)
+        B(5,1/8)
+        D#(6,1/8)
+    } -> M26_Sync1
+    SubDyad_BB + 24 * 2
+    sync {
+        C#(5,1/8)
+        E(5,1/8)
+        C#(6,1/8)
+        E(6,1/8)
+    }
+    SubDyad_CsCs + 24
+    SubDyad_EE + 24
+    M26_Sync1
+    SubDyad_BB + 24 > 3
+} -> Measure26_Up
+    
+seq {
+    sync {
+        C#(1,1/8)
+        C#(2,1/8)
+    }
+    C#(3,1/16)
+    sync {
+        E(3,1/8)
+        G#(3,1/8)
+        C#(3,1/8)
+    }
+    C#(3,1/16)
+    G#(2,1/16)
+    sync {
+        A(1,1/8)
+        A(2,1/8)
+    }
+    E(3,1/16)
+    A(3,1/16)
+    sync {
+        C#(4,1/8)
+        E(4,1/8)
+    }
+    A(3,1/16)
+    E(3,1/16)
+    A(2,1/16)
+} -> Measure26_Low
+    
+seq {
+    sync {
+        C#(5,1/16)
+        D#(5,1/16)
+        F#(5,1/16)
+        C#(6,1/16)
+    }
+    SubDyad_CsCs + 24
+    SubDyad_EE + 24
+    sync {
+        D#(5,1/8)
+        F#(5,1/8)
+        B(5,1/8)
+        D#(6,1/8)
+    } -> M26_Sync1
+    SubDyad_BB + 24 > 2
+    sync {
+        G#(4,1/8)
+        B(4,1/8)
+        E(5,1/8)
+        G#(5,1/8)
+    }
+    SubDyad_GsGs + 24
+    SubDyad_BB + 24
+    sync {
+        G#(4,1/8)
+        B(4,1/8)
+        D#(5,1/8)
+        G#(5,1/8)
+    }
+    SubDyad_BB + 24 > 3
+} -> Measure27_Up
+    
+seq {
+    sync {
+        B(1,1/8)
+        B(2,1/8)
+    }
+    B(2,1/16)
+    sync {
+        D#(3,1/8)
+        F#(3,1/8)
+        B(3,1/8)
+    }
+    B(2,1/16)
+    F#(2,1/16)
+    sync {
+        E(1,1/8)
+        E(2,1/8)
+    }
+    E(3,1/16)
+    sync {
+        G#(3,1/16)
+        B(3,1/16)
+    } -> M27_Sync1
+    sync {
+        D#(1,1/8)
+        D#(2,1/8)
+    }
+    D#(3,1/16)
+    M27_Sync1
+    D#(3,1/16)
+} -> Measure27_Low
+    
+sync {
+    Measure26_Up
+    Measure26_Low
+} -> Measure28
+    
+seq {
+    Measure27_Up [1~4]
+    SubDyad_CsCs + 24 > 2
+    sync {
+        B(4,1/8)
+        E(5,1/8)
+        G#(5,1/8)
+        B(5,1/8)
+    }
+    sync {
+        G#(5,1/8.)
+        B(5,1/8.)
+        E(6,1/8.)
+        G#(6,1/8.)
+    }
+    sync {
+        F#(5,1/4)
+        B#(5,1/4)
+        D#(6,1/4)
+        F#(6,1/4)
+    }
+} -> Measure29_Up
+    
+seq {
+    Measure27_Low [1~7]
+    sync {
+        G#(3,1/16)
+        B(3,1/16)
+        E(4,1/16)
+    }
+    E(3,1/16)
+    sync {
+        G#(2,1/8)
+        D#(3,1/8)
+        G#(3,1/8)
+    }
+    sync {
+        G#(1,1/8)
+        G#(2,1/8)
+    }
+} -> Measure29_Low
+    
+sync {
+    seq {
+        sync {
+            C#(5,1/16)
+            sync {
+                E(5,1/16)
+                G#(5,1/16)
+            } -> M30_Up_SubSync
+        }
+        M30_Up_SubSync * 7
+        sync {
+            E(5,1/16)
+            A(5,1/16)
+        } * 8
+    } -> M30_Up_Seq1
+    seq {
+        C#(6,1/16) * 2
+        E(6,1/16)
+        D#(6,1/8)
+        B(5,1/16) * 2
+        C#(6,1/8)
+        C#(6,1/16)
+        E(6,1/16)
+        D#(6,1/8)
+        B(5,1/8.)
+    } -> M30_Up_Seq2
+} -> Measure30_Up
+    
+seq {
+    seq {
+        C#(2,1/16)
+        sync {
+            G#(2,1/16)
+            E(3,1/16)
+        }
+    } * 4
+    seq {
+        A(1,1/16)
+        sync {
+            E(2,1/16)
+            C#(3,1/16)
+        }
+    } * 4
+} -> Measure30_Low
+    
+sync {
+    seq {
+        sync {
+            D#(5,1/16)
+            F#(5,1/16)
+        } -> M31_Up_Sync1 * 8
+        sync {
+            B(4,1/16)
+            E(5,1/16)
+        } * 4
+        sync {
+            B(4,1/16)
+            D#(5,1/16)
+        } * 4
+    }
+    seq {
+        M30_Up_Seq2 [1~3]
+        B(5,1/8)
+        G#(5,1/8)
+        G#(5,1/16)
+        B(5,1/16)
+        G#(5,1/8)
+        B(5,1/8.)
+    }
+} -> Measure31_Up
+    
+seq {
+    seq {
+        B(1,1/16)
+        sync {
+            F#(2,1/16)
+            D#(3,1/16)
+        }
+    } * 4
+    seq {
+        E(2,1/16)
+        sync {
+            B(2,1/16)
+            E(3,1/16)
+        }
+    } * 2
+    seq {
+        D#(2,1/16)
+        sync {
+            B(2,1/16)
+            D#(3,1/16)
+        }
+    } * 2
+} -> Measure31_Low
+    
+sync {
+    Measure30_Up
+    Measure30_Low
+} -> Measure32
+    
+sync {
+    seq {
+        M31_Up_Sync1 * 3
+        M31_Up_Sync1 > 2
+        sync {
+            B(4,1/16)
+            D#(5,1/16)
+        } * 2
+        sync {
+            C#(5,1/8)
+            E(5,1/8)
+            G#(5,1/8)
+        }
+        rest(1/16)
+    }
+    seq {
+        M30_Up_Seq2 [1~5]
+        seq {
+            sync {
+                E(5,1/32)
+                G#(5,1/32)
+            }
+            C#(6,1/32)
+        } -> M34_Up_Seq
+    } //has 1/8th of measure 34
+} -> Measure33_Up
+    
+seq {
+    sync {
+        B(1,1/8.)
+        F#(2,1/8.)
+        B(2,1/8.)
+    }
+    sync {
+        B(2,5/16)
+        D#(3,5/16)
+        F#(3,5/16)
+        B(3,5/16)
+    }
+    sync {
+        C#(2,1/8)
+        C#(3,1/8)
+    } //1/8th of measure 34
+} -> Measure33_Low
+    
+seq {
+    //1/8th with measure 33
+    M34_Up_Seq * 12
+    rest(1/8)
+} -> Measure34_Up
+    
+sync {
+    //1/8th with measure 33
+    seq {
+        seq {
+            C#(3,1/16)
+            G#(3,1/16)
+        } * 6
+        B(1,1/16)
+        B(2,1/16)
+    } -> M34_Low_Seq1
+    seq {
+        C#(4,1/16)
+        sync {
+            C#(4,1/8)
+            F#(4,1/8)
+        }
+        D#(4,1/8)
+        sync {
+            C#(4,1/8)
+            E(4,1/8)
+        }
+        C#(4,1/8)
+        D#(4,1/8)
+        B(3,1/8.)
+    } -> M34_Low_Seq2
+} -> Measure34_Low
+    
+seq {
+    sync {
+        C#(4,1/16)
+        E(4,1/16)
+        G#(4,1/16)
+    }
+    M34_Up_Seq
+    Measure34_Up
+} -> Measure35_Up
+    
+sync {
+    seq {
+        sync {
+            A(1,1/8)
+            A(2,1/8)
+        }
+        seq {
+            C#(3,1/16)
+            A(3,1/16)
+        } * 6
+        B(1,1/16)
+        B(2,1/16)
+    }
+    seq {
+        rest(1/8)
+        M34_Low_Seq2 [1~4]
+        D#(4,1/8)
+        C#(4,1/8)
+        B(3,1/8.)
+    }
+} -> Measure35_Low
+    
+seq {
+    sync {
+        B(4,1/8)
+        E(5,1/8)
+        G(5,1/8)
+        B(5,1/8)
+    }
+    sync {
+        E(4,1/16)
+        E(5,1/16)
+    } -> M35_EE
+    sync {
+        A(4,1/8)
+        E(5,1/8)
+        A(5,1/8)
+    }
+    sync {
+        F#(4,1/8)
+        F#(5,1/8)
+    }
+    sync {
+        G(4,1/8)
+        B(4,1/8)
+        E(5,1/8)
+        G(5,1/8)
+    }
+    M35_EE > 2
+    sync {
+        F#(4,1/8)
+        B(4,1/8)
+        F#(5,1/8)
+    }
+    sync {
+        D(4,1/8.)
+        F#(4,1/8.)
+        A(4,1/8.)
+        D(4,1/8.)
+    }
+} -> Measure36_Up
+    
+seq {
+    E(2,1/16)
+    G(3,1/32)
+    B(3,1/32)
+    seq {
+        E(3,1/32)
+        B(3,1/32)
+        G(3,1/32)
+        B(3,1/32)
+    } * 6
+    D(2,1/16)
+    D(3,1/16)
+} -> Measure36_Low
+    
+seq {
+    Measure36_Up [1~5]
+    sync {
+        F#(4,1/8)
+        F#(5,1/8)
+    }
+    sync {
+        E(4,1/8)
+        G(4,1/8)
+        B(4,1/8)
+        E(5,1/8)
+    }
+    Measure36_Up [8]
+} -> Measure37_Up
+    
+seq {
+    C(2,1/16)
+    G(3,1/32)
+    B(3,1/32)
+    seq {
+        C(3,1/32)
+        B(3,1/32)
+        G(3,1/32)
+        B(3,1/32)
+    } * 6
+    D(2,1/16)
+    D(3,1/16)
+} -> Measure37_Low
+    
+seq {
+    sync {
+        G(4,1/16)
+        Bb(4,1/16)
+        D(5,1/16)
+    }
+    seq {
+        sync {
+            G(5,1/32)
+            Bb(5,1/32)
+        }
+        D(6,1/32)
+    } -> M38_Up_Seq * 13
+    rest(1/8)
+} -> Measure38_Up
+    
+sync {
+    seq {
+        sync {
+            G(2,1/8)
+            G(3,1/8)
+        }
+        seq {
+            G(3,1/16)
+            D(4,1/16)
+        } * 6
+        F(2,1/16)
+        F(3,1/16)
+    } -> M38_Low_Seq1
+    seq {
+        rest(1/8)
+        G(4,1/16)
+        sync {
+            G(4,1/8)
+            C(4,1/8)
+        }
+        A(4,1/8)
+        sync {
+            G(4,1/8)
+            Bb(4,1/8)
+        }
+        G(4,1/8)
+        A(4,1/8)
+        F(4,1/8.)
+    } -> M38_Low_Seq2
+} -> Measure38_Low
+    
+seq {
+    Measure38_Up
+} -> Measure39_Up
+    
+sync {
+    seq {
+        sync {
+            Eb(2,1/8)
+            Eb(3,1/8)
+        }
+        seq {
+            G(3,1/16)
+            Eb(4,1/16)
+        } * 6
+        F(2,1/16)
+        F(3,1/16)
+    } -> M39_Low_Seq1
+    seq {
+        M38_Low_Seq2 [1~5]
+        A(4,1/8)
+        G(4,1/8)
+        F(4,1/8.)
+    } -> M39_Low_Seq2
+} -> Measure39_Low
+    
+seq {
+    sync {
+        D(5,1/8)
+        G(5,1/8)
+        Bb(5,1/8)
+        D(6,1/8)
+    }
+    sync {
+        G(4,1/16)
+        G(5,1/16)
+    } -> M40_GG
+    sync {
+        C(5,1/8)
+        G(5,1/8)
+        C(6,1/8)
+    }
+    sync {
+        A(4,1/8)
+        A(5,1/8)
+    }
+    sync {
+        Bb(4,1/8)
+        D(5,1/8)
+        G(5,1/8)
+        Bb(5,1/8)
+    }
+    M40_GG > 2
+    sync {
+        A(4,1/8)
+        D(5,1/8)
+        A(5,1/8)
+    }
+    sync {
+        F(4,1/8.)
+        A(4,1/8.)
+        C(5,1/8.)
+        F(5,1/8.)
+    }
+} -> Measure40_Up
+    
+seq {
+    G(2,1/16)
+    Bb(3,1/32)
+    D(4,1/32)
+    seq {
+        G(3,1/32)
+        D(4,1/32)
+        Bb(3,1/32)
+        D(4,1/32)
+    } * 6
+    F(2,1/16)
+    F(3,1/16)
+} -> Measure40_Low
+    
+seq {
+    sync {
+        D(5,1/8)
+        G(5,1/8)
+        Bb(5,1/8)
+        D(6,1/8)
+    }
+    sync {
+        G(4,1/16)
+        Bb(4,1/16)
+        Eb(5,1/16)
+        G(5,1/16)
+    }
+    sync {
+        C(5,1/8)
+        Eb(5,1/8)
+        G(5,1/8)
+        C(6,1/8)
+    }
+    sync {
+        A(4,1/16)
+        C(5,1/16)
+        F(5,1/16)
+        A(5,1/16)
+    }
+    sync {
+        Bb(4,1/8)
+        Eb(5,1/8)
+        G(5,1/8)
+        Bb(5,1/8)
+    }
+    rest(1/8)
+    Bb(4,1/48)
+    Eb(5,1/48)
+    G(5,1/48)
+    Bb(5,1/48)
+    Eb(6,1/48)
+    G(6,1/48)
+    rest(1/8)
+    A(4,1/48)
+    C(5,1/48)
+    F(5,1/48)
+    A(5,1/48)
+    C(6,1/48)
+    F(6,1/48)
+} -> Measure41_Up
+    
+seq {
+    sync {
+        Eb(2,1/8)
+        Eb(3,1/8)
+    } -> M41_EfEf
+    M41_EfEf < 2 - 12
+    M41_EfEf - 12
+    M41_EfEf < 2
+    M41_EfEf
+    Eb(2,1/40)
+    Bb(2,1/40)
+    Eb(3,1/40)
+    G(3,1/40)
+    G(4,1/40)
+    rest(1/8)
+    F(2,1/40)
+    C(3,1/40)
+    F(3,1/40)
+    A(3,1/40)
+    F(4,1/40)
+    rest(1/8)
+} -> Measure41_Low
+
+sync {
+    sync {
+        G(5,1/2)
+        Bb(5,1/2)
+        D(6,1/2)
+        G(6,1/2)
+    }
+    seq {
+        rest(1/8)
+        seq {
+            sync {
+                G(7,1/16)
+                Bb(7,1/16)
+            } -> M42_Up_GBf
+            sync {
+                D(7,1/16)
+                G(7,1/16)
+            } -> M42_Up_DG
+            sync {
+                Bb(6,1/16)
+                D(7,1/16)
+            } -> M42_Up_BfD
+        } -> M42_Up_Syncs
+        M42_Up_Syncs - 12
+        M42_Up_Syncs - 24
+        M42_Up_Syncs - 36
+        M42_Up_GBf - 48
+        M42_Up_DG - 48
+    }
+} -> Measure42_Up
+    
+sync {
+    sync {
+        G(2,1/2)
+        D(3,1/2)
+        G(3,1/2)
+    }
+    seq {
+        rest(5/32)
+        seq {
+            sync {
+                G(6,1/16)
+                Bb(6,1/16)
+            } -> M42_Low_GBf
+            sync {
+                D(6,1/16)
+                G(6,1/16)
+            } -> M42_Low_DG
+            sync {
+                Bb(5,1/16)
+                D(6,1/16)
+            } -> M42_Low_BfD
+        } -> M42_Low_Syncs
+        M42_Low_Syncs - 12
+        M42_Low_Syncs - 24
+        M42_Low_Syncs - 36
+        M42_Low_GBf - 48
+        M42_Low_DG - 48 < 2
+    }
+} -> Measure42_Low
+    
+seq {
+    rest(1/4)
+    sync {
+        G(5,1/4)
+        Bb(5,1/4)
+        D(5,1/4)
+        G(6,1/4)
+    }
+    sync {
+        G(3,1/2)
+        G(4,1/2)
+    }
+} -> Measure43_Up
+    
+seq {
+    G(1,1/4)
+    sync {
+        G(3,1/4)
+        Bb(3,1/4)
+        D(4,1/4)
+    }
+    sync {
+        G(1,1/2)
+        G(2,1/2)
+    }
+} -> Measure43_Low

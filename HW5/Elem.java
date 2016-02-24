@@ -63,7 +63,15 @@ public class Elem extends NonTerminal implements Playable {
 	}
 	
 	public Playable[] getPlayables() {
-		return ((Elem2)play).getPlayables();
+		if( play instanceof Elem2 ) {
+			return ((Elem2)play).getPlayables();
+		} else if( play instanceof Sync ) {
+			return ((Sync)play).getPlayables();
+		} else if( play instanceof Seq) {
+			return ((Seq)play).getPlayables();
+		} else {
+			return null;
+		}
 	}
 
 	public void play() {

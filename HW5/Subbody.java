@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Subbody extends NonTerminal {
@@ -12,8 +13,12 @@ public class Subbody extends NonTerminal {
 			throw new Exception(NOT_SET_MESSAGE);
 		} else {
 			Elems elems = (Elems) getComponent("ELEMS");
-			elems.interpret();
-			this.elems = elems.getElems();
+			if( elems != null ) {
+				elems.interpret();
+				this.elems = elems.getElems();
+			} else {
+				this.elems = (new ArrayList<Elem>()).iterator();
+			}
 		}
 	}
 
