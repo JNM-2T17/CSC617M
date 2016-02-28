@@ -28,8 +28,10 @@ public class Parser {
 			Token currToken = tokens.get(currIndex);
 
 			Action act = topState.getAction(currToken.type());
-			// printStack();
-				
+
+			// for( State s: states) {
+			// 	System.out.print(s.id() + " ");
+			// }
 
 			if( act == null ) {
 				error = true;
@@ -69,6 +71,8 @@ public class Parser {
 						states.push(act.shift());
 						// System.out.println("To state " + states.peek().id());
 						currIndex++;
+						// System.out.print(currToken.type() + " | ");
+						// printStack();
 						break;
 					case "REDUCE":
 						Production p = act.reduction();

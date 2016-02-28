@@ -11,8 +11,20 @@ public class State {
 	private boolean isExpanded;
 	private HashMap<String,Action> actions;
 	private HashMap<String,Integer> gotoTable;
+	private HashMap<String,Integer> tempShiftTable;
 	private HashMap<String,String> follows;
 	private TableGenerator tg;
+
+	public State(TableGenerator tg) {
+		this.tg = tg;
+		transKeys = new ArrayList<String>();
+		transition = new HashMap<String,State>();
+		actions = new HashMap<String,Action>();
+		gotoTable = new HashMap<String,Integer>();
+		tempShiftTable = new HashMap<String,Integer>();
+		follows = new HashMap<String,String>();
+		isExpanded = false;
+	}
 
 	public State(Item[] items,TableGenerator tg) {
 		this.tg = tg;
@@ -44,9 +56,6 @@ public class State {
 			Item i = frontier.get(0);
 			boolean isFound = false;
 			for(Item item:lr1) {
-				// if( i.prodId() == 30 && i.position() == 0 && item.prodId() == 30 && item.position() == 0) {
-				// 	System.out.println("COMPARING " + item + "\t" + i + "\t" + item.equals(i));
-				// }
 				if(item.equals(i)) {
 					isFound = true;
 					break;
@@ -58,11 +67,26 @@ public class State {
 				tg.registerSymbol(currPart);
 				//if next is a variable
 				if( currPart != null && tg.isVariable(currPart)) {
+					ArrayList<String> theFirst = new ArrayList<String>();
 					String[] first = tg.first(i.remains());
 					Production[] prods = tg.productions(currPart);
-					if( first.length == 1 && first[0].equals("")) {
-						first = i.lookahead();
+					boolean hasEmpty = false;
+					for(String s: first) {
+						if( s.length() == 0 ) {
+							hasEmpty = true;
+						} else {
+							theFirst.add(s);
+						}
 					}
+					if( hasEmpty ) {
+						String[] temp = i.lookahead();
+						for(String s: temp) {
+							if(theFirst.indexOf(s) == -1) {
+								theFirst.add(s);
+							}
+						}
+					}
+					first = theFirst.toArray(new String[1]);
 					for(Production p: prods) {
 						frontier.add(new Item(p,first));
 					}
@@ -93,17 +117,23 @@ public class State {
 				for(String look: lookahead ) {
 					Action theAction = actions.get(look);
 					if( theAction != null ) {
-						if( !printedState ) {
-							System.out.println(this);
-							printedState = true;
-						}
 						if( theAction.type().equals("SHIFT") ) {
+							if( !printedState ) {
+								System.out.println(this);
+								printedState = true;
+							}
+							
 							System.out.println("SR Conflict at terminal " 
 												+ look + " and production " 
 												+ currItem.prodString());
 							error = true;
 						} else {
 							if( theAction.type().equals("ACCEPT")) {
+								if( !printedState ) {
+									System.out.println(this);
+									printedState = true;
+								}
+								
 								System.out.println("AR conflict with " 
 											+ currItem.prodString());
 								error = true;
@@ -111,6 +141,11 @@ public class State {
 								Production conflict = theAction.reduction();
 								if( currItem.prodId() 
 										!= conflict.id() ) {
+									if( !printedState ) {
+										System.out.println(this);
+										printedState = true;
+									}
+									
 									System.out.println("RR Conflict " 
 														+ "with " 
 														+ currItem
@@ -139,6 +174,31 @@ public class State {
 		} else {
 			actions.put(key,tg.getShift(s));
 		}
+	}
+
+	public void putAction(String key, int state) {
+		if( tg.isVariable(key) ) {
+			gotoTable.put(key,state);
+		} else {
+			tempShiftTable.put(key,state);
+		}
+	}
+
+	public void accept() {
+		actions.put("EOF",new Action());
+	}
+
+	public void updateShifts(State[] table) {
+		Iterator<String> itr = tempShiftTable.keySet().iterator();
+		while(itr.hasNext()) {
+			String next = itr.next();
+			actions.put(next,tg.getShift(table[tempShiftTable
+												.get(next).intValue()]));
+		}
+	}
+
+	public void putAction(String key, Production p) {
+		actions.put(key,new Action(p));
 	}
 
 	public void putGoto(String key, State gotoState) {

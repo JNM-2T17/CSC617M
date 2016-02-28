@@ -1,4 +1,4 @@
-,play,bpm,volume,sync,seq,pitch,rest,varname,chord,newline,{,->,*,+,++,-,--,>,>>,<,<<,num,(,[,octave,time,},",",),.,],~,EOF,PROG,ELEMSR,ELEM,ELEM2,VAR,NUM2,ELEMS,SEQ,SYNC,PLAY,CHORD,SUBBODY,NOTE,SUBNOTE,OCTAVE,REST,TIME
+,play,bpm,volume,sync,seq,pitch,rest,varname,chord,newline,{,->,*,+,++,-,--,>,>>,<,<<,num,(,[,octave,time,},&com;,),.,],~,EOF,PROG,ELEMSR,ELEM,ELEM2,VAR,NUM2,ELEMS,SEQ,SYNC,PLAY,CHORD,SUBBODY,NOTE,SUBNOTE,OCTAVE,REST,TIME
 0,SHIFT 4,SHIFT 7,SHIFT 8,SHIFT 15,SHIFT 16,SHIFT 17,SHIFT 18,SHIFT 19,SHIFT 20,,,,,,,,,,,,,,,,,,,,,,,,,1,,5,6,13,,3,10,9,2,14,,11,,,12,
 1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ACCEPT,,,,,,,,,,,,,,,,,
 2,,,,,,,,,,SHIFT 21,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

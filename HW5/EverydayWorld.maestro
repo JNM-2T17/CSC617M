@@ -15,6 +15,14 @@ play {
 	measure12
 	measure13
 	measure14
+	measure15
+	measure16
+	measure17
+	measure18
+	measure19
+	measure20
+	// measure21
+	// measure22
 }
 
 seq {
@@ -103,29 +111,32 @@ sync{
 
 seq{
 	sync{
-		D(4,1/4)
-		B(3,1/4)
-		A(3,1/4)
+		seq{
+			sync{
+				D(4,1/4)
+				B(3,1/4)
+				A(3,1/4)
+			}
+		}
+		seq{
+			rest(1/4)
+			sync{
+				B(4,1/4.)
+				D(5,1/4.)
+			}
+			A(4,1/8)
+			sync{
+				A(4,1/8)
+				B(4,1/8)
+				D(5,1/8)
+				F(5,1/8)
+			}
+			D(5,1/8)
+		}
 	}
-
-	sync{
-		B(4,1/4.)
-		D(5,1/4.)
-	}
-
-	A(4,1/8)
-	sync{
-		A(4,1/8)
-		B(4,1/8)
-		D(5,1/8)
-		F(5,1/8)
-	}
-
-	D(5,1/8)
 } -> measure3R
 
 seq{
-	volume 80
 	sync{
 		seq{
 			G(2,1/2)
@@ -155,7 +166,6 @@ sync{
 } -> measure3
 
 seq{
-	volume 80
 	sync{
 		seq{
 			A(2,5/8)
@@ -224,7 +234,6 @@ seq{
 } -> measure5R
 
 seq{
-	volume 80
 	sync{
 		seq{
 			D(2,1/2..)
@@ -264,7 +273,6 @@ seq{
 } -> measure6R
 
 seq{
-	volume 80
 	sync{
 		seq{
 			B(2,1/2..)
@@ -315,7 +323,6 @@ seq{
 } -> measure7R
 
 seq{
-	volume 80
 	sync{
 		seq{
 			sync{
@@ -346,12 +353,12 @@ sync{
 seq{
 	B(3,1/8)
 	A(3,1/16)
-	A(3,11/16)
+	A(3,9/16)
+	rest(1/8)
 	A(4,1/8)
 } -> measure8R
 
 seq{
-	volume 80
 	sync{
 		seq{
 			sync{
@@ -416,7 +423,6 @@ seq{
 } -> measure9R
 
 seq{
-	volume 80
 	sync{
 		seq{
 			sync{
@@ -482,7 +488,6 @@ seq{
 } -> measure10R
 
 seq{
-	volume 80
 	sync{
 		seq{
 			B(2,1/4.)
@@ -534,7 +539,6 @@ seq{
 } -> measure11R
 
 seq{
-	volume 80
 	sync{
 		seq{
 			E(2,1/2)
@@ -601,7 +605,6 @@ seq{
 } -> measure12R
 
 seq{
-	volume 80
 	sync{
 		seq{
 			E(2,1/2)
@@ -645,7 +648,6 @@ seq{
 } -> measure13R
 
 seq{
-	volume 80
 	sync{
 		seq{
 			B(2,1/2)
@@ -686,7 +688,6 @@ seq{
 } -> measure14R
 
 seq{
-	volume 80
 	sync{
 		seq{
 			A(2,1/2)
@@ -710,3 +711,413 @@ sync{
 	measure14L
 	measure14R
 } -> measure14
+
+seq{
+	sync{
+		Bb(4,1/4)
+		D(5,1/4)
+		F(5,1/4)
+	}
+	F(5,1/8)
+	G(5,1/16)
+	sync{
+		F(5,1/8)
+		C(5,1/8)
+		A(4,1/8)
+	}
+	C(5,1/8)
+	C(5,1/8)
+	F(5,1/8)
+	A(5,1/16)
+} -> measure15R
+
+seq{
+	sync{
+		seq{
+			Bb(2,1/2)
+			A(2,1/2)
+		}
+		seq{
+			rest(1/16)
+			F(3,1/16)
+			Bb(3,1/16)
+			C(4,1/16)
+			D(4,1/16)
+			Bb(3,1/16)
+			F(3,1/16)
+			Bb(2,1/16)
+			rest(1/16)
+			F(3,1/16)
+			A(3,1/16)
+			C(4,1/16)
+			F(4,1/16)
+			C(4,1/16)
+			A(3,1/16)
+			F(3,1/16)
+		}
+	}
+} -> measure15L
+
+sync{
+	measure15L
+	measure15R
+} -> measure15
+
+seq{
+	sync{
+		seq{
+			sync{
+				G(5,1/2)
+				D(5,1/2)
+				Bb(4,1/2)
+			}
+			rest(1/8)
+			sync{
+				F#(5,1/8)
+				F#(4,1/8)
+			}
+			sync{
+				G(5,1/8)
+				D(5,1/8)
+				B(4,1/8)
+				G(4,1/8)
+			}
+			sync{
+				A(5,1/8)
+				A(4,1/8)
+			}
+		}
+		seq{
+			rest(1/2)
+			sync{
+				G(4,1/2)
+				D(4,1/2)
+				B(3,1/2)
+			}
+		}
+	}
+} -> measure16R
+
+seq{
+	sync{
+		seq{
+			G(2,1/2)
+			E(2,1/2)
+		}
+		seq{
+			rest(1/16)
+			D(3,1/16)
+			G(3,1/16)
+			A(3,1/16)
+			Bb(3,1/16)
+			C(4,1/16)
+			D(4,1/16)
+			F(4,1/16)
+			rest(1/16)
+			B(2,1/16)
+			E(3,1/16)
+			F#(3,1/16)
+			G(3,1/16)
+			B(3,1/16)
+			E(4,1/16)
+			E(3,1/16)
+		}
+	}
+} -> measure16L
+
+sync{
+	measure16L
+	measure16R
+} -> measure16
+
+seq{
+	sync{
+		B(5,1/8)
+		E(5,1/8)
+		D(5,1/8)
+		B(4,1/8)
+	}
+	sync{
+		A(5,1/16)
+		A(4,1/16)
+	}
+	sync{
+		A(5,9/16)
+		A(4,9/16)
+		D(5,9/16)
+		E(5,9/16)
+	}
+	sync{
+		F#(5,1/8)
+		F#(4,1/8)
+	}
+	sync{
+		G(5,1/8)
+		G(4,1/8)
+	}
+} -> measure17R
+
+seq{
+	sync{
+		seq{
+			A(2,1/4.)
+			rest(1/4.)
+			A(2,1/8)
+			A(1,1/8)
+		}
+
+		seq{
+			rest(1/16)
+			E(3,1/16)
+			G(3,1/16)
+			B(3,1/16)
+			D(4,1/16)
+			E(4,1/16)
+			G(4,1/16)
+			A(4,1/16)
+			sync{
+				C#(4,1/2)
+				A(3,1/2)
+				A(4,1/2)
+			}
+		}
+	}
+
+} -> measure17L
+
+sync{
+	measure17L
+	measure17R
+} -> measure17
+
+seq{
+	sync{
+		A(5,1/8)
+		F#(5,1/8)
+		D(5,1/8)
+		A(4,1/8)
+	}
+	sync{
+		D(5,1/8)
+		D(4,1/8)
+	}
+	sync{
+		seq{
+			sync{
+				A(4,1/4)
+				F#(4,1/4)
+				E(4,1/4)
+			}
+			sync{
+				A(4,1/4)
+				F#(4,1/4)
+				E(4,1/4)
+			}
+			sync{
+				A(4,1/4)
+				F#(4,1/4)
+				E(4,1/4)
+			}
+		}
+		seq{
+			D(5,1/8)
+			C#(5,1/16)
+			D(5,3/16)
+			A(4,1/8)
+			D(5,1/8)
+			sync{
+				B(5,1/8)
+				B(4,1/8)
+			}
+		}
+	}
+} -> measure18R
+
+seq{
+	sync{
+		seq{
+			D(2,1)
+		}
+		seq{
+			rest(1/8.)
+			D(3,1/16)
+			D(4,1/16)
+			A(3,1/16)
+			F#(3,1/16)
+			D(3,1/16)
+			D(4,1/16)
+			A(3,1/16)
+			F#(3,1/16)
+			D(3,1/16)
+			D(4,1/16)
+			A(3,1/16)
+			F#(3,1/16)
+			D(3,1/16)
+		}
+	}
+} -> measure18L
+
+sync{
+	measure18L
+	measure18R
+} -> measure18
+
+seq{
+	sync{
+		seq{
+			sync{
+				A(5,1/2.)
+				C#(5,1/2.)
+				A(4,1/2.)
+			}
+			F#(5,1/8)
+			sync{
+				G(5,1/8)
+				G(4,1/8)
+			}
+		}
+		seq{
+			E(5,1/8)
+			D(5,1/8)
+			sync{
+				C#(5,1/8)
+				A(4,1/8)
+			}
+			B(4,1/8)
+			C#(5,1/4)
+		}
+	}
+} -> measure19R
+
+seq{
+	sync{
+		seq{
+			F#(2,1)
+		}
+		seq{
+			rest(1/16)
+			C#(3,1/16)
+			E(3,1/16)
+			A(3,1/16)
+			C#(4,1/16)
+			A(3,1/16)
+			C#(4,1/16)
+			E(4,1/16)
+			sync{
+				seq{
+					A(4,1/8)
+					G(4,1/8)
+					F#(4,1/8)
+					E(4,1/8)
+				}
+				seq{
+					A(4,1/16)
+					A(3,1/16)
+					G(4,1/16)
+					A(3,1/16)
+					D(4,1/16)
+					A(3,1/16)
+					C#(4,1/16)
+					A(3,1/16)
+				}
+			}
+		}
+	}
+} -> measure19L
+
+sync{
+	measure19R
+	measure19L
+} -> measure19
+
+seq{
+	sync{
+		seq{
+			sync{
+				D(5,1/4)
+				B(4,1/4)
+				A(4,1/4)
+			}
+			sync{
+				D(5,1/4)
+				B(4,1/4)
+			}
+			sync{
+				B(4,1/4)
+				G(4,1/4)
+			}
+			sync{
+				B(4,1/4)
+				G(4,1/4)
+			}
+		}
+		seq{
+			A(5,1/8)
+			G(5,1/16)
+			G(5,1/8)
+			F#(5,1/8)
+			F#(5,3/16)
+			E(5,1/16)
+			E(5,1/8)
+			D(5,1/8)
+			E(5,1/16)
+		}
+	}
+} -> measure20R
+
+seq{
+	sync{
+		seq{
+			G(2,1/2)
+			E(2,1/2)
+		}
+		seq{
+			D(3,1/16)
+			G(3,1/16)
+			A(3,1/16)
+			G(4,1/16)
+			D(4,1/16)
+			B(3,1/16)
+			G(3,1/16)
+			rest(1/16)
+			B(2,1/16)
+			E(3,1/16)
+			F#(3,1/16)
+			E(4,1/16)
+			B(3,1/16)
+			G(3,1/16)
+			E(3,1/16)
+		}
+	}
+} -> measure20L
+
+sync{
+	measure20L
+	measure20R
+} -> measure20
+
+seq{
+
+} -> measure21R
+
+seq{
+
+} -> measure21L
+
+sync{
+	measure21L
+	measure21R
+} -> measure21
+
+seq{
+
+} -> measure22R
+
+seq{
+
+} -> measure22L
+
+sync{
+	measure22L
+	measure22R
+} -> measure22

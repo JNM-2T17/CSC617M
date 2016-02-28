@@ -20,7 +20,7 @@ public class Driver {
 			Interpreter interpreter 
 				= new Interpreter(new ConcreteTokenizer()
 									,ConcreteNonTerminalFactory.instance()
-									,code,"maestro.txt");
+									,code,"maestro.txt",false);
 			interpreter.interpret();
 		} catch(Exception e) {
 			// if( e.getMessage() != null) {
