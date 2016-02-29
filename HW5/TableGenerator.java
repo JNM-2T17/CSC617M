@@ -167,12 +167,17 @@ public class TableGenerator {
 			}
 		} 
 
-		for(String s: variables) {
-			ArrayList<String> listen = listenQueue.get(s);
-			ArrayList<String> first = firsts.get(s);
-			for(String listener: listen) {
-				for(String f: first) {
-					addFirst(listener,f);
+		boolean updates = true;
+
+		while(updates) {
+			updates = false;
+			for(String s: variables) {
+				ArrayList<String> listen = listenQueue.get(s);
+				ArrayList<String> first = firsts.get(s);
+				for(String listener: listen) {
+					for(String f: first) {
+						updates = updates || addFirst(listener,f);
+					}
 				}
 			}
 		}
@@ -202,10 +207,13 @@ public class TableGenerator {
 		// }
 	}
 
-	private void addFirst(String var, String first) {
+	private boolean addFirst(String var, String first) {
 		ArrayList<String> firstArr = firsts.get(var);
 		if( firstArr.indexOf(first) == -1) {
 			firstArr.add(first);
+			return true;
+		} else {
+			return false;
 		}
 	}
 
@@ -262,10 +270,13 @@ public class TableGenerator {
 		return variables.size();
 	}
 
-	private void addFollow(String var, String follow) {
+	private boolean addFollow(String var, String follow) {
 		ArrayList<String> followArr = follows.get(var);
 		if( followArr.indexOf(follow) == -1) {
 			followArr.add(follow);
+			return true;
+		} else {
+			return false;
 		}
 	}
 
@@ -326,13 +337,17 @@ public class TableGenerator {
 			}
 		}
 
-		for(String s : variables) {
-			ArrayList<String> listen = listenQueue.get(s);
-			ArrayList<String> follow = follows.get(s);
+		boolean update = true;
+		while(update) {
+			update = false;
+			for(String s : variables) {
+				ArrayList<String> listen = listenQueue.get(s);
+				ArrayList<String> follow = follows.get(s);
 
-			for(String lis: listen) {
-				for(String fol: follow) {
-					addFollow(lis,fol);
+				for(String lis: listen) {
+					for(String fol: follow) {
+						update = update || addFollow(lis,fol);
+					}
 				}
 			}
 		}
