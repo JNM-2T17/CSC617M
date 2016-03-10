@@ -1,0 +1,19 @@
+Student
+	name
+	id
+	gender
+Gradebook
+	Course
+	Student's Grades
+		Exercises
+		Exams
+		Finals
+		Final Grade
+Feature
+Persist Data
+CRUD
+Maintain more than 1 gradebook
+Report
+	Get GPA
+	Avg Grades Per Course
+	Top 5 students per course based on Final Grade

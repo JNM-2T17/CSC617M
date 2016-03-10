@@ -1,6 +1,4 @@
-import javax.sound.midi.MidiSystem;
-import javax.sound.midi.Synthesizer;
-import javax.sound.midi.MidiChannel;
+import javax.sound.midi.*;
 
 public class MusicPlayer {
     private MidiChannel[] channels;
@@ -27,6 +25,7 @@ public class MusicPlayer {
                     this.channels[i - 1] = channels[i];
                 }
             }
+            // this.channels[0].programChange(0, 22);
             actives = new boolean[this.channels.length][NOTE_COUNT];
             for(int i = 0; i < actives.length; i++) {
                 for(int j = 0; j < actives[0].length; j++ ) {
