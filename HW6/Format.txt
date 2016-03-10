@@ -1,0 +1,99 @@
+<name>
+<id>
+<gender>
+
+Austin
+11323604
+M
+Clarisse
+11321792
+F
+Marc
+11336617
+F
+Johan
+11313204
+M
+
+<no of courses>
+<course 1>
+...
+<course n>
+<id 1>
+<exer course 1>
+<exams course 1>
+<finals course 1>
+<final grade course 1>
+...
+<exer course n>
+<exams course n>
+<finals course n>
+<final grade course n>
+...
+<id n>
+<exer course 1>
+<exams course 1>
+<finals course 1>
+<final grade course 1>
+...
+<exer course n>
+<exams course n>
+<finals course n>
+<final grade course n>
+
+3
+COMPRO1
+BASICON
+CCSALGE
+11323604
+66
+55
+66
+77
+66
+55
+66
+77
+66
+55
+66
+77
+11321792
+66
+55
+66
+77
+66
+55
+66
+77
+66
+55
+66
+77
+11336617
+66
+55
+66
+77
+66
+55
+66
+77
+66
+55
+66
+77
+11313204
+66
+55
+66
+77
+66
+55
+66
+77
+66
+55
+66
+77
