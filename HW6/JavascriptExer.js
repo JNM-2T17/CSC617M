@@ -30,6 +30,7 @@ switch(k) {
 //3
 var exit = false;
 var out = false;
+j = -3;
 for(i = 0; !exit && i < 3; i++) {
 	switch( j + 2 ) {
 		case 3:
@@ -58,10 +59,10 @@ for(i = 0; !exit && i < 3; i++) {
 //4
 var exit = false;
 for( i = 0; i < n; i++) {
-	for(j = 0; !exit && j < n; j++) {
+	for(j = 0; j < n; j++) {
 		if( x[i][j] != 0 ) {
 			exit = true;
-			j--;
+			break;
 		}
 	}
 	if( !exit ) {

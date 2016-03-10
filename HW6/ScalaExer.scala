@@ -25,20 +25,16 @@ object ScalaExer {
 
 		//3
 		var exit = false
-		var out = false
 		i = 0
+		j = -3
 		while(!exit && i < 3) {
 			(j + 2) match {
-				case 3 => j = j - 1; out = true
-				case 2 => j = j - 1; out = true
-				case 0 => if( !out ) {
-								j += 2
-								out = true
-							}
-				case _ => if( !out ) {
-								j = 0
-							}
+				case 3 => j = j - 1
+				case 2 => j = j - 1
+				case 0 => j += 2
+				case _ => j = 0
 			}
+			
 			if( j > 0 ) {
 				exit = true
 			}
@@ -51,10 +47,11 @@ object ScalaExer {
 		//4
 		var n : Int = 3
 		var x = Array.ofDim[Int](n,n)
-		exit = false
+		x(0)(1) = 1
 		var stop = false
 		i = 0
 		while( !stop && i < n ) {
+			exit = false
 			var j = 0
 			while(!exit && j < n) {
 				if( x(i)(j) != 0 ) {
