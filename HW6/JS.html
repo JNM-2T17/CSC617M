@@ -27,6 +27,10 @@
 				text-align:right;
 			}
 
+			th {
+				text-align:center;
+			}
+
 			.grade {
 				width:65px;
 				text-align:right;
@@ -226,8 +230,7 @@
 						var curr = this.students[x];
 						str += "<tr><td>" + "<input type='text' value='" 
 								+ curr.name + "' id='name_" + curr.id 
-								+ "'/></td><td><input type='text' value='" 
-								+ curr.id + "'/></td><td><input type='text' value='" 
+								+ "'/></td><td>" + curr.id + "</td><td><input type='text' value='" 
 								+ curr.gender + "' id='gender_" + curr.id 
 								+ "'/></td><td><button onClick='sl.deleteStudent(\"" 
 								+ curr.id + "\")'>Delete</button><br/><button onClick='sl.updateStudent(\"" 
@@ -356,16 +359,16 @@
 			<table>
 				<thead>
 					<tr>
-						<td>Name</td>
-						<td>Id</td>
-						<td>Gender</td>
-						<td></td>
-						<td>Course</td>
-						<td>Exercises</td>
-						<td>Exams</td>
-						<td>Finals</td>
-						<td>Final Grade</td>
-						<td></td>
+						<tH>Name</tH>
+						<tH>Id</tH>
+						<tH>Gender</tH>
+						<tH></tH>
+						<tH>Course</tH>
+						<tH>Exercises</tH>
+						<tH>Exams</tH>
+						<tH>Finals</tH>
+						<tH>Final Grade</tH>
+						<tH></tH>
 					</tr>
 				</thead>
 				<tbody id="studBody">

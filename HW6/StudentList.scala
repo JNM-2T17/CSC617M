@@ -95,6 +95,6 @@ object StudentList {
 		for( s <- students ) {
 			str += s._2.toString()
 		}
-		return str
+		return str.substring(0,str.length() - 1)
 	}
 }

@@ -1,23 +1,12 @@
+import java.io.PrintWriter
 import scala.swing._
 import scala.io.Source
 import scala.collection.mutable.ArrayBuffer
 
-class Frame extends MainFrame {
-	title = "Gradebook"
-	contents = new BoxPanel(Orientation.Vertical) {
-	    contents += new Label("Look at me!")
-	    contents += Button("Press me, please") { println("Thank you") }
-	    contents += Button("Close") { sys.exit(0) }
-	    border = Swing.EmptyBorder(10,10,10,10)
-  	}
-}
-
 object Gradebook {
 	def main(args: Array[String]) {
-		val ui = new Frame
-		ui.visible = true
 		loadFile
-		//read students
+		writeFile
 	}
 
 	def loadFile {
@@ -57,5 +46,11 @@ object Gradebook {
 			}
 		}
 		println(StudentList)
+	}
+
+	def writeFile {
+		val f = new PrintWriter("Gradebook.txt")
+		f.print(StudentList)
+		f.close()
 	}
 }
