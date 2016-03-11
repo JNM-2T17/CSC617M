@@ -4,7 +4,7 @@
 		<style>
 			#notables {
 				float:right;
-				margin-right:25%;
+				margin-right:15%;
 			}
 
 			#screen {
@@ -13,6 +13,23 @@
 
 			table input {
 				width:100px;
+			}
+
+			table input[id^="name"] {
+				width:125px;
+			}
+
+			table input[id^="gender"] {
+				width:25px;
+			}
+
+			td {
+				text-align:right;
+			}
+
+			.grade {
+				width:65px;
+				text-align:right;
 			}
 		</style>
 	</head>
@@ -42,7 +59,8 @@
 
 				this.updateGradebook = function(course,exer,exams,finals,fg) {
 					var grade = this.grades[course];
-					if( grade != null ) {
+					console.log(course + " " + exer + " " + exams + " " + finals + " " + fg);
+					if( typeof grade != "undefined" ) {
 						grade.exer = exer;
 						grade.exams = exams;
 						grade.finals = finals;
@@ -222,16 +240,19 @@
 							} else {
 								first = false;
 							}
-							str += "<td>" + gb.course + "</td><td>" + gb.exer 
-									+ "</td><td>" + gb.exams + "</td><td>" 
-									+ gb.finals + "</td><td>" + (1.0 * gb.fg).toPrecision(2) 
-									+ "</td></tr>";
+							str += "<td>" + gb.course + "</td><td><input type='text' class='grade' value='" + gb.exer 
+									+ "' id='exer_" + gb.course + "_" + curr.id + "'/></td><td><input type='text' class='grade' value='" + gb.exams + "' id='exams_" + gb.course + "_" + curr.id + "'/></td><td><input type='text' class='grade' value='" 
+									+ gb.finals + "' id='finals_" + gb.course + "_" + curr.id + "'/></td><td><input type='text' class='grade' value='" + (1.0 * gb.fg).toPrecision(2) 
+									+ "' id='fg_" + gb.course + "_" + curr.id 
+									+ "'/></td><td><button onClick='sl.student(\"" 
+									+ curr.id + "\").updateGradebook(\"" 
+									+ gb.course + "\",$(\"#exer_" + gb.course + "_" + curr.id + "\").val(),$(\"#exams_" + gb.course + "_" + curr.id + "\").val(),$(\"#finals_" + gb.course + "_" + curr.id + "\").val(),$(\"#fg_" + gb.course + "_" + curr.id + "\").val())'>Update</button></td></tr>";
 						} 
 						if( first ) {
 							str += "<td></td><td></td><td></td><td></td><td></td></tr>";
 						}
 						str += "<tr><td></td><td></td><td></td><td></td><td>\
-								GPA</td><td></td><td></td><td></td><td>" 
+								GPA</td><td></td><td></td><td></td><td class='grade'>" 
 								+ curr.GPA().toPrecision(2) + "</td></tr>";
 					}
 					$("#studBody").html(str);
@@ -243,9 +264,12 @@
 								+ avgs[x].toPrecision(2) 
 								+ "</div><div><h4>Top Students</h4><ol>";
 						var top5 = this.getTop(x);
-						for( y in top5) {
+						var ctr = 0;
+						for( y in top5) {							
 							str += "<li>" + top5[y].name + "&nbsp;" 
 									+ (1.0 * top5[y].grade).toPrecision(2) + "</li>";
+							ctr++;
+							if( ctr == 5 ) break;
 						}
 						str += "</ol></li>";
 					}
@@ -341,6 +365,7 @@
 						<td>Exams</td>
 						<td>Finals</td>
 						<td>Final Grade</td>
+						<td></td>
 					</tr>
 				</thead>
 				<tbody id="studBody">
