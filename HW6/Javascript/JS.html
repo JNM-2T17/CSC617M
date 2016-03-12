@@ -304,10 +304,10 @@
 						sl.addStudent(name,id,gender);
 						var student = sl.student(id);
 						for(x in sl.courses) {
-							var exer = lines[i++];
-							var exams = lines[i++];
-							var finals = lines[i++];
-							var fg = lines[i++];
+							var exer = lines[i++] * 1.0;
+							var exams = lines[i++] * 1.0;
+							var finals = lines[i++] * 1.0;
+							var fg = lines[i++] * 1.0;
 							student.updateGradebook(sl.course(x),exer,exams
 													,finals,fg);
 						}
