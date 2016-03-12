@@ -51,6 +51,11 @@ object StudentList {
 	}
 
 	def addCourse(name : String) {
+		for( x <- courses ) {
+			if( x == name ) {
+				return
+			}
+		}
 		courses += name
 		for( x <- students ) {
 			x._2.addGradebook(name)
@@ -76,7 +81,7 @@ object StudentList {
 			top += new Tuple2(s._2.name,s._2.grade(course))
 		}
 
-		for(i <- top.length - 1 until 0; j <- 0 until i) {
+		for(i <- top.length - 1 until 1 by -1; j <- 0 until i) {
 			if( top(j)._2 < top(j + 1)._2) {
 				var temp = top(j)
 				top(j) = top(j + 1)

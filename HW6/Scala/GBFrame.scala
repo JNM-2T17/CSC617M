@@ -8,5 +8,6 @@ class GBFrame extends MainFrame {
 	def setMain(panel : Panel) {
 		contents = panel
 		centerOnScreen
+		repaint
 	}
 }
