@@ -1,14 +1,8 @@
 import java.io.PrintWriter
-import scala.swing._
 import scala.io.Source
 import scala.collection.mutable.ArrayBuffer
 
-object Gradebook {
-	def main(args: Array[String]) {
-		loadFile
-		writeFile
-	}
-
+object FileLoader {
 	def loadFile {
 		val in = Source.fromFile("gradebook.txt")
 		var lines = ArrayBuffer.empty[String]
@@ -45,7 +39,7 @@ object Gradebook {
 				StudentList.student(id).updateGradebook(name,exer,exams,finals,fg)
 			}
 		}
-		println(StudentList)
+		return
 	}
 
 	def writeFile {
