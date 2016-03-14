@@ -8,7 +8,9 @@ class CoursePanel(val control: GBController) extends AGBPanel {
 			font = new Font("Segoe UI",Font.BOLD,24)
 		},con(0,0,1,1,0,0,GridBagPanel.Anchor.Center,GridBagPanel.Fill.Both))
 	add(new BoxPanel(Orientation.Vertical) {
-			contents +=  new ScrollPane(clPanel)
+			contents +=  new ScrollPane(clPanel) {
+				verticalScrollBar.unitIncrement = 16
+			}
 		},con(0,1,1,1,1,1,GridBagPanel.Anchor.Center,GridBagPanel.Fill.Both))
 	add(new BoxPanel(Orientation.Horizontal) {
 			val tf = new TextField;
