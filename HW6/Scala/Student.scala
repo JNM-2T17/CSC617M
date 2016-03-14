@@ -35,7 +35,7 @@ class Student(
 		}
 	}
 
-	def GPA : Double = {
+	def gpa : Double = {
 		var gpa : Double = 0;
 		var ctr : Double = 0;
 
