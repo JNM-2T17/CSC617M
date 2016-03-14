@@ -8,9 +8,11 @@ class ReportsPanel(val control : GBController)
 	def updateModel {
 		var model = control.avg
 		contents.clear
-		contents += new Label {
-			text = "Reports"
-			font = new Font("Segoe UI",Font.BOLD,24)
+		contents += new BorderPanel {
+			add(new Label {
+					text = "Reports"
+					font = new Font("Segoe UI",Font.BOLD,24)
+				},BorderPanel.Position.Center)
 		}
 		val content = new BoxPanel(Orientation.Vertical) {
 			for(x <- model) {
@@ -60,7 +62,9 @@ class ReportsPanel(val control : GBController)
 				}
 			}
 		}
-		contents += new ScrollPane(content)
+		contents += new ScrollPane(content) {
+			verticalScrollBar.unitIncrement = 16
+		}
 		contents += new FlowPanel(FlowPanel.Alignment.Center)(
 			new Button {
 				action = new Action("Back") {

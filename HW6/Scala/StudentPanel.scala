@@ -42,10 +42,15 @@ class StudentPanel(val control : GBController) extends BorderPanel {
 				font = new Font("Segoe UI",Font.PLAIN,14)
 				action = new Action("Add Student") {
 					def apply {
-						control.addStudent(nameField.text,idField.text,genderField.text)
-						nameField.text = ""
-						idField.text = ""
-						genderField.text = ""
+						if( nameField.text.length > 0 && idField.text.length > 0 
+								&& genderField.text.length > 0 ) {
+							control.addStudent(nameField.text,idField.text,genderField.text)
+							nameField.text = ""
+							idField.text = ""
+							genderField.text = ""
+						} else {
+							Dialog.showMessage(null,"At least one of the fields is empty","Empty Field")
+						}
 					}
 				}
 			}
@@ -58,7 +63,9 @@ class StudentPanel(val control : GBController) extends BorderPanel {
 				for( x <- control.getStudents ) {
 					contents += new StudentDisplayPanel(control, x._2)
 				}	
-			})
+			}) {
+				verticalScrollBar.unitIncrement = 16
+			}
 			repaint
 			revalidate
 		}

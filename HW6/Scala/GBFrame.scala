@@ -4,6 +4,7 @@ class GBFrame extends MainFrame {
 	title = "Gradebook"
 	setSize
 	visible = true
+	resizable = false
 
 	def setMain(panel : Panel) {
 		contents = panel
