@@ -8,7 +8,7 @@ public class MusicPlayer {
     private int beatLength;
     public static final int NOTE_COUNT = 128;
     public static final int VOLUME = 127;
-    public static final int BPM = 120;
+    public static final int BPM = 170;
     public static final int MS_PER_MINUTE = 60000;
     public static final int BEATS_PER_WHOLE = 4;
     private static MusicPlayer instance = null;
