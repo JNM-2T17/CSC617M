@@ -5,17 +5,82 @@ courses = []
 students = []
 grades = []
 
-# Classes
+# Classes- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 class Course:
 	def __init__(self, name):
 		self.name = name
+
+	def getCourseAvg(self):
+		studCount = 0
+		total = 0
+
+		for grade in grades:
+			if grade.course.name == self.name:
+				total += grade.finalgrade
+				studCount += 1
+				if studCount == len(students):
+					break
+
+		return total/len(students)
+
+	def getTop(self, num):
+		return sorted([{ 'student' : grade.student, 'grade' : grade.finalgrade } for grade in grades if grade.course == self],
+					  key = lambda grade: grade['grade'],
+					  reverse = True)[:num]
+
+		# if num > len(students):
+		# 	num = len(students)
+
+		# topList = []
+
+		# for i in range(num):
+		# 	topList.append({'student': None, 'grade': 0.0})
+		# studCount = 0
+
+		# for grade in grades:
+		# 	if grade.course.name == self.name:
+		# 		for i in range(num):
+		# 			if grade.finalgrade >= topList[i]['grade']:
+		# 				newG = grade.finalgrade
+		# 				newS = grade.student
+
+		# 				for j in range(i, num):
+		# 					tempG = topList[j]['grade']
+		# 					topList[j]['grade'] = newG
+		# 					newG = tempG
+
+		# 					tempS = topList[j]['student']
+		# 					topList[j]['student'] = newS
+		# 					newS = tempS
+						
+		# 				break
+
+		# 		studCount += 1
+
+		# 		if studCount == len(students):
+		# 			break
+
+		# return topList
 
 class Student:
 	def __init__(self, name, id, gender):
 		self.name   = name
 		self.id     = id
 		self.gender = gender
+
+	def getGPA(self):
+		gradeCount = 0
+		total = 0
+
+		for grade in grades:
+			if grade.student.id == self.id:
+				total += grade.finalgrade
+				gradeCount += 1
+				if gradeCount == len(courses):
+					break
+
+		return total/len(courses)
 
 class Gradebook:
 	def __init__(self, course, student, exercises, exams, finals, finalgrade):
@@ -26,7 +91,7 @@ class Gradebook:
 		self.finals     = finals
 		self.finalgrade = finalgrade
 
-# Reading
+# Reading- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 def readline2(file):
 	line = file.readline()
@@ -35,12 +100,10 @@ def readline2(file):
 	return line
 
 def readGradesFile(filename):
-	global courses, students, grades
-
 	f = open(filename, "r")
 
 	numStudents = int(readline2(f))
-	numCourses = int(readline2(f))
+	numCourses  = int(readline2(f))
 
 	for i in range(numCourses):
 		courses.append(Course(readline2(f)))
@@ -60,7 +123,7 @@ def readGradesFile(filename):
 
 	f.close()
 
-# Writing
+# Writing- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 def writeGradesFile(filename):
 	f = open(filename, "w")
@@ -69,26 +132,26 @@ def writeGradesFile(filename):
 	f.write(str(len(students)) + "\n")
 	f.write(str(len(courses)) + "\n")
 
-	for i in range(len(courses)):
-		f.write(courses[i].name + "\n")
+	for course in courses:
+		f.write(course.name + "\n")
 
-	for i in range(len(students)):
-		f.write(students[i].name + "\n")
-		f.write(students[i].id + "\n")
-		f.write(students[i].gender + "\n")
+	for student in students:
+		f.write(student.name + "\n")
+		f.write(student.id + "\n")
+		f.write(student.gender + "\n")
 
-		for j in range(len(courses)):
-			for k in range(len(grades)):
-				if grades[k].student.id == students[i].id and grades[k].course.name == courses[j].name:
-					f.write(str(grades[k].exercises) + "\n")
-					f.write(str(grades[k].exams) + "\n")
-					f.write(str(grades[k].finals) + "\n")
-					f.write(str(grades[k].finalgrade) + "\n")
+		for course in courses:
+			for grade in grades:
+				if grade.student.id == student.id and grade.course.name == course.name:
+					f.write(str(grade.exercises) + "\n")
+					f.write(str(grade.exams) + "\n")
+					f.write(str(grade.finals) + "\n")
+					f.write(str(grade.finalgrade) + "\n")
 					break
 
 	f.close()
 
-# CRUD
+# CRUD - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 def addCourse(course):
 	courses.append(course)
@@ -149,70 +212,7 @@ def deleteStudent(index):
 			i += 1
 		del students[index]
 
-# Functions
-
-def getGPA(studID):
-	gradeCount = 0
-	total = 0
-
-	for grade in grades:
-		if grade.student.id == studID:
-			total += grade.finalgrade
-			gradeCount += 1
-			if gradeCount == len(courses):
-				break
-
-	return total/len(courses)
-
-def getCourseAvg(courseName):
-	studCount = 0
-	total = 0
-
-	for grade in grades:
-		if grade.course.name == courseName:
-			total += grade.finalgrade
-			studCount += 1
-			if studCount == len(students):
-				break
-
-	return total/len(students)
-
-def getTop(courseName, num):
-	if num > len(students):
-		num = len(students)
-
-	topList = []
-
-	for i in range(num):
-		topList.append({'student': None, 'grade': 0.0})
-	studCount = 0
-
-	for grade in grades:
-		if grade.course.name == courseName:
-			for i in range(num):
-				if grade.finalgrade >= topList[i]['grade']:
-					newG = grade.finalgrade
-					newS = grade.student
-
-					for j in range(i, num):
-						tempG = topList[j]['grade']
-						topList[j]['grade'] = newG
-						newG = tempG
-
-						tempS = topList[j]['student']
-						topList[j]['student'] = newS
-						newS = tempS
-					
-					break
-
-			studCount += 1
-
-			if studCount == len(students):
-				break
-
-	return topList
-
-# Display
+# Display- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 def displayCourses(numbered):
 	print "Courses:"
@@ -223,12 +223,12 @@ def displayCourses(numbered):
 			i += 1
 		else:
 			string = ""
-		string += c.name + ": Average Grade = " + str(getCourseAvg(c.name))
+		string += c.name + ": Average Grade = " + str(c.getCourseAvg())
 		print string
 
 def displayTopStudents(c):
 	print "Top Students in " + c.name + "\n"
-	topGrades = getTop(c.name, 5)
+	topGrades = c.getTop(5)
 	for top in topGrades:
 		print top['student'].name + " (" + str(top['student'].id) + "): " + str(top['grade'])
 
@@ -241,7 +241,7 @@ def displayStudents(numbered):
 			i += 1
 		else:
 			string = ""
-		string += s.name + ", " + s.id + ", " + s.gender + ": GPA = " + str(getGPA(s.id))
+		string += s.name + ", " + s.id + ", " + s.gender + ": GPA = " + str(s.getGPA())
 		print string
 
 def displayGrades(numbered):
@@ -257,7 +257,7 @@ def displayGrades(numbered):
 			string += "\n\tExercises: " + str(g.exercises) + "\n\tExams: " + str(g.exams) + "\n\tFinals: " + str(g.finals) + "\n\tFinal Grade: " + str(g.finalgrade)
 		print string
 
-# "Pages"
+# "Pages"- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 def pageMain(invalid):
 	os.system("clear")
@@ -594,7 +594,7 @@ def pageEditGradeDetails(index, invalid):
 	else:
 		pageEditGradeDetails(index, True)
 
-# Actual Program
+# Actual Program - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 readGradesFile(file)
 
