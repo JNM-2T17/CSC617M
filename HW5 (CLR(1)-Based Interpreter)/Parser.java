@@ -60,7 +60,7 @@ public class Parser {
 					currIndex++;
 					currToken = tokens.get(currIndex);
 					act = topState.getAction(currToken.type());
-				} while( act == null && currIndex < tokens.size() );
+				} while( act == null && currIndex + 1 < tokens.size() );
 			} if(act != null ) {//else {
 				switch(act.type()) {
 					case "ACCEPT":
