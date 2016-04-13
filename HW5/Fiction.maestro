@@ -1,0 +1,57 @@
+play {
+	intro * 2
+}
+
+seq {
+	volume 90
+	C(2,1/12)
+	G(2,1/12)
+	C(3,1/12)
+} -> introLeft
+introLeft * 8 -> introLeft
+
+sync {
+	C(4,1/8)
+	C(5,1/8)
+} -> octJumpC
+
+seq {
+	seq {
+		rest(1/4)
+		octJumpC
+		octJumpC - 1 -> octJumpB
+		octJumpC > 2
+		octJumpB - 3 > 2 -> octJumpGs
+		octJumpGs - 4 -> octJumpE
+		octJumpGs - 1 -> octJumpG
+		octJumpGs
+		octJumpG
+	} -> rightSub
+} -> introRight
+
+octJumpB - 13 < 2 -> octJumpAs
+octJumpC - 12 < 2 -> octJumpCdown
+octJumpCdown + 4 -> octJumpE
+
+seq {
+	octJumpAs * 2
+	octJumpAs > 4
+	octJumpCdown * 2
+	octJumpCdown > 4
+	octJumpE * 2
+	octJumpE > 4
+} -> lastIntro
+
+sync {
+	introLeft
+	introRight
+} -> introSub
+
+seq {
+	bpm 125
+	introSub * 4
+	bpm 100
+	rest(1/4)
+	lastIntro
+} -> intro
+

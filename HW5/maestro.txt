@@ -1,0 +1,52 @@
+PROG,PLAY newline
+PROG,ELEMS PLAY newline ELEMSR
+PROG,ELEMS newline PLAY newline
+PROG,PLAY newline ELEMS
+ELEMSR,ELEMS
+ELEM,ELEM2
+ELEM,bpm num
+ELEM,volume num
+ELEM,ELEM -> varname
+ELEM,ELEM * num
+ELEM2,ELEM2 + num
+ELEM2,ELEM2 ++
+ELEM2,ELEM2 - num
+ELEM2,ELEM2 --
+ELEM2,ELEM2 > num
+ELEM2,ELEM2 >>
+ELEM2,ELEM2 < num
+ELEM2,ELEM2 <<
+ELEM2,SYNC
+ELEM2,SEQ
+ELEM2,NOTE
+ELEM2,REST
+ELEM2,VAR
+ELEM2,CHORD
+VAR,varname
+VAR,varname [ num ]
+VAR,varname [ num ~ NUM2 ]
+NUM2,num
+ELEMS,ELEM newline ELEMS
+ELEMS,ELEM newline
+SEQ,seq SUBBODY
+SYNC,sync SUBBODY
+PLAY,play SUBBODY
+CHORD,chord ( pitch &com; SUBNOTE
+SUBBODY,{ newline ELEMS }
+SUBBODY,{ newline }
+SUBBODY,newline { newline ELEMS }
+SUBBODY,newline { newline }
+NOTE,pitch ( SUBNOTE
+SUBNOTE,num &com; TIME )
+SUBNOTE,OCTAVE &com; TIME )
+OCTAVE,octave
+OCTAVE,- num
+REST,rest ( TIME )
+TIME,num
+TIME,time
+TIME,num .
+TIME,time .
+TIME,num . .
+TIME,time . .
+TIME,num . . .
+TIME,time . . .

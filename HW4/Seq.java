@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Seq extends NonTerminal implements Playable {
 	private Playable[] playables;
+	private List<NoteAction> stream;
 	
 	public Seq(String pattern){
 		super("SEQ", pattern);
@@ -11,8 +13,37 @@ public class Seq extends NonTerminal implements Playable {
 	public Seq(Playable[] p){
 		super("SEQ","seq SUBBODY");
 		playables = p;
+		buildStream();
 	}
 	
+	private void buildStream() {
+		ArrayList<NoteAction> nas = new ArrayList<NoteAction>();
+		int volume = MusicPlayer.DEFAULT_VOLUME;
+		for(Playable p: playables) {
+			List<NoteAction> stream = p.getStream();
+			if( stream != null ) {
+				for(NoteAction na: stream) {
+					if( volume != MusicPlayer.DEFAULT_VOLUME 
+							&& na.type() == NoteAction.ON) {
+						na = new NoteAction(NoteAction.ON,na.note(),na.index()
+											,volume);
+					}
+					nas.add(na);
+					// System.out.print(na + " ");
+				}
+			} else {
+				volume = ((Elem)p).volume();
+				// System.out.println("Setting volume to " + volume);
+			}
+		}
+		// System.out.println();
+		stream = nas;
+	}
+
+	public String getType() {
+		return "SEQ";
+	}
+
 	public void interpret() throws Exception{
 		if(!isSet()) {
 			throw new Exception(NOT_SET_MESSAGE);
@@ -24,10 +55,12 @@ public class Seq extends NonTerminal implements Playable {
 			int ctr = 0;
 			while(itr.hasNext() ) {
 				elems.add(itr.next());
+				// System.out.println(elems.get(elems.size() - 1));
 				ctr++;
 			}
 			playables = new Playable[ctr];
 			playables = elems.toArray(playables);
+			buildStream();
 		}
 	}
 	
@@ -36,15 +69,19 @@ public class Seq extends NonTerminal implements Playable {
 	}
 
 	public void play() {
-		for(Playable p: playables) {
-			p.play();
-		}
+		for(NoteAction na: stream) {
+    		// System.out.println(na);
+    		MusicPlayer.instance().play(na);
+    	}
 	}
 
 	public Playable changePitch(int semitones) {
     	Playable[] newPlay = new Playable[playables.length];
         for(int i = 0; i < playables.length; i++) {
 		  newPlay[i] = playables[i].changePitch(semitones);
+		  if( newPlay[i] == null ) {
+		  	newPlay[i] = playables[i];
+		  }
         }
         return new Seq(newPlay);
 	}
@@ -53,6 +90,9 @@ public class Seq extends NonTerminal implements Playable {
         Playable[] newPlay = new Playable[playables.length];
         for(int i = 0; i < playables.length; i++) {
 		  newPlay[i] = playables[i].changeTime(factor);
+		  if( newPlay[i] == null ) {
+		  	newPlay[i] = playables[i];
+		  }
         }
         return new Seq(newPlay);
 	}
@@ -65,4 +105,7 @@ public class Seq extends NonTerminal implements Playable {
 		return new Seq(newSeq);
 	}
 
+	public List<NoteAction> getStream() {
+		return stream;
+	}
 }

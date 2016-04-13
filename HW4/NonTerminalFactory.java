@@ -34,6 +34,8 @@ public class NonTerminalFactory {
 				return new SubElems2(pattern);
 			case "SEQ":
 				return new Seq(pattern);
+			case "CHORD":
+				return new Chord(pattern);
 			case "SYNC":
 				return new Sync(pattern);
 			case "PLAY":

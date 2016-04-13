@@ -1,23 +1,24 @@
-,sync,seq,pitch,rest,varname,play,newline,+,++,-,--,<,<<,>,>>,*,->,[,],~,time,{,.,),num,octave,EOF
-PROG,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,PLAY SUBELEMS2 NL,newline PROG NL,,,,,,,,,,,,,,,,,,,,SYNCH
-ELEM,SYNC SUBELEM,SEQ SUBELEM,NOTE SUBELEM,REST SUBELEM,VAR SUBELEM,,SYNCH,,,,,,,,,,SYNCH,,,,,,,,,,
-SUBELEM,,,,,,,e,+ num SUBELEM,++ SUBELEM,- num SUBELEM,-- SUBELEM,< num SUBELEM,<< SUBELEM,> num SUBELEM,>> SUBELEM,* num,e,,,,,,,,,,SYNCH
-VAR,,,,,varname SUBVAR,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,
-SUBVAR,,,,,,,e,e,e,e,e,e,e,e,e,e,e,[ num SUB2VAR,,,,,,,,,
-SUB2VAR,,,,,,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,],~ num ],,,,,,,
-ELEMS,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,,e,,,,,,,,,,e,,,,,,,,,,e
-SUBELEMS,,,,,,,newline ELEMS,,,,,,,,,,-> varname SUBELEMS2,,,,,,,,,,e
-SUBELEMS2,,,,,,,newline ELEMS,,,,,,,,,,,,,,,,,,,,e
-SEQ,,seq SUBBODY,,,,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,
-SYNC,sync SUBBODY,,,,,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,
-PLAY,,,,,,play SUBBODY,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,,SYNCH
-SUBBODY,,,,,,,newline { newline ELEMS newline },SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,{ newline ELEMS newline },,,,,SYNCH
-NOTE,,,pitch ( SUBNOTE,,,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,
-SUBNOTE,,,,,,,,,,OCTAVE | TIME ),,,,,,,,,,,,,,,num | TIME ),OCTAVE | TIME ),
-OCTAVE,,,,,,,,,,- num,,,,,,,,,,,,,,,,octave,
-REST,,,,rest ( TIME ),,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,
-TIME,,,,,,,,,,,,,,,,,,,,,time SUBTIME,,,,num SUBTIME,,
-SUBTIME,,,,,,,,,,,,,,,,,,,,,,,. SUB2TIME,e,,,
-SUB2TIME,,,,,,,,,,,,,,,,,,,,,,,. SUB3TIME,e,,,
-SUB3TIME,,,,,,,,,,,,,,,,,,,,,,,.,e,,,
-NL,,,,,,,newline,,,,,,,,,,,,,,,,,,,,e
+,sync,seq,pitch,rest,varname,play,newline,+,++,-,--,<,<<,>,>>,*,->,[,],~,time,{,.,),num,octave,chord,bpm,volume,},EOF
+PROG,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,PLAY SUBELEMS2 NL,newline PROG NL,,,,,,,,,,,,,,,,,,,,,ELEMS newline PLAY SUBELEMS2 NL,ELEMS newline PLAY SUBELEMS2 NL,,SYNCH
+ELEM,SYNC SUBELEM,SEQ SUBELEM,NOTE SUBELEM,REST SUBELEM,VAR SUBELEM,,SYNCH,,,,,,,,,,SYNCH,,,,,,,,,,CHORD SUBELEM,bpm num,volume num,SYNCH,
+SUBELEM,,,,,,,e,+ num SUBELEM,++ SUBELEM,- num SUBELEM,-- SUBELEM,< num SUBELEM,<< SUBELEM,> num SUBELEM,>> SUBELEM,* num,e,,,,,,,,,,,,,SYNCH,e
+VAR,,,,,varname SUBVAR,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,,,,,
+SUBVAR,,,,,,,e,e,e,e,e,e,e,e,e,e,e,[ num SUB2VAR,,,,,,,,,,,,,
+SUB2VAR,,,,,,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,],~ num ],,,,,,,,,,,
+ELEMS,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,,e,,,,,,,,,,e,,,,,,,,,,ELEM SUBELEMS,ELEM SUBELEMS,ELEM SUBELEMS,e,e
+SUBELEMS,,,,,,,newline ELEMS,,,,,,,,,,-> varname SUBELEMS2,,,,,,,,,,,,,e,e
+SUBELEMS2,,,,,,,newline ELEMS,,,,,,,,,,,,,,,,,,,,,,,,e
+SEQ,,seq SUBBODY,,,,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,,,,,
+SYNC,sync SUBBODY,,,,,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,,,,,
+PLAY,,,,,,play SUBBODY,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,,,,,,SYNCH
+SUBBODY,,,,,,,newline { newline ELEMS NL },SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,{ newline ELEMS NL },,,,,,,,,SYNCH
+NOTE,,,pitch ( SUBNOTE,,,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,,,,,
+SUBNOTE,,,,,,,SYNCH,SYNCH,SYNCH,OCTAVE | TIME ),SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,num | TIME ),OCTAVE | TIME ),,,,,
+OCTAVE,,,,,,,,,,- num,,,,,,,,,,,,,,,,octave,,,,,
+REST,,,,rest ( TIME ),,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,,,,,
+TIME,,,,,,,,,,,,,,,,,,,,,time SUBTIME,,,,num SUBTIME,,,,,,
+SUBTIME,,,,,,,,,,,,,,,,,,,,,,,. SUB2TIME,e,,,,,,,
+SUB2TIME,,,,,,,,,,,,,,,,,,,,,,,. SUB3TIME,e,,,,,,,
+SUB3TIME,,,,,,,,,,,,,,,,,,,,,,,.,e,,,,,,,
+NL,,,,,,,newline,,,,,,,,,,,,,,,,,,,,,,,e,e
+CHORD,,,,,,,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,SYNCH,,,,,,,,,,chord ( pitch | SUBNOTE,,,,

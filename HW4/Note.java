@@ -1,6 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Note extends NonTerminal implements Playable {
 	private int note;
 	private double duration;
+	private List<NoteAction> stream;
 
 	public Note(String pattern) {
 		super("NOTE",pattern);
@@ -10,6 +14,15 @@ public class Note extends NonTerminal implements Playable {
 		super("NOTE","pitch ( SUBNOTE");
 		this.note = note;
 		this.duration = duration;
+		buildStream();
+	}
+
+	private void buildStream() {
+		ArrayList<NoteAction> nas = new ArrayList<NoteAction>();
+		nas.add(new NoteAction(NoteAction.ON,note));
+		nas.add(new NoteAction(NoteAction.SLEEP,duration));
+		nas.add(new NoteAction(NoteAction.OFF,note));
+		stream = nas;
 	}
 
 	public void interpret() throws Exception {
@@ -28,14 +41,23 @@ public class Note extends NonTerminal implements Playable {
 
 			note += 12 * (subnote.getOctave() + 1);
 			duration = subnote.getTime();
+			buildStream();
 		}
+	}
+
+	public String getType() {
+		return "NOTE";
 	}
 
 	public void play() {
 		try {
 			MusicPlayer.instance().play(note, duration);
 		} catch(Exception e) {
-			System.out.println(e.getMessage());
+			if( e.getMessage() == null ) {
+				e.printStackTrace();
+			} else {
+				System.out.println(e.getMessage());
+			}
 		}
 	}
 
@@ -55,5 +77,9 @@ public class Note extends NonTerminal implements Playable {
 			newSeq[i] = this;
 		}
 		return new Seq(newSeq);
+	}
+
+	public List<NoteAction> getStream() {
+		return stream;
 	}
 }

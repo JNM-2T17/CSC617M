@@ -1,0 +1,6 @@
+c:\users\marcdominic\documents\visual studio 2012\Projects\ProgLangGradebooks\ProgLangGradebooks\bin\Debug\ProgLangGradebooks.exe.config
+C:\Users\MarcDominic\documents\visual studio 2012\Projects\ProgLangGradebooks\ProgLangGradebooks\bin\Debug\ProgLangGradebooks.exe
+C:\Users\MarcDominic\documents\visual studio 2012\Projects\ProgLangGradebooks\ProgLangGradebooks\bin\Debug\ProgLangGradebooks.pdb
+C:\Users\MarcDominic\documents\visual studio 2012\Projects\ProgLangGradebooks\ProgLangGradebooks\obj\Debug\ProgLangGradebooks.csprojResolveAssemblyReference.cache
+C:\Users\MarcDominic\documents\visual studio 2012\Projects\ProgLangGradebooks\ProgLangGradebooks\obj\Debug\ProgLangGradebooks.exe
+C:\Users\MarcDominic\documents\visual studio 2012\Projects\ProgLangGradebooks\ProgLangGradebooks\obj\Debug\ProgLangGradebooks.pdb

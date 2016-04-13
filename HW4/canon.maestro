@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 play {
+=======
+/**
+ * Canon.maestro
+ * @author Marc San Pedro
+ * @20160219
+ */
+ play {
+ 	bpm 300
+>>>>>>> 0854c1d9c8ab5548545ad50ef157ca829c6f4531
 	left1
 	
 	sync {

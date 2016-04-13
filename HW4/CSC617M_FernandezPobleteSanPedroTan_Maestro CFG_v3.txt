@@ -1,15 +1,15 @@
-PROG -> ELEMS nl PLAY nl ELEMS | PLAY nl ELEMS | ELEMS nl PLAY | PLAY 
-		| nl PROG nl
+PROG -> ELEMS newline PLAY newline ELEMS | PLAY newline ELEMS | ELEMS newline PLAY | PLAY 
+		| newline PROG newline
 ELEM -> SYNC | SEQ | NOTE | REST | VAR | TIMES | SYNC SUBELEM | SEQ SUBELEM 
 			| NOTE SUBELEM | REST SUBELEM | VAR SUBELEM
 SUBELEM -> + num | ++ | - num | -- | < num | << | > num | >> | + num SUBELEM 
 			| ++ SUBELEM | - num SUBELEM | -- SUBELEM | < num SUBELEM 
 			| << SUBELEM | > num SUBELEM | >> SUBELEM | * num
 VAR -> varname | varname[num] | varname[num~num]
-ELEMS -> ELEM nl ELEMS | ELEM | DEC | DEC nl ELEMS
-SEQ -> seq { nl ELEMS nl } | seq nl { nl ELEMS nl }
-SYNC -> sync { nl ELEMS nl } | sync nl { nl ELEMS nl }
-PLAY -> play { nl ELEMS nl } | play nl { nl ELEMS nl }
+ELEMS -> ELEM newline ELEMS | ELEM | DEC | DEC newline ELEMS
+SEQ -> seq { newline ELEMS newline } | seq newline { newline ELEMS newline }
+SYNC -> sync { newline ELEMS newline } | sync newline { newline ELEMS newline }
+PLAY -> play { newline ELEMS newline } | play newline { newline ELEMS newline }
 NOTE -> pitch(num,TIME) | pitch(OCTAVE,TIME)
 OCTAVE -> octave | -num
 REST -> rest(TIME)
@@ -18,10 +18,11 @@ DEC -> ELEM -> varname
 
 Left Factored
 
-PROG -> ELEMS nl PLAY SUBELEMS2 NL | PLAY SUBELEMS2 NL 
-		| nl PROG NL
-NL -> nl | e 
+PROG -> ELEMS newline PLAY SUBELEMS2 newline | PLAY SUBELEMS2 newline 
+		| newline PROG newline
+newline -> newline | e 
 ELEM -> SYNC SUBELEM | SEQ SUBELEM | NOTE SUBELEM | REST SUBELEM | VAR SUBELEM 
+		| CHORD SUBELEM | bpm num | volume num
 SUBELEM -> + num SUBELEM | ++ SUBELEM | - num SUBELEM | -- SUBELEM 
 			| < num SUBELEM | << SUBELEM | > num SUBELEM | >> SUBELEM | e 
 			| * num
@@ -29,12 +30,13 @@ VAR -> varname SUBVAR
 SUBVAR -> e | [num SUB2VAR
 SUB2VAR -> ] | ~num]
 ELEMS -> ELEM SUBELEMS | e
-SUBELEMS -> nl ELEMS | e | -> varname SUBELEMS2
-SUBELEMS2 -> nl ELEMS | e
+SUBELEMS -> newline ELEMS | e | -> varname SUBELEMS2
+SUBELEMS2 -> newline ELEMS | e
 SEQ -> seq SUBBODY
 SYNC -> sync SUBBODY
 PLAY -> play SUBBODY
-SUBBODY -> { nl ELEMS nl } | nl { nl ELEMS nl }
+CHORD -> chord(pitch,SUBNOTE
+SUBBODY -> { newline ELEMS newline } | newline { newline ELEMS newline }
 NOTE -> pitch(SUBNOTE
 SUBNOTE -> num,TIME) | OCTAVE,TIME)
 OCTAVE -> octave | -num
@@ -46,19 +48,19 @@ SUB3TIME -> e | .
 
 FIRST
 
-PROG -> sync, seq, pitch, rest, varname, play, nl
-ELEM -> sync, seq, pitch, rest, varname
+PROG -> sync, seq, pitch, rest, varname, play, newline, bpm, volume
+ELEM -> sync, seq, pitch, rest, varname,chord, bpm, volume
 SUBELEM -> +,++,-,--,<,<<,>,>>,*,e
 VAR -> varname
 SUBVAR -> [,e
 SUB2VAR -> ],~
-ELEMS -> sync, seq, pitch, rest, varname
-SUBELEMS -> nl, ->,e
-SUBELEMS2 -> nl,e
+ELEMS -> sync, seq, pitch, rest, varname, bpm, volume
+SUBELEMS -> newline, ->,e
+SUBELEMS2 -> newline,e
 SEQ -> seq
 SYNC -> sync
 PLAY -> play
-SUBBODY -> {,nl
+SUBBODY -> {,newline
 NOTE -> pitch
 OCTAVE -> octave,-
 REST -> rest
@@ -66,24 +68,27 @@ TIME -> time,num
 SUBTIME -> .,e
 SUB2TIME -> .,e
 SUB3TIME -> .,e
+CHORD -> chord
 
 FOLLOW
 
-PROG -> EOF,nl
-ELEM -> nl, ->
-SUBELEM -> nl, ->
-VAR -> +,++,-,--,<,<<,>,>>,*,nl, ->
-SUBVAR -> +,++,-,--,<,<<,>,>>,*,nl, ->
-SUB2VAR -> +,++,-,--,<,<<,>,>>,*,nl, ->
-ELEMS -> nl,EOF
-SUBELEMS -> nl,EOF
-SUBELEMS2 -> nl,EOF
-SEQ -> +,++,-,--,<,<<,>,>>,*,nl, ->
-SYNC -> +,++,-,--,<,<<,>,>>,*,nl, ->
-PLAY -> +,++,-,--,<,<<,>,>>,*,EOF,nl
-SUBBODY -> +,++,-,--,<,<<,>,>>,*,EOF,nl
-NOTE -> +,++,-,--,<,<<,>,>>,*,nl, ->
-REST -> +,++,-,--,<,<<,>,>>,*,nl, ->
+PROG -> EOF,newline
+ELEM -> newline, ->
+SUBELEM -> newline, ->
+VAR -> +,++,-,--,<,<<,>,>>,*,newline, ->
+SUBVAR -> +,++,-,--,<,<<,>,>>,*,newline, ->
+SUB2VAR -> +,++,-,--,<,<<,>,>>,*,newline, ->
+ELEMS -> newline,EOF,}
+SUBELEMS -> newline,EOF
+SUBELEMS2 -> newline,EOF
+SEQ -> +,++,-,--,<,<<,>,>>,*,newline, ->
+SYNC -> +,++,-,--,<,<<,>,>>,*,newline, ->
+PLAY -> +,++,-,--,<,<<,>,>>,*,EOF,newline
+SUBBODY -> +,++,-,--,<,<<,>,>>,*,EOF,newline
+NOTE -> +,++,-,--,<,<<,>,>>,*,newline, ->
+SUBNOTE -> +,++,-,--,<,<<,>,>>,*,newline, ->
+CHORD -> +,++,-,--,<,<<,>,>>,*,newline, ->
+REST -> +,++,-,--,<,<<,>,>>,*,newline, ->
 TIME -> )
 SUBTIME -> )
 SUB2TIME -> )

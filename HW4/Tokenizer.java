@@ -10,6 +10,7 @@ public class Tokenizer {
 	private int lineNo;
 	private static String[] reserved;
 	private static String[] operators;
+	private static String[] chords;
 
 	public Tokenizer(String code) {
 		this.code = code;
@@ -17,11 +18,15 @@ public class Tokenizer {
 		state = 0;
 		currToken = "";
 		reserved = new String[] {
-			"play", "rest", "seq", "sync"
+			"play", "rest", "seq", "sync","bpm","volume"
 		};
 		operators = new String[] {
 			"->", "+", "++", "-", "--", ">", ">>", "<", "<<", "~", "*", 
 			"(", ")", "{", "}", ",","[","]","."
+		};
+		chords = new String[] {
+			"maj", "m", "aug", "dim", "dim7","min7","mmaj7","dom7","maj7",
+			"aug7","dom9","dom11","dom13","add9","add11","sus2","sus4","octup"
 		};
 	}
 
@@ -267,10 +272,18 @@ public class Tokenizer {
 			}
 		}
 
+		for(String s: chords) {
+			if(s.equals(currToken)) {
+				return "chord";
+			}
+		}
+
 		try {
 			int i = Integer.parseInt(currToken);
 			if( i > 0 ) {
 				return "num";
+			} else if( i == 0 ) {
+				return "octave";
 			} else {
 				return "Invalid number, must be positiive";
 			}

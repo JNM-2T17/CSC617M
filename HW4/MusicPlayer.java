@@ -6,9 +6,15 @@ public class MusicPlayer {
     private MidiChannel[] channels;
     private boolean[][] actives;
     private int beatLength;
+    private int bpm;
     public static final int NOTE_COUNT = 128;
+<<<<<<< HEAD
     public static final int VOLUME = 127;
     public static final int BPM = 170;
+=======
+    public static final int DEFAULT_BPM = 100;
+    public static final int DEFAULT_VOLUME = 127;
+>>>>>>> 0854c1d9c8ab5548545ad50ef157ca829c6f4531
     public static final int MS_PER_MINUTE = 60000;
     public static final int BEATS_PER_WHOLE = 4;
     private static MusicPlayer instance = null;
@@ -33,11 +39,15 @@ public class MusicPlayer {
                     actives[i][j] = false;
                 }
             }
-
-            beatLength = MS_PER_MINUTE / BPM * BEATS_PER_WHOLE;
+            setTempo(DEFAULT_BPM);
         } catch(Exception e) {
             e.printStackTrace();
         }        
+    }
+
+    public void setTempo(int bpm) {
+        this.bpm = bpm;
+        beatLength = MS_PER_MINUTE / bpm * BEATS_PER_WHOLE;
     }
 
     public static MusicPlayer instance() {
@@ -64,8 +74,8 @@ public class MusicPlayer {
             i = 0;
         }
 
-        channels[i].noteOn(note,VOLUME);
-        System.out.println("Playing " + note + " for " + (duration * beatLength));
+        channels[i].noteOn(note,DEFAULT_VOLUME);
+        // System.out.println("Playing " + note + " for " + (duration * beatLength));
         try {
             Thread.sleep((long)(duration * beatLength));
         } catch(InterruptedException e) {
@@ -76,11 +86,32 @@ public class MusicPlayer {
     }
 
     public void rest(double duration) {
-        System.out.println("Resting for " + (duration * beatLength));
+        // System.out.println("Resting for " + (duration * beatLength));
         try {
             Thread.sleep((long)(duration * beatLength));
         } catch(Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void play(NoteAction na) {
+        switch(na.type()) {
+            case NoteAction.ON:
+                // System.out.println("Turning " + na.note() + ":" + na.index() 
+                                    // + " on with volume " + na.volume());
+                channels[na.index()].noteOn(na.note(),na.volume());
+                break;
+            case NoteAction.OFF:
+                // System.out.println("Turning " + na.note() + ":" + na.index() + " off");
+                channels[na.index()].noteOff(na.note());
+                break;
+            case NoteAction.SLEEP:
+                rest(na.duration());
+                break;
+            case NoteAction.TEMPO:
+                setTempo(na.tempo());
+                break;
+            default:
         }
     }
 }

@@ -1,0 +1,210 @@
+/**
+ * IWriteSinsNotTragedies.maestro
+ * @author Austin Fernandez
+ * @20150220
+ */
+play {
+	bpm 175
+	part1
+	part2
+	part3
+	part4
+	part5
+	part6
+}
+
+seq {
+	seq {
+		A(2,1/8)
+		E(3,1/8)
+		sync {
+			C(4,1/4)
+			E(4,1/4)
+		} -> CE
+		rest(1/8)
+		E(3,1/8)
+		sync {
+			B(3,1/4)
+			C(4,1/4)
+		} -> BC
+	} -> part1Sub
+	part1Sub * 3
+} -> part1
+
+seq {
+	seq {
+		F#(3,1/8)
+		BC < 2
+		sync {
+			D(4,1/4)
+			A(4,1/4)
+		} -> DA
+		rest(1/8)
+		C(4,1/8)
+		sync {
+			B(3,1/4)
+			D(4,1/4)
+		} -> BD
+	} * 2
+	
+	F(3,1/8)
+	B(3,1/8)
+	CE
+	rest(1/8)
+	B(3,1/8)
+	sync {
+		C(4,1/4)
+		D(4,1/4)
+	} -> CD
+
+	F(3,1/8)
+	B(3,1/8)
+	sync {
+		C(4,1/4)
+		F(4,1/4)
+	} -> CF
+	rest(1/8)
+	B(3,1/8)
+	CD
+} -> part2
+
+sync {
+	seq {
+		A(3,1/2)
+		rest(1/8)
+		seq {
+			A(3,1/8)
+			C(4,1/8)
+			B(3,1/4)
+		} -> ACB
+
+		A(3,1/4.)
+		rest(1/8)
+		ACB
+
+		ACB
+		ACB
+
+		ACB
+		A(3,1/8)
+		A(3,1/4)
+	} -> part3R
+	seq {
+		volume 80
+		seq {
+			F#(3,1/8)
+			BC < 2
+			DA
+			rest(1/8)
+			C(4,1/8)
+			BD
+		} * 2
+
+		F(3,1/8)
+		B(3,1/8)
+		CE
+		rest(1/8)
+		B(3,1/8)
+		CD
+
+		F(3,1/8)
+		B(3,1/8)
+		CF
+		rest(1/8)
+		B(3,1/8)
+		CD
+	} -> part3L
+} -> part3
+
+sync {
+	seq {
+		D(4,1/4) * 3
+		E(4,1/8)
+		C(4,1/4.)
+
+		A(3,1/8) * 3
+		G(3,1/8) * 2
+		A(3,1/8)
+
+		D(4,1/4)
+		C(4,1/8)
+		B(3,1/8)
+		B(3,1/4)
+		C(4,1/8)
+		B(3,1/8)
+
+		A(3,1/8)
+		G(3,1/4.)
+		rest(1/2)
+	} -> part4R
+	seq {
+		volume 80
+		seq {
+			F#(3,1/8)
+			BC < 2
+			DA
+			rest(1/8)
+			C(4,1/8)
+			BD
+		} * 2
+
+		F(3,1/8)
+		B(3,1/8)
+		CE
+		rest(1/8)
+		B(3,1/8)
+		CD
+
+		F(3,1/8)
+		B(3,1/8)
+		CF
+		rest(1/8)
+		B(3,1/8)
+		CD
+	} -> part4L
+} -> part4
+
+sync {
+	seq {
+		rest(1/4)
+		G(4,1/8) * 2
+		G(4,1/4)
+		F(4,1/8)
+		E(4,1/8)
+
+		D(4,1/8)
+		C(4,1/4.)
+		rest(1/8)
+		ACB
+
+		ACB
+		A(3,1/8) * 3
+
+		D(4,1/4) * 3
+		E(4,1/8)
+		C(4,1/8)
+	}
+	part3L
+} -> part5
+
+sync {
+	seq {
+		D(4,1/4) * 3
+		E(4,1/8)
+		C(4,1/4.)
+
+		A(3,1/8) * 3
+		G(3,1/8)
+		G(3,1/4)
+
+		D(4,1/4) * 3
+		E(4,1/4)
+
+		A(3,1/2)
+		rest(1/2)
+	}
+	seq {
+		part4L[1~8]
+		rest(1)
+	}
+} -> part6

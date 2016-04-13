@@ -27,36 +27,28 @@ public class SubElem extends NonTerminal {
 					ret = base.multiply(arg);
 					break;
 				case "+ num SUBELEM":
-					ret = base.changePitch(arg);
-					ret = se.value(ret);
+					ret = se.value(base.changePitch(arg));
 					break;
 				case "++ SUBELEM":
-					ret = base.changePitch(1);
-					ret = se.value(ret);
+					ret = se.value(base.changePitch(1));
 					break;
 				case "- num SUBELEM":
-					ret = base.changePitch(-arg);
-					ret = se.value(ret);
+					ret = se.value(base.changePitch(-arg));
 					break;
 				case "-- SUBELEM":
-					ret = base.changePitch(-1);
-					ret = se.value(ret);
+					ret = se.value(base.changePitch(-1));
 					break;
 				case "> num SUBELEM":
-					ret = base.changeTime(arg);
-					ret = se.value(ret);
+					ret = se.value(base.changeTime(arg));
 					break;
 				case ">>":
-					ret = base.changeTime(2);
-					ret = se.value(ret);
+					ret = se.value(base.changeTime(2));
 					break;
 				case "< num SUBELEM":
-					ret = base.changeTime(1.0 / arg);
-					ret = se.value(ret);
+					ret = se.value(base.changeTime(1.0 / arg));
 					break;
 				case "<< SUBELEM":
-					ret = base.changeTime(0.5);
-					ret = se.value(ret);
+					ret = se.value(base.changeTime(0.5));
 					break;
 				default:
 			}

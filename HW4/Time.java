@@ -25,8 +25,9 @@ public class Time extends NonTerminal {
 			SubTime subTime = (SubTime)getComponent("SUBTIME");
 			subTime.interpret();
 			int nDots = subTime.getDotCount();
-			for(int i=0; i<nDots; i++){
-				timeVal += (timeVal/2);
+			double origTime = timeVal;
+			for(int i=0; i<nDots; i++,origTime /= 2){
+				timeVal += (origTime/2);
 			}
 		}
 	}
