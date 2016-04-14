@@ -1,0 +1,39 @@
+play{
+	melody
+}
+
+seq {
+	C#(6, 1/8)
+	G#(5, 1/8)
+	F#(5, 1/8)
+	F#(6, 1/8)
+	G#(5, 1/8)
+	F(6, 1/8)
+	G#(5, 1/8)
+} -> rightRem
+
+seq {
+	C#(5, 1/8)
+	rightRem
+} -> rightOne
+
+seq {
+	D#(5, 1/8)
+	rightRem
+} -> rightTwo
+
+seq {
+	F#(5, 1/8)
+	rightRem
+} -> rightThree
+
+seq {
+	rightOne
+	rightOne
+	rightTwo
+	rightTwo
+	rightThree
+	rightThree
+	rightOne
+	rightOne
+} -> melody
