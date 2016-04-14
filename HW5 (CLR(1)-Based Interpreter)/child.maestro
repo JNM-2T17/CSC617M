@@ -1,4 +1,5 @@
 play{
+	bpm 125
 	melody
 }
 
