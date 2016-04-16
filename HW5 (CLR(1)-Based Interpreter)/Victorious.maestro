@@ -1,0 +1,942 @@
+/**
+ * Victorious.maestro
+ * @author Austin Fernandez
+ * @20160415
+ */
+
+play {
+	bpm 120
+	intro
+	prelude
+	verse1
+	prechorus
+	chorus
+	verse2
+	prechorus
+	chorus2
+	interlude
+	chorus3
+}
+
+seq {
+	seq {
+		Ab(4,1/8) * 2
+		F(4,1/8)
+		Bb(4,1/8)
+		Ab(4,1/8)
+		F(4,1/8)
+		Eb(4,1/4)
+	} * 3
+
+	seq {
+		Eb(4,1/8)
+		F(4,1/8)
+	} * 2
+	Eb(4,1/8.)
+	Db(4,1/8.)
+	Bb(3,1/8)
+} -> intro
+
+sync {
+	seq {
+		sync {
+			F(3,1/8)
+			Bb(3,1/8)
+		}
+		sync {
+			F(3,1/4)
+			C(4,1/4)
+		}
+		sync {
+			F(3,1/4)
+			Bb(3,1/4)
+			Db(4,1/4)
+		}
+		sync {
+			F(3,1/4)
+			Bb(3,1/4)
+			F(4,1/4)
+		}
+		sync {
+			Bb(3,1/2)
+			Db(4,1/2)
+			F(4,1/2)
+			Bb(4,1/2)
+		}
+
+		F(4,1/8)
+		Eb(4,1/8.)
+		Db(4,1/8.)
+		Bb(3,1/8)
+
+		sync {
+			F(3,1/8)
+			Bb(3,1/8)
+		}
+		sync {
+			F(3,1/4)
+			C(4,1/4)
+		}
+		sync {
+			F(3,1/4)
+			Bb(3,1/4)
+			Db(4,1/4)
+		}
+		sync {
+			F(3,1/4)
+			Bb(3,1/4)
+			F(4,1/4)	
+		}
+		sync {
+			octup(Bb,3,9/8)
+			Db(4,9/8)
+			F(4,9/8)
+		}
+
+		seq {
+			Bb(3,1/16)
+			C(4,1/16)
+			Db(4,1/16)
+			Eb(4,1/16)
+			F(4,1/8)
+			rest(1/16)
+			Bb(3,1/8)
+			rest(1/16)
+			Ab(3,1/8)
+			rest(1/16)
+			A(3,1/8)
+			rest(1/16)
+		} * 4
+	}
+	seq {
+		volume 95
+		octup(C,2,1/8.) * 2
+		octup(C,2,1/4)
+		octup(C,2,1/4.)
+
+		Ab(2,1/16)
+		Bb(2,1/8)
+		Ab(2,1/16)
+		Bb(2,1/8)
+		Ab(2,1/16)
+		Bb(2,1/8.)
+		Eb(3,1/8.)
+		Db(3,1/8.)
+
+		octup(C,2,1/8.) * 2
+		octup(C,2,1/4)
+		octup(C,2,1/4.)
+	
+		Ab(2,1/16)
+		Bb(2,1/8)
+		Ab(2,1/16)
+		Bb(2,1/8)
+		Ab(2,1/16)
+		Bb(2,1/8)
+		rest(1/4..)
+
+		seq {
+			sync {
+				Bb(2,1/8)
+				F(3,1/8)
+			} -> preludeL_1 * 2
+			preludeL_1 < 2 > 3 * 2
+			sync {
+				Ab(2,1/8.)
+				F(3,1/8.)
+			} * 2
+		} * 4
+	}
+} -> prelude
+
+sync {
+	seq {
+		Bb(4,1/8) * 4
+		A(4,1/8) * 2
+		A(4,1/4)
+
+		Ab(4,1/8) * 4
+		G(4,1/4) * 2
+
+		Gb(4,1/8) * 4
+		F(4,1/8) * 2
+		F(4,1/4)
+
+		Eb(4,1/8)
+		Db(4,1/8)
+		Eb(4,1/8)
+		F(4,1/8)
+		Eb(4,1/8)
+		Db(4,1/8)
+		Bb(3,1/4)
+
+		Bb(4,1/8) * 4
+		A(4,1/4)
+		A(4,1/8) * 2
+
+		Ab(4,1/8) * 4
+		G(4,1/4)
+		G(4,1/8) * 2
+
+		Gb(4,1/8) * 2
+		Gb(4,1/4)
+		F(4,1/4)
+		sync {
+			octup(Bb,4,1/4)
+			F(5,1/4)
+		}
+
+		Eb(4,1/8)
+		Db(4,1/8)
+		Eb(4,1/8)
+		F(4,1/8)
+		Eb(4,1/8)
+		Db(4,1/8)
+		Bb(3,1/8)
+		Db(4,1/8)
+	}
+	seq {
+		volume 95
+		octup(Bb,2,1/8.) * 2
+		octup(Bb,2,1/8)
+		sync {
+			Bb(2,1/8.)
+			A(3,1/8.)
+		}
+		sync {
+			Ab(2,1/8.)
+			F(3,1/8.)
+		}
+		sync {
+			A(2,1/8)
+			F(3,1/8)
+		}
+
+		sync {
+			Bb(2,1/8.)
+			Ab(3,1/8.)
+		} -> verse1L_1 * 2
+		verse1L_1 < 3 > 2
+		sync {
+			Bb(2,1/8.)
+			G(3,1/8.)
+		}
+		sync {
+			Ab(2,1/8.)
+			F(3,1/8.)
+		}
+		sync {
+			A(2,1/8)
+			F(3,1/8)
+		}
+
+		sync {
+			Bb(2,1/8.)
+			Gb(3,1/8.)
+		} -> verse1L_2 * 2
+		verse1L_2 < 3 > 2
+		sync {
+			Bb(2,1/8.)
+			F(3,1/8.)
+		}
+		sync {
+			Ab(2,1/8.)
+			F(3,1/8.)
+		}
+		sync {
+			A(2,1/8)
+			F(3,1/8)
+		}
+
+		sync {
+			Bb(2,1/8.)
+			Eb(3,1/8.)
+		} -> verse1L_3 * 2
+		verse1L_3 < 3 > 2
+		octup(F,2,1/8)
+		rest(1/4.)
+
+		seq {
+			seq {
+				Bb(1,1/16)
+				Bb(2,1/16)
+			} * 2
+		} * 2
+		seq {
+			seq {
+				A(1,1/16)
+				A(2,1/16)
+			} * 2
+		} * 2
+
+		seq {
+			seq {
+				Ab(1,1/16)
+				Ab(2,1/16)
+			} * 2
+		} * 2
+		seq {
+			seq {
+				B(1,1/16)
+				G(2,1/16)
+			} * 2
+		} * 2
+
+		seq {
+			seq {
+				Gb(1,1/16)
+				Gb(2,1/16)
+			} * 2
+		} * 2
+		seq {
+			seq {
+				F(1,1/16)
+				F(2,1/16)
+			} * 2
+		} * 2
+
+		seq {
+			seq {
+				Eb(1,1/16)
+				Eb(2,1/16)
+			} * 2
+		} * 2
+		seq {
+			seq {
+				F(1,1/16)
+				F(2,1/16)
+			} * 2
+		} * 2
+	}
+} -> verse1
+
+sync {
+	seq {
+		Bb(3,1/4.)
+		F(4,1/8)
+		Eb(4,1/8)
+		F(4,1/8)
+		Eb(4,1/8)
+		F(4,1/8)
+
+		Bb(3,1/4.)
+		F(4,1/8)
+		Eb(4,1/8)
+		F(4,1/8)
+		Ab(4,1/8)
+		F(4,1/8)
+
+		Bb(3,1/4) * 2
+		Bb(3,1/16)
+		Ab(3,1/16)
+		Bb(3,1/16)
+		C(4,1/16)
+		Db(4,1/16)
+		C(4,1/16)
+		Bb(3,1/16)
+		Ab(3,1/16)
+
+		Bb(3,1/16)
+		C(4,1/16)
+		Db(4,1/16)
+		Eb(4,1/16)
+		F(4,1/16)
+		Eb(4,1/16)
+		F(4,1/16)
+		Ab(4,1/16)
+		sync {
+			Db(4,1/2)
+			Bb(4,1/2)
+		}
+	}
+	seq {
+		volume 95
+		seq {
+			octup(Bb,1,1/8.) * 2
+			octup(Bb,1,1/4)
+			octup(F,1,1/8.)
+			octup(Ab,1,1/8.)
+		} * 3
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/8)
+		octup(Bb,1,1/2)
+	}
+} -> prechorus
+
+sync {
+	seq {
+		seq {
+			rest(1/4.)
+			sync {
+				F(4,1/4)
+				Bb(4,1/4)
+			} -> chorusR_1
+			chorusR_1 < 2 * 3
+
+			sync {
+				F(4,1/4)
+				Ab(4,1/4)
+			}
+			Ab(4,1/8)
+			Bb(4,1/8)
+			F(4,1/8)
+			Eb(4,1/8)
+			Db(4,1/4)
+
+			rest(1/4.)
+			sync {
+				Eb(4,1/4)
+				Bb(4,1/4)
+			} -> chorusR_1
+			chorusR_1 < 2 * 3
+			
+			sync {
+				Eb(4,1/4)
+				Ab(4,1/4)
+			}
+			Ab(4,1/8)
+			Bb(4,1/8)
+			F(4,1/8)
+			Eb(4,1/8)
+			Db(4,1/4)
+
+			rest(1/4.)
+			sync {
+				F(4,1/4)
+				Bb(4,1/4)
+			} -> chorusR_1
+			chorusR_1 < 2 * 3
+
+			sync {
+				F(4,1/8)
+				Ab(4,1/8)
+			}
+			Ab(4,1/8) * 2
+			Bb(4,1/8)
+			F(4,1/8)
+			Eb(4,1/8)
+			Db(4,1/8)
+			Eb(4,9/8)
+		} -> chorusR_2
+
+		rest(1/8)
+		octup(Bb,4,1/8)
+		octup(A,4,1/8)
+		octup(Bb,4,1/8)
+		octup(C,5,1/8)
+		octup(Bb,4,1/8)
+		octup(A,4,1/4)
+
+		seq {
+			Ab(3,1/16)
+			Bb(3,1/8)
+		} * 3
+		seq {
+			Ab(3,1/16)
+			Bb(3,1/4.)
+		}
+
+		rest(1/8)
+		octup(Bb,4,1/8)
+		octup(A,4,1/8)
+		octup(Bb,4,1/8)
+		octup(C,5,1/8)
+		octup(Bb,4,1/8)
+		octup(A,4,1/4)
+
+		seq {
+			Ab(3,1/16)
+			Bb(3,1/8)
+		} * 3
+		seq {
+			Ab(3,1/16)
+			Bb(3,1/4.)
+		}
+
+		seq {
+			Ab(3,1/16)
+			Bb(3,1/8)
+		} * 2
+		seq {
+			Ab(3,1/16)
+			Bb(3,1/4.)
+		}
+		rest(1/4.)
+	}
+	seq {
+		volume 95
+		seq {
+			seq {
+				octup(Bb,1,1/4)
+				sync {
+					Db(3,1/4)
+					F(3,1/4)
+					Bb(3,1/4)
+				} * 3
+
+				octup(Ab,1,1/4)
+				sync {
+					Db(3,1/4)
+					F(3,1/4)
+					Ab(3,1/4)
+				} * 3
+
+				octup(Eb,2,1/4)
+				sync {
+					Eb(3,1/4)
+					Gb(3,1/4)
+					Bb(3,1/4)
+				} * 3
+			} -> chorusL_1
+
+			octup(Ab,1,1/4)
+			sync {
+				Eb(3,1/4)
+				Ab(3,1/4)
+				C(4,1/4)
+			}
+			octup(A,1,1/4)
+			sync {
+				F(3,1/4)
+				A(3,1/4)
+				C(4,1/4)
+			}
+
+			chorusL_1
+
+			sync {
+				octup(F,2,1/4)
+				C(3,1/4)
+			}
+			rest(1/2.)
+		} -> chorusL_2
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/4)
+		octup(F,1,1/8.)
+		octup(Ab,1,1/8.)
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/4)
+		octup(Eb,3,1/8.)
+		octup(Db,3,1/8.)
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/4)
+		octup(F,1,1/8.)
+		octup(Ab,1,1/8.)
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/4)
+		rest(1/4.)
+	}
+} -> chorus
+
+sync {
+	seq {
+		Bb(4,1/4)
+		Bb(4,1/8) * 2
+		A(4,1/4)
+		A(4,1/8) * 2
+
+		Ab(4,1/8) * 3
+		G(4,1/2)
+		G(4,1/8)
+
+		Gb(4,1/4) * 2
+		F(4,1/8)
+		sync {
+			F(4,1/8)
+			Ab(4,1/8)
+		}
+		sync {
+			F(4,1/4)
+			Bb(4,1/4)
+		}
+
+		Eb(4,1/8)
+		Db(4,1/8)
+		Eb(4,1/8)
+		F(4,1/8)
+		Eb(4,1/8)
+		Db(4,1/8)
+		Bb(3,1/4)
+
+		Bb(4,1/8) * 2
+		Bb(4,1/4)
+		A(4,1/8) * 2
+		A(4,1/4)
+
+		Ab(4,1/8) * 4
+		G(4,1/4)
+		rest(1/4)
+
+		Gb(4,1/8) * 4
+		F(4,1/4)
+		Bb(3,1/4)
+
+		Eb(4,1/8)
+		Db(4,1/8)
+		Eb(4,1/8)
+		F(4,1/8)
+		Eb(4,1/8)
+		Db(4,1/8)
+		Bb(3,1/8)
+		Db(4,1/8)
+	}
+	seq {
+		volume 95
+		octup(Bb,2,1/8.) * 2
+		octup(Bb,2,1/8)
+		sync {
+			Bb(2,1/8.)
+			A(3,1/8.)
+		}
+		sync {
+			Ab(2,1/8.)
+			F(3,1/8.)
+		}
+		sync {
+			A(2,1/8)
+			F(3,1/8)
+		}
+
+		sync {
+			Bb(2,1/8.)
+			Ab(3,1/8.)
+		} -> verse2L_1 * 2
+		verse2L_1 < 3 > 2
+		sync {
+			Bb(2,1/8.)
+			G(3,1/8.)
+		}
+		sync {
+			Ab(2,1/8.)
+			F(3,1/8.)
+		}
+		sync {
+			A(2,1/8)
+			F(3,1/8)
+		}
+
+		sync {
+			Bb(2,1/8.)
+			Gb(3,1/8.)
+		} -> verse2L_2 * 2
+		verse2L_2 < 3 > 2
+		sync {
+			Bb(2,1/8.)
+			F(3,1/8.)
+		}
+		sync {
+			Ab(2,1/8.)
+			F(3,1/8.)
+		}
+		sync {
+			A(2,1/8)
+			F(3,1/8)
+		}
+
+		sync {
+			Bb(2,1/8.)
+			Eb(3,1/8.)
+		} -> verse2L_3 * 2
+		verse2L_3 < 3 > 2
+		octup(F,2,1/8)
+		rest(1/4.)
+
+		seq {
+			seq {
+				Bb(1,1/16)
+				Bb(2,1/16)
+			} * 2
+		} * 2
+		seq {
+			seq {
+				A(1,1/16)
+				A(2,1/16)
+			} * 2
+		} * 2
+
+		seq {
+			seq {
+				Ab(1,1/16)
+				Ab(2,1/16)
+			} * 2
+		} * 2
+		seq {
+			seq {
+				G(1,1/16)
+				G(2,1/16)
+			} * 2
+		} 
+		rest(1/4)
+
+		seq {
+			seq {
+				Gb(1,1/16)
+				Gb(2,1/16)
+			} * 2
+		} * 2
+		seq {
+			seq {
+				F(1,1/16)
+				F(2,1/16)
+			} * 2
+		} * 2
+
+		seq {
+			seq {
+				Eb(1,1/16)
+				Eb(2,1/16)
+			} * 2
+		} * 2
+		seq {
+			seq {
+				F(1,1/16)
+				F(2,1/16)
+			} * 2
+		} * 2
+	}
+} -> verse2
+
+sync {
+	seq {
+		chorusR_2
+
+		rest(1/4)
+		sync {
+			C(4,1/2.)
+			F(4,1/2.)
+			A(4,1/2.)
+		}
+	}
+	seq {
+		volume 95
+		chorusL_2
+	}
+} -> chorus2
+
+sync {
+	intro * 2
+	seq {
+		volume 95
+		seq {
+			seq {
+				octup(Bb,1,1/8.) * 2
+				octup(Bb,1,1/4)
+				octup(F,1,1/8.)
+				octup(Ab,1,1/8.)
+			} -> interludeL_1
+
+			seq {
+				octup(Bb,1,1/8.) * 2
+				octup(Bb,1,1/4)
+				octup(F,1,1/8)
+				rest(1/4)
+			} -> interludeL_2
+
+			interludeL_1 * 3
+
+			interludeL_2
+
+			interludeL_1 * 2
+		}
+	}
+} -> interlude
+
+sync {
+	seq {
+		seq {
+			rest(1/4.)
+			sync {
+				F(4,1/4)
+				Bb(4,1/4)
+			} -> chorusR_1
+			chorusR_1 < 2 * 3
+
+			sync {
+				F(4,1/4)
+				Ab(4,1/4)
+			}
+			Ab(4,1/8)
+			Bb(4,1/8)
+			F(4,1/8)
+			Eb(4,1/8)
+			Db(4,1/4)
+
+			rest(1)
+			
+			sync {
+				Eb(4,1/4)
+				Ab(4,1/4)
+			}
+			Ab(4,1/8)
+			Bb(4,1/8)
+			F(4,1/8)
+			Eb(4,1/8)
+			Db(4,1/4)
+
+			rest(1/4.)
+			sync {
+				F(4,1/4)
+				Bb(4,1/4)
+			} -> chorusR_1
+			chorusR_1 < 2 * 3
+
+			sync {
+				F(4,1/8)
+				Ab(4,1/8)
+			}
+			Ab(4,1/8) * 2
+			Bb(4,1/8)
+			F(4,1/8)
+			Eb(4,1/8)
+			Db(4,1/8)
+			Eb(4,9/8)
+		} -> chorusR_2
+
+		rest(1/8)
+		octup(Bb,4,1/8)
+		octup(A,4,1/8)
+		octup(Bb,4,1/8)
+		octup(C,5,1/8)
+		octup(Bb,4,1/8)
+		octup(A,4,1/4)
+
+		seq {
+			Ab(3,1/16)
+			Bb(3,1/8)
+		} * 3
+		seq {
+			Ab(3,1/16)
+			Bb(3,1/4.)
+		}
+
+		rest(1/8)
+		octup(Bb,4,1/8)
+		octup(A,4,1/8)
+		octup(Bb,4,1/8)
+		octup(C,5,1/8)
+		octup(Bb,4,1/8)
+		octup(A,4,1/4)
+
+		seq {
+			Ab(3,1/16)
+			Bb(3,1/8)
+		} * 3
+		seq {
+			Ab(3,1/16)
+			Bb(3,1/4.)
+		}
+
+		seq {
+			Ab(3,1/16)
+			Bb(3,1/8)
+		} * 2
+		Ab(3,1/16)
+		Bb(3,1/8.)
+		Ab(3,1/8.)
+		A(3,1/8.)
+
+		seq {
+			Ab(4,1/8) * 2
+			F(4,1/8)
+			Bb(4,1/8)
+			Ab(4,1/8)
+			F(4,1/8)
+			Eb(4,1/4)
+		} * 3
+
+		seq {
+			Eb(4,1/8)
+			F(4,1/8)
+		} * 2
+		Eb(4,1/8.)
+		Db(4,1/8.)
+		Bb(3,5/8)
+	}
+	seq {
+		volume 95
+		sync {
+			octup(Bb,2,1/2..)
+			F(3,1/2..)
+		}
+		sync {
+			octup(Ab,2,9/8)
+			Eb(3,9/8)
+		}
+
+		sync {
+			octup(Eb,2,1/2..)
+			Bb(2,1/2..)
+		}
+		sync {
+			octup(Ab,2,1/2)
+			Eb(3,1/2)
+		}
+
+		sync {
+			octup(A,2,5/8)
+			F(3,5/8)
+		}
+
+		sync {
+			octup(Bb,2,1/2..)
+			F(3,1/2..)
+		}
+		sync {
+			octup(Ab,2,9/8)
+			Eb(3,9/8)
+		}
+
+		sync {
+			octup(Eb,2,1/2..)
+			Bb(2,1/2..)
+		}
+		sync {
+			octup(F,2,1/4)
+			C(3,1/4)
+		}			
+
+		rest(1/2..)
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/4)
+		octup(F,1,1/8.)
+		octup(Ab,1,1/8.)
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/4)
+		octup(Eb,3,1/8.)
+		octup(Db,3,1/8.)
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/4)
+		octup(F,1,1/8.)
+		octup(Ab,1,1/8.)
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/4)
+		rest(1/4.)
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/4)
+		octup(F,1,1/8.)
+		octup(Ab,1,1/8.)
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/4)
+		octup(Eb,3,1/8.)
+		octup(Db,3,1/8.)
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/4)
+		octup(F,1,1/8.)
+		octup(Ab,1,1/8.)
+
+		octup(Bb,1,1/8.) * 2
+		octup(Bb,1,1/4)
+	}
+} -> chorus3
