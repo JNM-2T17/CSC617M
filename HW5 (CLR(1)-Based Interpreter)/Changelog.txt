@@ -1,0 +1,5 @@
+Maestro History
+February 19 - v1.00 - Basic playing
+February 20 - v1.10 - Tempo and Volume
+February 24 - v2.00 - Switched from LL(1) to CLR parser, allowing for assignment repetition constructs
+February 28 - v2.10 - Stored CLR(1) Parsing Table, allowing for faster interpretation of code
