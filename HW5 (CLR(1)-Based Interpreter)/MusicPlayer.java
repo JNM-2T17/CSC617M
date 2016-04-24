@@ -91,7 +91,7 @@ public class MusicPlayer {
         switch(na.type()) {
             case NoteAction.ON:
                 // System.out.println("Turning " + na.note() + ":" + na.index() 
-                                    // + " on with volume " + na.volume());
+                //                     + " on with volume " + na.volume());
                 channels[na.index()].noteOn(na.note(),na.volume());
                 break;
             case NoteAction.OFF:
